@@ -1,1 +1,2 @@
-pre-commit
+numpy==1.21.4
+lark~=0.11.3
