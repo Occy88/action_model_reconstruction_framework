@@ -24,11 +24,5 @@ from Planning.pddl_lib.pddlpy.pddlParser import pddlParser
 from Planning.pddl_lib.pddlpy.pddlListener import pddlListener
 
 
-
-
-
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass
-

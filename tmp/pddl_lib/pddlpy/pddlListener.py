@@ -96,7 +96,9 @@ class pddlListener(ParseTreeListener):
         pass
 
     # Enter a parse tree produced by pddlParser#atomicFunctionSkeleton.
-    def enterAtomicFunctionSkeleton(self, ctx: pddlParser.AtomicFunctionSkeletonContext):
+    def enterAtomicFunctionSkeleton(
+        self, ctx: pddlParser.AtomicFunctionSkeletonContext
+    ):
         pass
 
     # Exit a parse tree produced by pddlParser#atomicFunctionSkeleton.
@@ -400,11 +402,15 @@ class pddlListener(ParseTreeListener):
         pass
 
     # Enter a parse tree produced by pddlParser#simpleDurationConstraint.
-    def enterSimpleDurationConstraint(self, ctx: pddlParser.SimpleDurationConstraintContext):
+    def enterSimpleDurationConstraint(
+        self, ctx: pddlParser.SimpleDurationConstraintContext
+    ):
         pass
 
     # Exit a parse tree produced by pddlParser#simpleDurationConstraint.
-    def exitSimpleDurationConstraint(self, ctx: pddlParser.SimpleDurationConstraintContext):
+    def exitSimpleDurationConstraint(
+        self, ctx: pddlParser.SimpleDurationConstraintContext
+    ):
         pass
 
     # Enter a parse tree produced by pddlParser#durOp.

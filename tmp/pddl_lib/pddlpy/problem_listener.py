@@ -5,7 +5,6 @@ from Planning.pddl_lib.pddlpy.pddlListener import pddlListener
 
 
 class ProblemListener(pddlListener):
-
     def __init__(self):
         self.objects = {}
         self.initialstate = []
@@ -16,19 +15,19 @@ class ProblemListener(pddlListener):
         self.scopes.append(Scope())
 
     def exitInit(self, ctx):
-        self.initialstate = set( self.scopes.pop().atoms )
+        self.initialstate = set(self.scopes.pop().atoms)
 
     def enterGoal(self, ctx):
         self.scopes.append(Scope())
 
     def exitGoal(self, ctx):
-        self.goals = set( self.scopes.pop().atoms )
+        self.goals = set(self.scopes.pop().atoms)
 
     def enterAtomicNameFormula(self, ctx):
         pred = []
         for c in ctx.getChildren():
             n = c.getText()
-            if n == '(' or n == ')':
+            if n == "(" or n == ")":
                 continue
             pred.append(n)
         scope = self.scopes[-1]
@@ -39,7 +38,7 @@ class ProblemListener(pddlListener):
         pred = []
         for c in ctx.getChildren():
             n = c.getText()
-            if n == '(' or n == ')':
+            if n == "(" or n == ")":
                 continue
             pred.append(n)
         scope = self.scopes[-1]
@@ -67,9 +66,8 @@ class ProblemListener(pddlListener):
             vs = set()
             for a in self.initialstate:
                 for s in a.predicate:
-                    vs.add( (s, None) )
+                    vs.add((s, None))
             for a in self.goals:
                 for s in a.predicate:
-                    vs.add( (s, None) )
-            self.objects = dict( vs )
-
+                    vs.add((s, None))
+            self.objects = dict(vs)

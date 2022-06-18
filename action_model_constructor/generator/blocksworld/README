@@ -1,10 +1,9 @@
-
 The blocksworld generators use the random bw state generator provided
-by John Slaney and Sylvie Thiebaux. This is contained in the 
+by John Slaney and Sylvie Thiebaux. This is contained in the
 
 bwstates.1
 
-subdirectory. Go there and make. Then go to 
+subdirectory. Go there and make. Then go to
 
 2pddl
 
@@ -18,5 +17,4 @@ blocksworld <num>
 which takes as input the number of blocks in the problem to be
 generated. This is currently maximal 200 due to the random state
 generator. To increase that, edit the Makefile in bwstates.1 and
-increase SIZE. 
-
+increase SIZE.

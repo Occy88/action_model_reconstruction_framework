@@ -5,7 +5,8 @@ from Planning.pddl_lib.pddlpy.enums import GoalOperator
 from Planning.pddl_lib.pddlpy.pddlParser import pddlParser
 from Planning.pddl_lib.pddlpy.utils import list2str
 
-class Atom():
+
+class Atom:
     def __init__(self, predicate):
         self.predicate = predicate
 
@@ -13,9 +14,8 @@ class Atom():
         return str(tuple(self.predicate))
 
     def ground(self, varvals):
-        g = [ varvals[v] if v in varvals else v for v in self.predicate ]
+        g = [varvals[v] if v in varvals else v for v in self.predicate]
         return tuple(g)
-
 
 
 class Goal(object):
@@ -30,20 +30,29 @@ class Goal(object):
             assert isinstance(atom, Atom)
             self.atom = atom
         elif operator in [GoalOperator.AND, GoalOperator.OR]:
-            assert hasattr(sub_goals, "__iter__") and all(isinstance(goal, Goal) for goal in sub_goals)
+            assert hasattr(sub_goals, "__iter__") and all(
+                isinstance(goal, Goal) for goal in sub_goals
+            )
             self.sub_goals = tuple(sub_goals)
         elif operator == GoalOperator.NOT:
             assert isinstance(sub_goals, Goal)
             self.sub_goals = (sub_goals,)
         elif operator == GoalOperator.IMPLY:
-            assert hasattr(sub_goals, "__len__") and len(sub_goals) == 2 and all(
-                isinstance(goal, Goal) for goal in sub_goals)
+            assert (
+                hasattr(sub_goals, "__len__")
+                and len(sub_goals) == 2
+                and all(isinstance(goal, Goal) for goal in sub_goals)
+            )
             self.sub_goals = tuple(sub_goals)
         elif operator in [GoalOperator.EXISTS, GoalOperator.FORALL]:
             assert isinstance(obj, Obj) and isinstance(sub_goals, Goal)
             self.obj = obj
             self.sub_goals = {sub_goals}
-        elif operator in [GoalOperator.AT_START, GoalOperator.AT_END, GoalOperator.OVER_ALL]:
+        elif operator in [
+            GoalOperator.AT_START,
+            GoalOperator.AT_END,
+            GoalOperator.OVER_ALL,
+        ]:
             assert isinstance(sub_goals, Goal)
             self.sub_goals = {sub_goals}
 
@@ -58,16 +67,24 @@ class Goal(object):
         if self.atom:
             return str(self.atom)
         elif self.operator in [GoalOperator.EXISTS, GoalOperator.FORALL]:
-            return "({op} ({var}) {goals})".format(op=self.operator, var=self.obj, goals=list2str(self.sub_goals))
+            return "({op} ({var}) {goals})".format(
+                op=self.operator, var=self.obj, goals=list2str(self.sub_goals)
+            )
         else:
-            return "({op} {goals})".format(op=self.operator, goals=list2str(self.sub_goals))
+            return "({op} {goals})".format(
+                op=self.operator, goals=list2str(self.sub_goals)
+            )
 
     def __str__(self):
         return self.__repr_()
 
     def __eq__(self, other):
-        return isinstance(other, Goal) and \
-               self.operator == other.operator and self.sub_goals == other.sub_goals and self.obj == other.obj
+        return (
+            isinstance(other, Goal)
+            and self.operator == other.operator
+            and self.sub_goals == other.sub_goals
+            and self.obj == other.obj
+        )
 
 
 class Effect(object):
@@ -114,20 +131,30 @@ class Effect(object):
         if self.operator is None:
             return str(self.atom)
         elif self.operator == EffectOperator.FORALL:
-            return "({op} ({var}) {effects})".format(op=self.operator, var=self.obj, effects=list2str(self.sub_effects))
+            return "({op} ({var}) {effects})".format(
+                op=self.operator, var=self.obj, effects=list2str(self.sub_effects)
+            )
         elif self.operator == EffectOperator.WHEN:
-            return "({op} {goal} {effects})".format(op=self.operator, goal=self.goal,
-                                                    effects=list2str(self.sub_effects))
+            return "({op} {goal} {effects})".format(
+                op=self.operator, goal=self.goal, effects=list2str(self.sub_effects)
+            )
         else:
-            return "({op} {effects})".format(op=self.operator, effects=list2str(self.sub_effects))
+            return "({op} {effects})".format(
+                op=self.operator, effects=list2str(self.sub_effects)
+            )
 
     def __str__(self):
         return self.__repr_()
 
     def __eq__(self, other):
-        return isinstance(other, Effect) and \
-               self.atom == other.atom and self.operator == other.operator and \
-               self.sub_effects == other.sub_effects and self.obj == other.obj and self.goal is other.goal
+        return (
+            isinstance(other, Effect)
+            and self.atom == other.atom
+            and self.operator == other.operator
+            and self.sub_effects == other.sub_effects
+            and self.obj == other.obj
+            and self.goal is other.goal
+        )
 
 
 class Duration(object):
@@ -139,9 +166,14 @@ class Duration(object):
         self.operator = operator
         if operator == DurationOperator.AND:
             assert hasattr(sub_durations, "__iter__") and all(
-                isinstance(duration, Duration) for duration in sub_durations)
+                isinstance(duration, Duration) for duration in sub_durations
+            )
             self.sub_durations = set(sub_durations)
-        elif operator in [DurationOperator.SE, DurationOperator.GE, DurationOperator.EQ]:
+        elif operator in [
+            DurationOperator.SE,
+            DurationOperator.GE,
+            DurationOperator.EQ,
+        ]:
             assert value is not None
             self.value = value
         elif operator in [DurationOperator.AT_START, DurationOperator.AT_END]:
@@ -151,10 +183,16 @@ class Duration(object):
     def __repr_(self):
         if self.operator is None:
             return "()"
-        elif self.operator in [DurationOperator.SE, DurationOperator.GE, DurationOperator.EQ]:
+        elif self.operator in [
+            DurationOperator.SE,
+            DurationOperator.GE,
+            DurationOperator.EQ,
+        ]:
             return "({op} {value})".format(op=self.operator, value=self.value)
         else:
-            return "({op} {durations})".format(op=self.operator, durations=list2str(self.sub_durations))
+            return "({op} {durations})".format(
+                op=self.operator, durations=list2str(self.sub_durations)
+            )
 
     def __str__(self):
         return self.__repr_()

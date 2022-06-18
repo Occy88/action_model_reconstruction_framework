@@ -73,4 +73,3 @@
    :effect (when (not (have_image ?d ?m)) (have_image ?d ?m))
   )
 )
-

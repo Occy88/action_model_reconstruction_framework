@@ -433,4 +433,3 @@
    :precondition (and (not (object-done ?o)) (object-pos ?o ?x ?y) (object-goal ?o ?x ?y))
    :effect (and (object-done ?o)))
 )
-

@@ -23,4 +23,3 @@ ztravel -n 3152 16 5 20 1000 > pfile17
 ztravel -n 1452 18 5 20 1000 > pfile18
 ztravel -n 3451 20 5 25 1000 > pfile19
 ztravel -n 3222 22 5 25 1000 > pfile20
-

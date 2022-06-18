@@ -308,4 +308,3 @@
 :effect (and (not (started o25))(shipped o25)(not (stacks-avail ?avail))(stacks-avail ?new-avail)))
 
 )
-

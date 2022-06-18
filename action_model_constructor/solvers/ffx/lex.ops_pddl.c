@@ -2319,5 +2319,3 @@ void yyfree (void * ptr )
 #define YYTABLES_NAME "yytables"
 
 #line 123 "lex-ops_pddl.l"
-
-

@@ -3,14 +3,7 @@
   "version": "2.0.4",
   "title": "The Final Countdown",
   "description": "jQuery plugin to display a countdown clock on your page.",
-  "keywords": [
-    "countdown",
-    "coupons",
-    "auction",
-    "clock",
-    "datetime",
-    "date"
-  ],
+  "keywords": ["countdown", "coupons", "auction", "clock", "datetime", "date"],
   "author": {
     "name": "Edson Hilios",
     "url": "http://edson.hilios.com.br"

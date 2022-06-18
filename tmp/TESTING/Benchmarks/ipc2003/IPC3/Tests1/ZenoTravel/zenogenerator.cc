@@ -369,6 +369,3 @@ int main(int argc,char * argv[])
 	cout << p;
 	return 0;
 };
-
-
-

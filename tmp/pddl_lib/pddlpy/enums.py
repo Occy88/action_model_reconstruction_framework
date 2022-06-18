@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class EffectOperator(Enum):
     AND = "and"
     NOT = "not"
@@ -7,6 +8,7 @@ class EffectOperator(Enum):
     FORALL = "forall"
     AT_START = "at start"
     AT_END = "at end"
+
 
 class GoalOperator(Enum):
     AND = "and"
@@ -19,6 +21,7 @@ class GoalOperator(Enum):
     AT_END = "at end"
     OVER_ALL = "over all"
 
+
 class DurationOperator(Enum):
     AND = "and"
     AT_START = "at start"
@@ -26,4 +29,3 @@ class DurationOperator(Enum):
     SE = "<= ?duration"
     GE = ">= ?duration"
     EQ = "= ?duration"
-

@@ -2,14 +2,7 @@
   "name": "jquery.countdown",
   "version": "2.0.4",
   "description": "jQuery plugin to display a countdown clock on your page",
-  "keywords": [
-    "countdown",
-    "coupons",
-    "auction",
-    "clock",
-    "datetime",
-    "date"
-  ],
+  "keywords": ["countdown", "coupons", "auction", "clock", "datetime", "date"],
   "author": "Edson Hilios",
   "homepage": "http://hilios.github.io/jQuery.countdown/",
   "license": [
@@ -18,10 +11,7 @@
       "url": "https://github.com/hilios/jQuery.countdown/blob/2.0.4/LICENSE.md"
     }
   ],
-  "main": [
-    "./dist/jquery.countdown.js",
-    "./dist/jquery.countdown.min.js"
-  ],
+  "main": ["./dist/jquery.countdown.js", "./dist/jquery.countdown.min.js"],
   "ignore": [
     "**/.*",
     "src",

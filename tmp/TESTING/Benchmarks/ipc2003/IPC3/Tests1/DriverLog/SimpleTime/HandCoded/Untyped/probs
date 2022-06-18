@@ -27,4 +27,3 @@ dlgen -u -s 6798 160 20 150 50 > pfile17
 dlgen -u -s 6553 200 50 200 50 > pfile18
 dlgen -u -s 7664 200 50 250 50 > pfile19
 dlgen -u -s 1774 200 80 300 60 > pfile20
-

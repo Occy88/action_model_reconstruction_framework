@@ -1533,9 +1533,3 @@ void build_connectivity_graph( void )
   }
     
 }
-
-
-
-
-
-

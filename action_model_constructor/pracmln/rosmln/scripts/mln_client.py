@@ -40,5 +40,3 @@ if __name__ == '__main__':
     config.db=''
     query = MLNQuery(queries, ['Cancer(Ann)', '!Cancer(Bob)', '!Friends(Ann,Bob)'])
     print_results(mln_interface_client(query, config))
-
-

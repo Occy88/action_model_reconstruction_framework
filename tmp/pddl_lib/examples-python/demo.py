@@ -31,9 +31,13 @@ def main():
     print("\t", domprob.worldobjects())
     print("operators")
     print("\t", list(domprob.operators()))
-    print("init", )
+    print(
+        "init",
+    )
     print("\t", domprob.initialstate())
-    print("goal", )
+    print(
+        "goal",
+    )
     print("\t", domprob.goals())
 
     print()
@@ -50,5 +54,5 @@ def main():
             print("\teff-", o.effect_neg)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

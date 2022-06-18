@@ -1113,4 +1113,3 @@ void reset_search_info( void )
   gnum_in_plan_E = 0;
   
 }
-

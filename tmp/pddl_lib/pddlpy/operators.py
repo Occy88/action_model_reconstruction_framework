@@ -1,7 +1,7 @@
 from Planning.pddl_lib.pddlpy.datatypes import Scope
 
 
-class Operator():
+class Operator:
     """Represents and action. Can be grounded or ungrounded.
     Ungrounded operators have a '?' in names (unbound variables).
     Attributes:
@@ -18,6 +18,7 @@ class Operator():
         effect_pos -- a set of atoms to add.
         effect_neg -- a set of atoms to delete.
     """
+
     def __init__(self, name):
         self.operator_name = name
         self.variable_list = {}
@@ -25,8 +26,6 @@ class Operator():
         self.precondition_neg = set()
         self.effect_pos = set()
         self.effect_neg = set()
-
-
 
 
 class Action(Operator):
@@ -50,8 +49,8 @@ class Action(Operator):
 class DurativeAction(Operator):
     """Represents an durative-action:
 
-        duration -- a possibly nested Duration
-        condition -- a possibly nested Goal
+    duration -- a possibly nested Duration
+    condition -- a possibly nested Goal
     """
 
     def __init__(self, name):

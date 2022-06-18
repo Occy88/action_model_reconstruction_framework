@@ -1,4 +1,5 @@
 from Planning.project.solver.solver import Solver
 import os
-s=Solver()
-s.solve_generated_states('gripper')
+
+s = Solver()
+s.solve_generated_states("gripper")

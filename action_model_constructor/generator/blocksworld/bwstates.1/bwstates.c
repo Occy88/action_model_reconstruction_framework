@@ -242,4 +242,3 @@ void print_state(state sigma)
     printf(" %d", sigma->S[x]+1);
   printf("\n");
 }
-

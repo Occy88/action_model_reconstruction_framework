@@ -2,7 +2,7 @@ from lark import Lark, Transformer
 from collections import namedtuple
 from problem_convert.grammar import LarkGrammar as lg
 
-name = namedtuple('name', 'x')
+name = namedtuple("name", "x")
 
 
 class Name:
@@ -12,22 +12,19 @@ class Name:
     digits, hyphens (\-"),and underscores (\ ").
     Case is not significant.
     """
-    key = 'name'
+
+    key = "name"
 
     def name(self, args):
         return name(*args)
 
     def lark_grammar(self):
-        name_regex = '/([a-zA-Z]|\d)+((_|-)([a-zA-Z]|\d)+)*/'
-        grammar = [
-            self.key,
-            ':',
-            name_regex
-        ]
-        return ' '.join(grammar)
+        name_regex = "/([a-zA-Z]|\d)+((_|-)([a-zA-Z]|\d)+)*/"
+        grammar = [self.key, ":", name_regex]
+        return " ".join(grammar)
 
 
-variable = namedtuple('variable', 'x')
+variable = namedtuple("variable", "x")
 
 
 class Variable:
@@ -35,24 +32,20 @@ class Variable:
     <variable> ::= ?<name>
 
     """
-    key = 'variable'
+
+    key = "variable"
 
     def variable(self, args):
         variable(*args)
 
     def lark_grammar(self):
-        grammar = [
-            self.key,
-            ':',
-            lg.str_literal('?'),
-            Name.key
-        ]
-        return ' '.join(grammar)
+        grammar = [self.key, ":", lg.str_literal("?"), Name.key]
+        return " ".join(grammar)
 
 
-either = namedtuple('either', 'x')
-fluent = namedtuple('fluent', 'x')
-ptype = namedtuple('ptype', 'x')
+either = namedtuple("either", "x")
+fluent = namedtuple("fluent", "x")
+ptype = namedtuple("ptype", "x")
 
 
 class Type:
@@ -62,7 +55,7 @@ class Type:
     <type> ::=:fluents (fluent <type>)
     """
 
-    key = 'type'
+    key = "type"
 
     def type(self, args):
         return ptype(args)
@@ -77,34 +70,26 @@ class Type:
         return fluent(args)
 
     def lark_grammar(self):
-        f_1 = [
-            f'{self.key}_1',
-            ':',
-            Name.key
-        ]
+        f_1 = [f"{self.key}_1", ":", Name.key]
         f_2 = [
-            f'{self.key}_2',
-            ':',
-            lg.str_literal('('),
-            lg.str_literal('either'),
+            f"{self.key}_2",
+            ":",
+            lg.str_literal("("),
+            lg.str_literal("either"),
             lg.one_or_more(self.key),
-            lg.str_literal(')')
+            lg.str_literal(")"),
         ]
         f_3 = [
-            f'{self.key}_3',
-            ':',
-            lg.str_literal('('),
-            lg.str_literal('fluent'),
+            f"{self.key}_3",
+            ":",
+            lg.str_literal("("),
+            lg.str_literal("fluent"),
             self.key,
-            lg.str_literal(')')
+            lg.str_literal(")"),
         ]
-        f_0 = [
-            self.key,
-            ':',
-            lg.match_one_of([f_1[0], f_2[0], f_3[0]])
-        ]
-        asstr = [' '.join(x) for x in [f_1, f_2, f_3, f_0]]
-        return '\n'.join(asstr)
+        f_0 = [self.key, ":", lg.match_one_of([f_1[0], f_2[0], f_3[0]])]
+        asstr = [" ".join(x) for x in [f_1, f_2, f_3, f_0]]
+        return "\n".join(asstr)
 
 
 class TypedList:
@@ -115,7 +100,7 @@ class TypedList:
 
     def __init__(self, x: str):
         self.x = x
-        self.key = f'typed_list_{x}'
+        self.key = f"typed_list_{x}"
 
     def lark_grammar(self) -> (dict, str):
         """
@@ -126,28 +111,21 @@ class TypedList:
         :param x:
         :return: name:str, grammar:str
         """
-        f_1 = [
-            f'{self.key}_1',
-            ':',
-            self.x
-        ]
+        f_1 = [f"{self.key}_1", ":", self.x]
         f_2 = [
-            f'{self.key}_2',
-            ':',
+            f"{self.key}_2",
+            ":",
             lg.one_or_more(self.x),
-            lg.str_literal('-'),
+            lg.str_literal("-"),
             Type.key,
             self.key,
         ]
-        f_0 = [
-            f'{self.key}:',
-            lg.match_one_of([f_1[0], f_2[0]])
-        ]
-        asstr = [' '.join(x) for x in [f_1, f_2, f_0]]
-        return '\n'.join(asstr)
+        f_0 = [f"{self.key}:", lg.match_one_of([f_1[0], f_2[0]])]
+        asstr = [" ".join(x) for x in [f_1, f_2, f_0]]
+        return "\n".join(asstr)
 
 
-typed_list_variable = namedtuple('typed_list_variable', 'x')
+typed_list_variable = namedtuple("typed_list_variable", "x")
 
 
 class TypedListVariable(TypedList, Transformer):
@@ -156,7 +134,6 @@ class TypedListVariable(TypedList, Transformer):
 
     def typed_list_variable(self, args):
         return typed_list_variable(args)
-
 
 
 def test_parse():

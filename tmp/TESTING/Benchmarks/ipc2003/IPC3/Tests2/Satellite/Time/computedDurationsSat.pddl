@@ -82,4 +82,3 @@
    :effect (at end (have_image ?d ?m))
   )
 )
-

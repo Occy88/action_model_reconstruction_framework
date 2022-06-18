@@ -1903,4 +1903,3 @@
 :effect (and (not (started o170))(shipped o170)(not (stacks-avail ?avail))(stacks-avail ?new-avail)))
 
 )
-

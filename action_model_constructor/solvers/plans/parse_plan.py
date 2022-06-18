@@ -8,8 +8,13 @@ class PddlToJson(Transformer):
         objects = args[2]
         init = args[3]
         goal = args[4]
-        return {'definition': definition, 'domain': domain, 'objects': objects, 'init': init[0],
-                'goal': goal[0]}
+        return {
+            "definition": definition,
+            "domain": domain,
+            "objects": objects,
+            "init": init[0],
+            "goal": goal[0],
+        }
 
     def var(self, v):
         val = v[0][0].value
@@ -28,7 +33,7 @@ class PddlToJson(Transformer):
         args = list(map(lambda x: x.value, args))
         name = args[0]
         vals = list(tuple(args[1:]))
-        p = {'name': name, 'args': vals}
+        p = {"name": name, "args": vals}
         return p
 
     init = list
@@ -41,4 +46,3 @@ class PddlToJson(Transformer):
         return s[0]
 
     number = v_args(inline=True)(float)
-

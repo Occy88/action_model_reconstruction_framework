@@ -73,4 +73,3 @@
    :effect (have_image ?d ?m)
   )
 )
-

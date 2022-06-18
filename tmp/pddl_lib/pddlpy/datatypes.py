@@ -1,4 +1,4 @@
-class Scope():
+class Scope:
     def __init__(self):
         self.atoms = []
         self.negatoms = []
@@ -10,7 +10,6 @@ class Scope():
         self.negatoms.append(atom)
 
 
-class Obj():
+class Obj:
     def __init__(self):
         self.variable_list = {}
-

@@ -5,6 +5,7 @@ from io import StringIO
 from typing.io import TextIO
 import sys
 
+
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3s")
@@ -13,8 +14,8 @@ def serializedATN():
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
         buf.write("\t\31\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36")
-        buf.write("\4\37\t\37\4 \t \4!\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t")
-        buf.write("&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+\4,\t,\4-\t-\4.\t.\4")
+        buf.write('\4\37\t\37\4 \t \4!\t!\4"\t"\4#\t#\4$\t$\4%\t%\4&\t')
+        buf.write("&\4'\t'\4(\t(\4)\t)\4*\t*\4+\t+\4,\t,\4-\t-\4.\t.\4")
         buf.write("/\t/\4\60\t\60\4\61\t\61\4\62\t\62\4\63\t\63\4\64\t\64")
         buf.write("\4\65\t\65\4\66\t\66\4\67\t\67\48\t8\49\t9\4:\t:\4;\t")
         buf.write(";\4<\t<\4=\t=\4>\t>\4?\t?\4@\t@\4A\tA\4B\tB\4C\tC\4D\t")
@@ -50,11 +51,11 @@ def serializedATN():
         buf.write("\36\7\36\u01a0\n\36\f\36\16\36\u01a3\13\36\3\36\3\36\3")
         buf.write("\37\3\37\5\37\u01a9\n\37\3 \3 \3 \3 \3 \3 \3 \3 \3 \3")
         buf.write(" \3!\3!\3!\3!\3!\3!\5!\u01bb\n!\3!\3!\3!\3!\5!\u01c1\n")
-        buf.write("!\3\"\3\"\3\"\3\"\7\"\u01c7\n\"\f\"\16\"\u01ca\13\"\3")
-        buf.write("\"\3\"\3\"\3\"\3\"\3\"\3\"\3\"\3\"\5\"\u01d5\n\"\3#\3")
+        buf.write('!\3"\3"\3"\3"\7"\u01c7\n"\f"\16"\u01ca\13"\3')
+        buf.write('"\3"\3"\3"\3"\3"\3"\3"\3"\5"\u01d5\n"\3#\3')
         buf.write("#\3#\3#\5#\u01db\n#\3#\3#\3#\5#\u01e0\n#\3$\3$\3$\3$\3")
-        buf.write("$\3$\3$\3$\3$\3$\3$\3$\5$\u01ee\n$\3%\3%\3&\3&\3\'\3\'")
-        buf.write("\3\'\3\'\3\'\3\'\3(\3(\3(\3(\3(\3(\3(\3(\3(\3(\3(\3(\3")
+        buf.write("$\3$\3$\3$\3$\3$\3$\3$\5$\u01ee\n$\3%\3%\3&\3&\3'\3'")
+        buf.write("\3'\3'\3'\3'\3(\3(\3(\3(\3(\3(\3(\3(\3(\3(\3(\3(\3")
         buf.write("(\5(\u0207\n(\3)\3)\3*\3*\3*\7*\u020e\n*\f*\16*\u0211")
         buf.write("\13*\3*\3*\3*\5*\u0216\n*\3+\3+\3+\7+\u021b\n+\f+\16+")
         buf.write("\u021e\13+\3+\3+\5+\u0222\n+\3,\3,\3,\3,\3,\3,\3,\3,\3")
@@ -88,16 +89,16 @@ def serializedATN():
         buf.write("I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3")
         buf.write("I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3")
         buf.write("I\3I\3I\3I\3I\3I\3I\3I\3I\3I\3I\5I\u03b3\nI\3J\3J\3J\2")
-        buf.write("\2K\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60")
+        buf.write('\2K\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 "$&(*,.\60')
         buf.write("\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|~\u0080\u0082")
         buf.write("\u0084\u0086\u0088\u008a\u008c\u008e\u0090\u0092\2\13")
-        buf.write("\3\2 !\4\2\t\t%\'\3\2(,\3\2-\61\3\2*,\3\2\60\61\3\29:")
-        buf.write("\4\2%%\'\'\4\2\36\37GG\2\u03de\2\u0096\3\2\2\2\4\u0098")
+        buf.write("\3\2 !\4\2\t\t%'\3\2(,\3\2-\61\3\2*,\3\2\60\61\3\29:")
+        buf.write("\4\2%%''\4\2\36\37GG\2\u03de\2\u0096\3\2\2\2\4\u0098")
         buf.write("\3\2\2\2\6\u00b5\3\2\2\2\b\u00ba\3\2\2\2\n\u00c3\3\2\2")
         buf.write("\2\f\u00d9\3\2\2\2\16\u00dc\3\2\2\2\20\u00ed\3\2\2\2\22")
         buf.write("\u00ef\3\2\2\2\24\u00f1\3\2\2\2\26\u0101\3\2\2\2\30\u0104")
         buf.write("\3\2\2\2\32\u0109\3\2\2\2\34\u010b\3\2\2\2\36\u010d\3")
-        buf.write("\2\2\2 \u0112\3\2\2\2\"\u011b\3\2\2\2$\u0120\3\2\2\2&")
+        buf.write('\2\2\2 \u0112\3\2\2\2"\u011b\3\2\2\2$\u0120\3\2\2\2&')
         buf.write("\u0133\3\2\2\2(\u0136\3\2\2\2*\u013d\3\2\2\2,\u0145\3")
         buf.write("\2\2\2.\u0147\3\2\2\2\60\u0151\3\2\2\2\62\u0159\3\2\2")
         buf.write("\2\64\u0163\3\2\2\2\66\u0194\3\2\2\28\u0196\3\2\2\2:\u019c")
@@ -167,7 +168,7 @@ def serializedATN():
         buf.write("\u010a\33\3\2\2\2\u010b\u010c\7\f\2\2\u010c\35\3\2\2\2")
         buf.write("\u010d\u010e\7\3\2\2\u010e\u010f\7\r\2\2\u010f\u0110\5")
         buf.write("\f\7\2\u0110\u0111\7\5\2\2\u0111\37\3\2\2\2\u0112\u0113")
-        buf.write("\7\3\2\2\u0113\u0115\7\16\2\2\u0114\u0116\5\"\22\2\u0115")
+        buf.write('\7\3\2\2\u0113\u0115\7\16\2\2\u0114\u0116\5"\22\2\u0115')
         buf.write("\u0114\3\2\2\2\u0116\u0117\3\2\2\2\u0117\u0115\3\2\2\2")
         buf.write("\u0117\u0118\3\2\2\2\u0118\u0119\3\2\2\2\u0119\u011a\7")
         buf.write("\5\2\2\u011a!\3\2\2\2\u011b\u011c\7\3\2\2\u011c\u011d")
@@ -181,13 +182,13 @@ def serializedATN():
         buf.write("\u012e\u012d\3\2\2\2\u012f\u0132\3\2\2\2\u0130\u012e\3")
         buf.write("\2\2\2\u0130\u0131\3\2\2\2\u0131\u0134\3\2\2\2\u0132\u0130")
         buf.write("\3\2\2\2\u0133\u0125\3\2\2\2\u0133\u0129\3\2\2\2\u0134")
-        buf.write("\'\3\2\2\2\u0135\u0137\7H\2\2\u0136\u0135\3\2\2\2\u0137")
+        buf.write("'\3\2\2\2\u0135\u0137\7H\2\2\u0136\u0135\3\2\2\2\u0137")
         buf.write("\u0138\3\2\2\2\u0138\u0136\3\2\2\2\u0138\u0139\3\2\2\2")
         buf.write("\u0139\u013a\3\2\2\2\u013a\u013b\7\t\2\2\u013b\u013c\5")
         buf.write("\20\t\2\u013c)\3\2\2\2\u013d\u013e\7\3\2\2\u013e\u013f")
         buf.write("\7\17\2\2\u013f\u0140\5\u0090I\2\u0140\u0141\7\5\2\2\u0141")
         buf.write("+\3\2\2\2\u0142\u0146\5.\30\2\u0143\u0146\5> \2\u0144")
-        buf.write("\u0146\5L\'\2\u0145\u0142\3\2\2\2\u0145\u0143\3\2\2\2")
+        buf.write("\u0146\5L'\2\u0145\u0142\3\2\2\2\u0145\u0143\3\2\2\2")
         buf.write("\u0145\u0144\3\2\2\2\u0146-\3\2\2\2\u0147\u0148\7\3\2")
         buf.write("\2\u0148\u0149\7\20\2\2\u0149\u014a\5\60\31\2\u014a\u014b")
         buf.write("\7\21\2\2\u014b\u014c\7\3\2\2\u014c\u014d\5&\24\2\u014d")
@@ -236,17 +237,17 @@ def serializedATN():
         buf.write("\7\5\2\2\u01b1\u01b2\5@!\2\u01b2\u01b3\7\5\2\2\u01b3?")
         buf.write("\3\2\2\2\u01b4\u01b5\7\33\2\2\u01b5\u01b6\5b\62\2\u01b6")
         buf.write("\u01ba\7\34\2\2\u01b7\u01b8\7\3\2\2\u01b8\u01bb\7\5\2")
-        buf.write("\2\u01b9\u01bb\5B\"\2\u01ba\u01b7\3\2\2\2\u01ba\u01b9")
+        buf.write('\2\u01b9\u01bb\5B"\2\u01ba\u01b7\3\2\2\2\u01ba\u01b9')
         buf.write("\3\2\2\2\u01bb\u01bc\3\2\2\2\u01bc\u01c0\7\23\2\2\u01bd")
         buf.write("\u01be\7\3\2\2\u01be\u01c1\7\5\2\2\u01bf\u01c1\5j\66\2")
         buf.write("\u01c0\u01bd\3\2\2\2\u01c0\u01bf\3\2\2\2\u01c1A\3\2\2")
         buf.write("\2\u01c2\u01d5\5D#\2\u01c3\u01c4\7\3\2\2\u01c4\u01c8\7")
-        buf.write("\24\2\2\u01c5\u01c7\5B\"\2\u01c6\u01c5\3\2\2\2\u01c7\u01ca")
+        buf.write('\24\2\2\u01c5\u01c7\5B"\2\u01c6\u01c5\3\2\2\2\u01c7\u01ca')
         buf.write("\3\2\2\2\u01c8\u01c6\3\2\2\2\u01c8\u01c9\3\2\2\2\u01c9")
         buf.write("\u01cb\3\2\2\2\u01ca\u01c8\3\2\2\2\u01cb\u01d5\7\5\2\2")
         buf.write("\u01cc\u01cd\7\3\2\2\u01cd\u01ce\7\31\2\2\u01ce\u01cf")
         buf.write("\7\3\2\2\u01cf\u01d0\5&\24\2\u01d0\u01d1\7\5\2\2\u01d1")
-        buf.write("\u01d2\5B\"\2\u01d2\u01d3\7\5\2\2\u01d3\u01d5\3\2\2\2")
+        buf.write('\u01d2\5B"\2\u01d2\u01d3\7\5\2\2\u01d3\u01d5\3\2\2\2')
         buf.write("\u01d4\u01c2\3\2\2\2\u01d4\u01c3\3\2\2\2\u01d4\u01cc\3")
         buf.write("\2\2\2\u01d5C\3\2\2\2\u01d6\u01e0\5F$\2\u01d7\u01d8\7")
         buf.write("\3\2\2\u01d8\u01da\7\35\2\2\u01d9\u01db\5\u0092J\2\u01da")
@@ -259,7 +260,7 @@ def serializedATN():
         buf.write("\37\2\2\u01e9\u01ea\5J&\2\u01ea\u01eb\5\66\34\2\u01eb")
         buf.write("\u01ec\7\5\2\2\u01ec\u01ee\3\2\2\2\u01ed\u01e1\3\2\2\2")
         buf.write("\u01ed\u01e7\3\2\2\2\u01eeG\3\2\2\2\u01ef\u01f0\t\2\2")
-        buf.write("\2\u01f0I\3\2\2\2\u01f1\u01f2\7\"\2\2\u01f2K\3\2\2\2\u01f3")
+        buf.write('\2\u01f0I\3\2\2\2\u01f1\u01f2\7"\2\2\u01f2K\3\2\2\2\u01f3')
         buf.write("\u01f4\7\3\2\2\u01f4\u01f5\7#\2\2\u01f5\u01f6\5&\24\2")
         buf.write("\u01f6\u01f7\5\66\34\2\u01f7\u01f8\7\5\2\2\u01f8M\3\2")
         buf.write("\2\2\u01f9\u0207\7I\2\2\u01fa\u01fb\7\3\2\2\u01fb\u01fc")
@@ -320,7 +321,7 @@ def serializedATN():
         buf.write("\u0281\u0282\7\31\2\2\u0282\u0283\7\3\2\2\u0283\u0284")
         buf.write("\5&\24\2\u0284\u0285\7\5\2\2\u0285\u0286\5j\66\2\u0286")
         buf.write("\u0287\7\5\2\2\u0287\u0295\3\2\2\2\u0288\u0289\7\3\2\2")
-        buf.write("\u0289\u028a\7$\2\2\u028a\u028b\5B\"\2\u028b\u028c\5l")
+        buf.write('\u0289\u028a\7$\2\2\u028a\u028b\5B"\2\u028b\u028c\5l')
         buf.write("\67\2\u028c\u028d\7\5\2\2\u028d\u0295\3\2\2\2\u028e\u028f")
         buf.write("\7\3\2\2\u028f\u0290\5`\61\2\u0290\u0291\5R*\2\u0291\u0292")
         buf.write("\5p9\2\u0292\u0293\7\5\2\2\u0293\u0295\3\2\2\2\u0294\u0276")
@@ -458,60 +459,203 @@ def serializedATN():
         return buf.getvalue()
 
 
-class pddlParser ( Parser ):
+class pddlParser(Parser):
 
     grammarFileName = "pddl.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
+    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'('", "'define'", "')'", "'domain'", 
-                     "':requirements'", "':types'", "'-'", "'either'", "':functions'", 
-                     "'number'", "':constants'", "':predicates'", "':constraints'", 
-                     "':action'", "':parameters'", "':precondition'", "':effect'", 
-                     "'and'", "'or'", "'not'", "'imply'", "'exists'", "'forall'", 
-                     "':durative-action'", "':duration'", "':condition'", 
-                     "'preference'", "'at'", "'over'", "'start'", "'end'", 
-                     "'all'", "':derived'", "'when'", "'*'", "'+'", "'/'", 
-                     "'>'", "'<'", "'='", "'>='", "'<='", "'assign'", "'scale-up'", 
-                     "'scale-down'", "'increase'", "'decrease'", "'?duration'", 
-                     "'problem'", "':domain'", "':objects'", "':init'", 
-                     "':goal'", "':metric'", "'minimize'", "'maximize'", 
-                     "'total-time'", "'is-violated'", "'always'", "'sometime'", 
-                     "'within'", "'at-most-once'", "'sometime-after'", "'sometime-before'", 
-                     "'always-within'", "'hold-during'", "'hold-after'" ]
+    literalNames = [
+        "<INVALID>",
+        "'('",
+        "'define'",
+        "')'",
+        "'domain'",
+        "':requirements'",
+        "':types'",
+        "'-'",
+        "'either'",
+        "':functions'",
+        "'number'",
+        "':constants'",
+        "':predicates'",
+        "':constraints'",
+        "':action'",
+        "':parameters'",
+        "':precondition'",
+        "':effect'",
+        "'and'",
+        "'or'",
+        "'not'",
+        "'imply'",
+        "'exists'",
+        "'forall'",
+        "':durative-action'",
+        "':duration'",
+        "':condition'",
+        "'preference'",
+        "'at'",
+        "'over'",
+        "'start'",
+        "'end'",
+        "'all'",
+        "':derived'",
+        "'when'",
+        "'*'",
+        "'+'",
+        "'/'",
+        "'>'",
+        "'<'",
+        "'='",
+        "'>='",
+        "'<='",
+        "'assign'",
+        "'scale-up'",
+        "'scale-down'",
+        "'increase'",
+        "'decrease'",
+        "'?duration'",
+        "'problem'",
+        "':domain'",
+        "':objects'",
+        "':init'",
+        "':goal'",
+        "':metric'",
+        "'minimize'",
+        "'maximize'",
+        "'total-time'",
+        "'is-violated'",
+        "'always'",
+        "'sometime'",
+        "'within'",
+        "'at-most-once'",
+        "'sometime-after'",
+        "'sometime-before'",
+        "'always-within'",
+        "'hold-during'",
+        "'hold-after'",
+    ]
 
-    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "REQUIRE_KEY", "NAME", "VARIABLE", "NUMBER", "LINE_COMMENT", 
-                      "WHITESPACE", "DOMAIN", "DOMAIN_NAME", "REQUIREMENTS", 
-                      "TYPES", "EITHER_TYPE", "CONSTANTS", "FUNCTIONS", 
-                      "PREDICATES", "ACTION", "DURATIVE_ACTION", "PROBLEM", 
-                      "PROBLEM_NAME", "PROBLEM_DOMAIN", "OBJECTS", "INIT", 
-                      "FUNC_HEAD", "PRECONDITION", "EFFECT", "AND_GD", "OR_GD", 
-                      "NOT_GD", "IMPLY_GD", "EXISTS_GD", "FORALL_GD", "COMPARISON_GD", 
-                      "AND_EFFECT", "FORALL_EFFECT", "WHEN_EFFECT", "ASSIGN_EFFECT", 
-                      "NOT_EFFECT", "PRED_HEAD", "GOAL", "BINARY_OP", "UNARY_MINUS", 
-                      "INIT_EQ", "INIT_AT", "NOT_PRED_INIT", "PRED_INST", 
-                      "PROBLEM_CONSTRAINT", "PROBLEM_METRIC" ]
+    symbolicNames = [
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "<INVALID>",
+        "REQUIRE_KEY",
+        "NAME",
+        "VARIABLE",
+        "NUMBER",
+        "LINE_COMMENT",
+        "WHITESPACE",
+        "DOMAIN",
+        "DOMAIN_NAME",
+        "REQUIREMENTS",
+        "TYPES",
+        "EITHER_TYPE",
+        "CONSTANTS",
+        "FUNCTIONS",
+        "PREDICATES",
+        "ACTION",
+        "DURATIVE_ACTION",
+        "PROBLEM",
+        "PROBLEM_NAME",
+        "PROBLEM_DOMAIN",
+        "OBJECTS",
+        "INIT",
+        "FUNC_HEAD",
+        "PRECONDITION",
+        "EFFECT",
+        "AND_GD",
+        "OR_GD",
+        "NOT_GD",
+        "IMPLY_GD",
+        "EXISTS_GD",
+        "FORALL_GD",
+        "COMPARISON_GD",
+        "AND_EFFECT",
+        "FORALL_EFFECT",
+        "WHEN_EFFECT",
+        "ASSIGN_EFFECT",
+        "NOT_EFFECT",
+        "PRED_HEAD",
+        "GOAL",
+        "BINARY_OP",
+        "UNARY_MINUS",
+        "INIT_EQ",
+        "INIT_AT",
+        "NOT_PRED_INIT",
+        "PRED_INST",
+        "PROBLEM_CONSTRAINT",
+        "PROBLEM_METRIC",
+    ]
 
     RULE_pddlDoc = 0
     RULE_domain = 1
@@ -587,174 +731,228 @@ class pddlParser ( Parser ):
     RULE_conGD = 71
     RULE_name = 72
 
-    ruleNames =  [ "pddlDoc", "domain", "domainName", "requireDef", "typesDef", 
-                   "typedNameList", "singleTypeNameList", "r_type", "primType", 
-                   "functionsDef", "functionList", "atomicFunctionSkeleton", 
-                   "functionSymbol", "functionType", "constantsDef", "predicatesDef", 
-                   "atomicFormulaSkeleton", "predicate", "typedVariableList", 
-                   "singleTypeVarList", "constraints", "structureDef", "actionDef", 
-                   "actionSymbol", "actionDefBody", "precondition", "goalDesc", 
-                   "fComp", "atomicTermFormula", "term", "durativeActionDef", 
-                   "daDefBody", "daGD", "prefTimedGD", "timedGD", "timeSpecifier", 
-                   "interval", "derivedDef", "fExp", "fExp2", "fHead", "effect", 
-                   "cEffect", "pEffect", "condEffect", "binaryOp", "binaryComp", 
-                   "assignOp", "durationConstraint", "simpleDurationConstraint", 
-                   "durOp", "durValue", "daEffect", "timedEffect", "fAssignDA", 
-                   "fExpDA", "assignOpT", "problem", "problemDecl", "problemDomain", 
-                   "objectDecl", "init", "initEl", "nameLiteral", "atomicNameFormula", 
-                   "goal", "probConstraints", "prefConGD", "metricSpec", 
-                   "optimization", "metricFExp", "conGD", "name" ]
+    ruleNames = [
+        "pddlDoc",
+        "domain",
+        "domainName",
+        "requireDef",
+        "typesDef",
+        "typedNameList",
+        "singleTypeNameList",
+        "r_type",
+        "primType",
+        "functionsDef",
+        "functionList",
+        "atomicFunctionSkeleton",
+        "functionSymbol",
+        "functionType",
+        "constantsDef",
+        "predicatesDef",
+        "atomicFormulaSkeleton",
+        "predicate",
+        "typedVariableList",
+        "singleTypeVarList",
+        "constraints",
+        "structureDef",
+        "actionDef",
+        "actionSymbol",
+        "actionDefBody",
+        "precondition",
+        "goalDesc",
+        "fComp",
+        "atomicTermFormula",
+        "term",
+        "durativeActionDef",
+        "daDefBody",
+        "daGD",
+        "prefTimedGD",
+        "timedGD",
+        "timeSpecifier",
+        "interval",
+        "derivedDef",
+        "fExp",
+        "fExp2",
+        "fHead",
+        "effect",
+        "cEffect",
+        "pEffect",
+        "condEffect",
+        "binaryOp",
+        "binaryComp",
+        "assignOp",
+        "durationConstraint",
+        "simpleDurationConstraint",
+        "durOp",
+        "durValue",
+        "daEffect",
+        "timedEffect",
+        "fAssignDA",
+        "fExpDA",
+        "assignOpT",
+        "problem",
+        "problemDecl",
+        "problemDomain",
+        "objectDecl",
+        "init",
+        "initEl",
+        "nameLiteral",
+        "atomicNameFormula",
+        "goal",
+        "probConstraints",
+        "prefConGD",
+        "metricSpec",
+        "optimization",
+        "metricFExp",
+        "conGD",
+        "name",
+    ]
 
     EOF = Token.EOF
-    T__0=1
-    T__1=2
-    T__2=3
-    T__3=4
-    T__4=5
-    T__5=6
-    T__6=7
-    T__7=8
-    T__8=9
-    T__9=10
-    T__10=11
-    T__11=12
-    T__12=13
-    T__13=14
-    T__14=15
-    T__15=16
-    T__16=17
-    T__17=18
-    T__18=19
-    T__19=20
-    T__20=21
-    T__21=22
-    T__22=23
-    T__23=24
-    T__24=25
-    T__25=26
-    T__26=27
-    T__27=28
-    T__28=29
-    T__29=30
-    T__30=31
-    T__31=32
-    T__32=33
-    T__33=34
-    T__34=35
-    T__35=36
-    T__36=37
-    T__37=38
-    T__38=39
-    T__39=40
-    T__40=41
-    T__41=42
-    T__42=43
-    T__43=44
-    T__44=45
-    T__45=46
-    T__46=47
-    T__47=48
-    T__48=49
-    T__49=50
-    T__50=51
-    T__51=52
-    T__52=53
-    T__53=54
-    T__54=55
-    T__55=56
-    T__56=57
-    T__57=58
-    T__58=59
-    T__59=60
-    T__60=61
-    T__61=62
-    T__62=63
-    T__63=64
-    T__64=65
-    T__65=66
-    T__66=67
-    REQUIRE_KEY=68
-    NAME=69
-    VARIABLE=70
-    NUMBER=71
-    LINE_COMMENT=72
-    WHITESPACE=73
-    DOMAIN=74
-    DOMAIN_NAME=75
-    REQUIREMENTS=76
-    TYPES=77
-    EITHER_TYPE=78
-    CONSTANTS=79
-    FUNCTIONS=80
-    PREDICATES=81
-    ACTION=82
-    DURATIVE_ACTION=83
-    PROBLEM=84
-    PROBLEM_NAME=85
-    PROBLEM_DOMAIN=86
-    OBJECTS=87
-    INIT=88
-    FUNC_HEAD=89
-    PRECONDITION=90
-    EFFECT=91
-    AND_GD=92
-    OR_GD=93
-    NOT_GD=94
-    IMPLY_GD=95
-    EXISTS_GD=96
-    FORALL_GD=97
-    COMPARISON_GD=98
-    AND_EFFECT=99
-    FORALL_EFFECT=100
-    WHEN_EFFECT=101
-    ASSIGN_EFFECT=102
-    NOT_EFFECT=103
-    PRED_HEAD=104
-    GOAL=105
-    BINARY_OP=106
-    UNARY_MINUS=107
-    INIT_EQ=108
-    INIT_AT=109
-    NOT_PRED_INIT=110
-    PRED_INST=111
-    PROBLEM_CONSTRAINT=112
-    PROBLEM_METRIC=113
+    T__0 = 1
+    T__1 = 2
+    T__2 = 3
+    T__3 = 4
+    T__4 = 5
+    T__5 = 6
+    T__6 = 7
+    T__7 = 8
+    T__8 = 9
+    T__9 = 10
+    T__10 = 11
+    T__11 = 12
+    T__12 = 13
+    T__13 = 14
+    T__14 = 15
+    T__15 = 16
+    T__16 = 17
+    T__17 = 18
+    T__18 = 19
+    T__19 = 20
+    T__20 = 21
+    T__21 = 22
+    T__22 = 23
+    T__23 = 24
+    T__24 = 25
+    T__25 = 26
+    T__26 = 27
+    T__27 = 28
+    T__28 = 29
+    T__29 = 30
+    T__30 = 31
+    T__31 = 32
+    T__32 = 33
+    T__33 = 34
+    T__34 = 35
+    T__35 = 36
+    T__36 = 37
+    T__37 = 38
+    T__38 = 39
+    T__39 = 40
+    T__40 = 41
+    T__41 = 42
+    T__42 = 43
+    T__43 = 44
+    T__44 = 45
+    T__45 = 46
+    T__46 = 47
+    T__47 = 48
+    T__48 = 49
+    T__49 = 50
+    T__50 = 51
+    T__51 = 52
+    T__52 = 53
+    T__53 = 54
+    T__54 = 55
+    T__55 = 56
+    T__56 = 57
+    T__57 = 58
+    T__58 = 59
+    T__59 = 60
+    T__60 = 61
+    T__61 = 62
+    T__62 = 63
+    T__63 = 64
+    T__64 = 65
+    T__65 = 66
+    T__66 = 67
+    REQUIRE_KEY = 68
+    NAME = 69
+    VARIABLE = 70
+    NUMBER = 71
+    LINE_COMMENT = 72
+    WHITESPACE = 73
+    DOMAIN = 74
+    DOMAIN_NAME = 75
+    REQUIREMENTS = 76
+    TYPES = 77
+    EITHER_TYPE = 78
+    CONSTANTS = 79
+    FUNCTIONS = 80
+    PREDICATES = 81
+    ACTION = 82
+    DURATIVE_ACTION = 83
+    PROBLEM = 84
+    PROBLEM_NAME = 85
+    PROBLEM_DOMAIN = 86
+    OBJECTS = 87
+    INIT = 88
+    FUNC_HEAD = 89
+    PRECONDITION = 90
+    EFFECT = 91
+    AND_GD = 92
+    OR_GD = 93
+    NOT_GD = 94
+    IMPLY_GD = 95
+    EXISTS_GD = 96
+    FORALL_GD = 97
+    COMPARISON_GD = 98
+    AND_EFFECT = 99
+    FORALL_EFFECT = 100
+    WHEN_EFFECT = 101
+    ASSIGN_EFFECT = 102
+    NOT_EFFECT = 103
+    PRED_HEAD = 104
+    GOAL = 105
+    BINARY_OP = 106
+    UNARY_MINUS = 107
+    INIT_EQ = 108
+    INIT_AT = 109
+    NOT_PRED_INIT = 110
+    PRED_INST = 111
+    PROBLEM_CONSTRAINT = 112
+    PROBLEM_METRIC = 113
 
-    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
+    def __init__(self, input: TokenStream, output: TextIO = sys.stdout):
         super().__init__(input, output)
         self.checkVersion("4.7")
-        self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
+        self._interp = ParserATNSimulator(
+            self, self.atn, self.decisionsToDFA, self.sharedContextCache
+        )
         self._predicates = None
 
-
-
     class PddlDocContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def domain(self):
-            return self.getTypedRuleContext(pddlParser.DomainContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DomainContext, 0)
 
         def problem(self):
-            return self.getTypedRuleContext(pddlParser.ProblemContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ProblemContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_pddlDoc
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPddlDoc" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPddlDoc"):
                 listener.enterPddlDoc(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPddlDoc" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPddlDoc"):
                 listener.exitPddlDoc(self)
-
-
-
 
     def pddlDoc(self):
 
@@ -763,7 +961,7 @@ class pddlParser ( Parser ):
         try:
             self.state = 148
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,0,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 0, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 146
@@ -776,7 +974,6 @@ class pddlParser ( Parser ):
                 self.problem()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -786,65 +983,55 @@ class pddlParser ( Parser ):
         return localctx
 
     class DomainContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def domainName(self):
-            return self.getTypedRuleContext(pddlParser.DomainNameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DomainNameContext, 0)
 
         def requireDef(self):
-            return self.getTypedRuleContext(pddlParser.RequireDefContext,0)
-
+            return self.getTypedRuleContext(pddlParser.RequireDefContext, 0)
 
         def typesDef(self):
-            return self.getTypedRuleContext(pddlParser.TypesDefContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypesDefContext, 0)
 
         def constantsDef(self):
-            return self.getTypedRuleContext(pddlParser.ConstantsDefContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ConstantsDefContext, 0)
 
         def predicatesDef(self):
-            return self.getTypedRuleContext(pddlParser.PredicatesDefContext,0)
-
+            return self.getTypedRuleContext(pddlParser.PredicatesDefContext, 0)
 
         def functionsDef(self):
-            return self.getTypedRuleContext(pddlParser.FunctionsDefContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FunctionsDefContext, 0)
 
         def constraints(self):
-            return self.getTypedRuleContext(pddlParser.ConstraintsContext,0)
+            return self.getTypedRuleContext(pddlParser.ConstraintsContext, 0)
 
-
-        def structureDef(self, i:int=None):
+        def structureDef(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.StructureDefContext)
             else:
-                return self.getTypedRuleContext(pddlParser.StructureDefContext,i)
-
+                return self.getTypedRuleContext(pddlParser.StructureDefContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_domain
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDomain" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDomain"):
                 listener.enterDomain(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDomain" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDomain"):
                 listener.exitDomain(self)
-
-
-
 
     def domain(self):
 
         localctx = pddlParser.DomainContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_domain)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 150
@@ -855,56 +1042,50 @@ class pddlParser ( Parser ):
             self.domainName()
             self.state = 154
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 1, self._ctx)
             if la_ == 1:
                 self.state = 153
                 self.requireDef()
 
-
             self.state = 157
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 2, self._ctx)
             if la_ == 1:
                 self.state = 156
                 self.typesDef()
 
-
             self.state = 160
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 3, self._ctx)
             if la_ == 1:
                 self.state = 159
                 self.constantsDef()
 
-
             self.state = 163
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 4, self._ctx)
             if la_ == 1:
                 self.state = 162
                 self.predicatesDef()
 
-
             self.state = 166
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 5, self._ctx)
             if la_ == 1:
                 self.state = 165
                 self.functionsDef()
 
-
             self.state = 169
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 6, self._ctx)
             if la_ == 1:
                 self.state = 168
                 self.constraints()
 
-
             self.state = 174
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==pddlParser.T__0:
+            while _la == pddlParser.T__0:
                 self.state = 171
                 self.structureDef()
                 self.state = 176
@@ -922,28 +1103,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class DomainNameContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(pddlParser.NameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_domainName
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDomainName" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDomainName"):
                 listener.enterDomainName(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDomainName" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDomainName"):
                 listener.exitDomainName(self)
-
-
-
 
     def domainName(self):
 
@@ -968,12 +1146,13 @@ class pddlParser ( Parser ):
         return localctx
 
     class RequireDefContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def REQUIRE_KEY(self, i:int=None):
+        def REQUIRE_KEY(self, i: int = None):
             if i is None:
                 return self.getTokens(pddlParser.REQUIRE_KEY)
             else:
@@ -982,38 +1161,35 @@ class pddlParser ( Parser ):
         def getRuleIndex(self):
             return pddlParser.RULE_requireDef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRequireDef" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterRequireDef"):
                 listener.enterRequireDef(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRequireDef" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitRequireDef"):
                 listener.exitRequireDef(self)
-
-
-
 
     def requireDef(self):
 
         localctx = pddlParser.RequireDefContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_requireDef)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 184
             self.match(pddlParser.T__0)
             self.state = 185
             self.match(pddlParser.T__4)
-            self.state = 187 
+            self.state = 187
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 186
                 self.match(pddlParser.REQUIRE_KEY)
-                self.state = 189 
+                self.state = 189
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==pddlParser.REQUIRE_KEY):
+                if not (_la == pddlParser.REQUIRE_KEY):
                     break
 
             self.state = 191
@@ -1027,28 +1203,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class TypesDefContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def typedNameList(self):
-            return self.getTypedRuleContext(pddlParser.TypedNameListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedNameListContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_typesDef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTypesDef" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTypesDef"):
                 listener.enterTypesDef(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTypesDef" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTypesDef"):
                 listener.exitTypesDef(self)
-
-
-
 
     def typesDef(self):
 
@@ -1073,54 +1246,57 @@ class pddlParser ( Parser ):
         return localctx
 
     class TypedNameListContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def name(self, i:int=None):
+        def name(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.NameContext)
             else:
-                return self.getTypedRuleContext(pddlParser.NameContext,i)
+                return self.getTypedRuleContext(pddlParser.NameContext, i)
 
-
-        def singleTypeNameList(self, i:int=None):
+        def singleTypeNameList(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.SingleTypeNameListContext)
             else:
-                return self.getTypedRuleContext(pddlParser.SingleTypeNameListContext,i)
-
+                return self.getTypedRuleContext(pddlParser.SingleTypeNameListContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_typedNameList
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTypedNameList" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTypedNameList"):
                 listener.enterTypedNameList(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTypedNameList" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTypedNameList"):
                 listener.exitTypedNameList(self)
-
-
-
 
     def typedNameList(self):
 
         localctx = pddlParser.TypedNameListContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_typedNameList)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 215
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 12, self._ctx)
             if la_ == 1:
                 self.state = 201
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while ((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)))) != 0):
+                while (((_la - 28)) & ~0x3F) == 0 and (
+                    (1 << (_la - 28))
+                    & (
+                        (1 << (pddlParser.T__27 - 28))
+                        | (1 << (pddlParser.T__28 - 28))
+                        | (1 << (pddlParser.NAME - 28))
+                    )
+                ) != 0:
                     self.state = 198
                     self.name()
                     self.state = 203
@@ -1130,24 +1306,31 @@ class pddlParser ( Parser ):
                 pass
 
             elif la_ == 2:
-                self.state = 205 
+                self.state = 205
                 self._errHandler.sync(self)
                 _alt = 1
-                while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
                     if _alt == 1:
                         self.state = 204
                         self.singleTypeNameList()
 
                     else:
                         raise NoViableAltException(self)
-                    self.state = 207 
+                    self.state = 207
                     self._errHandler.sync(self)
-                    _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
+                    _alt = self._interp.adaptivePredict(self._input, 10, self._ctx)
 
                 self.state = 212
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while ((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)))) != 0):
+                while (((_la - 28)) & ~0x3F) == 0 and (
+                    (1 << (_la - 28))
+                    & (
+                        (1 << (pddlParser.T__27 - 28))
+                        | (1 << (pddlParser.T__28 - 28))
+                        | (1 << (pddlParser.NAME - 28))
+                    )
+                ) != 0:
                     self.state = 209
                     self.name()
                     self.state = 214
@@ -1155,7 +1338,6 @@ class pddlParser ( Parser ):
                     _la = self._input.LA(1)
 
                 pass
-
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1166,54 +1348,63 @@ class pddlParser ( Parser ):
         return localctx
 
     class SingleTypeNameListContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.t = None # R_typeContext
+            self.t = None  # R_typeContext
 
         def r_type(self):
-            return self.getTypedRuleContext(pddlParser.R_typeContext,0)
+            return self.getTypedRuleContext(pddlParser.R_typeContext, 0)
 
-
-        def name(self, i:int=None):
+        def name(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.NameContext)
             else:
-                return self.getTypedRuleContext(pddlParser.NameContext,i)
-
+                return self.getTypedRuleContext(pddlParser.NameContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_singleTypeNameList
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSingleTypeNameList" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterSingleTypeNameList"):
                 listener.enterSingleTypeNameList(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSingleTypeNameList" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitSingleTypeNameList"):
                 listener.exitSingleTypeNameList(self)
-
-
-
 
     def singleTypeNameList(self):
 
         localctx = pddlParser.SingleTypeNameListContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_singleTypeNameList)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 218 
+            self.state = 218
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 217
                 self.name()
-                self.state = 220 
+                self.state = 220
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)))) != 0)):
+                if not (
+                    (
+                        (((_la - 28)) & ~0x3F) == 0
+                        and (
+                            (1 << (_la - 28))
+                            & (
+                                (1 << (pddlParser.T__27 - 28))
+                                | (1 << (pddlParser.T__28 - 28))
+                                | (1 << (pddlParser.NAME - 28))
+                            )
+                        )
+                        != 0
+                    )
+                ):
                     break
 
             self.state = 222
@@ -1229,37 +1420,34 @@ class pddlParser ( Parser ):
         return localctx
 
     class R_typeContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def primType(self, i:int=None):
+        def primType(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.PrimTypeContext)
             else:
-                return self.getTypedRuleContext(pddlParser.PrimTypeContext,i)
-
+                return self.getTypedRuleContext(pddlParser.PrimTypeContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_r_type
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterR_type" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterR_type"):
                 listener.enterR_type(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitR_type" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitR_type"):
                 listener.exitR_type(self)
-
-
-
 
     def r_type(self):
 
         localctx = pddlParser.R_typeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_r_type)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 235
             self._errHandler.sync(self)
@@ -1270,16 +1458,29 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__0)
                 self.state = 226
                 self.match(pddlParser.T__7)
-                self.state = 228 
+                self.state = 228
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
                     self.state = 227
                     self.primType()
-                    self.state = 230 
+                    self.state = 230
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if not (((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)))) != 0)):
+                    if not (
+                        (
+                            (((_la - 28)) & ~0x3F) == 0
+                            and (
+                                (1 << (_la - 28))
+                                & (
+                                    (1 << (pddlParser.T__27 - 28))
+                                    | (1 << (pddlParser.T__28 - 28))
+                                    | (1 << (pddlParser.NAME - 28))
+                                )
+                            )
+                            != 0
+                        )
+                    ):
                         break
 
                 self.state = 232
@@ -1302,28 +1503,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class PrimTypeContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(pddlParser.NameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_primType
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPrimType" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPrimType"):
                 listener.enterPrimType(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPrimType" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPrimType"):
                 listener.exitPrimType(self)
-
-
-
 
     def primType(self):
 
@@ -1342,28 +1540,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class FunctionsDefContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def functionList(self):
-            return self.getTypedRuleContext(pddlParser.FunctionListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FunctionListContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_functionsDef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFunctionsDef" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFunctionsDef"):
                 listener.enterFunctionsDef(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFunctionsDef" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFunctionsDef"):
                 listener.exitFunctionsDef(self)
-
-
-
 
     def functionsDef(self):
 
@@ -1388,73 +1583,72 @@ class pddlParser ( Parser ):
         return localctx
 
     class FunctionListContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def atomicFunctionSkeleton(self, i:int=None):
+        def atomicFunctionSkeleton(self, i: int = None):
             if i is None:
-                return self.getTypedRuleContexts(pddlParser.AtomicFunctionSkeletonContext)
+                return self.getTypedRuleContexts(
+                    pddlParser.AtomicFunctionSkeletonContext
+                )
             else:
-                return self.getTypedRuleContext(pddlParser.AtomicFunctionSkeletonContext,i)
+                return self.getTypedRuleContext(
+                    pddlParser.AtomicFunctionSkeletonContext, i
+                )
 
-
-        def functionType(self, i:int=None):
+        def functionType(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.FunctionTypeContext)
             else:
-                return self.getTypedRuleContext(pddlParser.FunctionTypeContext,i)
-
+                return self.getTypedRuleContext(pddlParser.FunctionTypeContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_functionList
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFunctionList" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFunctionList"):
                 listener.enterFunctionList(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFunctionList" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFunctionList"):
                 listener.exitFunctionList(self)
-
-
-
 
     def functionList(self):
 
         localctx = pddlParser.FunctionListContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_functionList)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 255
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==pddlParser.T__0:
-                self.state = 245 
+            while _la == pddlParser.T__0:
+                self.state = 245
                 self._errHandler.sync(self)
                 _alt = 1
-                while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
                     if _alt == 1:
                         self.state = 244
                         self.atomicFunctionSkeleton()
 
                     else:
                         raise NoViableAltException(self)
-                    self.state = 247 
+                    self.state = 247
                     self._errHandler.sync(self)
-                    _alt = self._interp.adaptivePredict(self._input,16,self._ctx)
+                    _alt = self._interp.adaptivePredict(self._input, 16, self._ctx)
 
                 self.state = 251
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==pddlParser.T__6:
+                if _la == pddlParser.T__6:
                     self.state = 249
                     self.match(pddlParser.T__6)
                     self.state = 250
                     self.functionType()
-
 
                 self.state = 257
                 self._errHandler.sync(self)
@@ -1469,32 +1663,28 @@ class pddlParser ( Parser ):
         return localctx
 
     class AtomicFunctionSkeletonContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def functionSymbol(self):
-            return self.getTypedRuleContext(pddlParser.FunctionSymbolContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FunctionSymbolContext, 0)
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_atomicFunctionSkeleton
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAtomicFunctionSkeleton" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAtomicFunctionSkeleton"):
                 listener.enterAtomicFunctionSkeleton(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAtomicFunctionSkeleton" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAtomicFunctionSkeleton"):
                 listener.exitAtomicFunctionSkeleton(self)
-
-
-
 
     def atomicFunctionSkeleton(self):
 
@@ -1519,28 +1709,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class FunctionSymbolContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(pddlParser.NameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_functionSymbol
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFunctionSymbol" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFunctionSymbol"):
                 listener.enterFunctionSymbol(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFunctionSymbol" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFunctionSymbol"):
                 listener.exitFunctionSymbol(self)
-
-
-
 
     def functionSymbol(self):
 
@@ -1559,25 +1746,22 @@ class pddlParser ( Parser ):
         return localctx
 
     class FunctionTypeContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return pddlParser.RULE_functionType
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFunctionType" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFunctionType"):
                 listener.enterFunctionType(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFunctionType" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFunctionType"):
                 listener.exitFunctionType(self)
-
-
-
 
     def functionType(self):
 
@@ -1596,28 +1780,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class ConstantsDefContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def typedNameList(self):
-            return self.getTypedRuleContext(pddlParser.TypedNameListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedNameListContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_constantsDef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConstantsDef" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterConstantsDef"):
                 listener.enterConstantsDef(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConstantsDef" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitConstantsDef"):
                 listener.exitConstantsDef(self)
-
-
-
 
     def constantsDef(self):
 
@@ -1642,53 +1823,54 @@ class pddlParser ( Parser ):
         return localctx
 
     class PredicatesDefContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def atomicFormulaSkeleton(self, i:int=None):
+        def atomicFormulaSkeleton(self, i: int = None):
             if i is None:
-                return self.getTypedRuleContexts(pddlParser.AtomicFormulaSkeletonContext)
+                return self.getTypedRuleContexts(
+                    pddlParser.AtomicFormulaSkeletonContext
+                )
             else:
-                return self.getTypedRuleContext(pddlParser.AtomicFormulaSkeletonContext,i)
-
+                return self.getTypedRuleContext(
+                    pddlParser.AtomicFormulaSkeletonContext, i
+                )
 
         def getRuleIndex(self):
             return pddlParser.RULE_predicatesDef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPredicatesDef" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPredicatesDef"):
                 listener.enterPredicatesDef(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPredicatesDef" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPredicatesDef"):
                 listener.exitPredicatesDef(self)
-
-
-
 
     def predicatesDef(self):
 
         localctx = pddlParser.PredicatesDefContext(self, self._ctx, self.state)
         self.enterRule(localctx, 30, self.RULE_predicatesDef)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 272
             self.match(pddlParser.T__0)
             self.state = 273
             self.match(pddlParser.T__11)
-            self.state = 275 
+            self.state = 275
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 274
                 self.atomicFormulaSkeleton()
-                self.state = 277 
+                self.state = 277
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==pddlParser.T__0):
+                if not (_la == pddlParser.T__0):
                     break
 
             self.state = 279
@@ -1702,32 +1884,28 @@ class pddlParser ( Parser ):
         return localctx
 
     class AtomicFormulaSkeletonContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def predicate(self):
-            return self.getTypedRuleContext(pddlParser.PredicateContext,0)
-
+            return self.getTypedRuleContext(pddlParser.PredicateContext, 0)
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_atomicFormulaSkeleton
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAtomicFormulaSkeleton" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAtomicFormulaSkeleton"):
                 listener.enterAtomicFormulaSkeleton(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAtomicFormulaSkeleton" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAtomicFormulaSkeleton"):
                 listener.exitAtomicFormulaSkeleton(self)
-
-
-
 
     def atomicFormulaSkeleton(self):
 
@@ -1752,28 +1930,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class PredicateContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(pddlParser.NameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_predicate
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPredicate" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPredicate"):
                 listener.enterPredicate(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPredicate" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPredicate"):
                 listener.exitPredicate(self)
-
-
-
 
     def predicate(self):
 
@@ -1792,53 +1967,50 @@ class pddlParser ( Parser ):
         return localctx
 
     class TypedVariableListContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def VARIABLE(self, i:int=None):
+        def VARIABLE(self, i: int = None):
             if i is None:
                 return self.getTokens(pddlParser.VARIABLE)
             else:
                 return self.getToken(pddlParser.VARIABLE, i)
 
-        def singleTypeVarList(self, i:int=None):
+        def singleTypeVarList(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.SingleTypeVarListContext)
             else:
-                return self.getTypedRuleContext(pddlParser.SingleTypeVarListContext,i)
-
+                return self.getTypedRuleContext(pddlParser.SingleTypeVarListContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_typedVariableList
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTypedVariableList" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTypedVariableList"):
                 listener.enterTypedVariableList(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTypedVariableList" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTypedVariableList"):
                 listener.exitTypedVariableList(self)
-
-
-
 
     def typedVariableList(self):
 
         localctx = pddlParser.TypedVariableListContext(self, self._ctx, self.state)
         self.enterRule(localctx, 36, self.RULE_typedVariableList)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 305
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,23,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 23, self._ctx)
             if la_ == 1:
                 self.state = 291
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==pddlParser.VARIABLE:
+                while _la == pddlParser.VARIABLE:
                     self.state = 288
                     self.match(pddlParser.VARIABLE)
                     self.state = 293
@@ -1848,24 +2020,24 @@ class pddlParser ( Parser ):
                 pass
 
             elif la_ == 2:
-                self.state = 295 
+                self.state = 295
                 self._errHandler.sync(self)
                 _alt = 1
-                while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
                     if _alt == 1:
                         self.state = 294
                         self.singleTypeVarList()
 
                     else:
                         raise NoViableAltException(self)
-                    self.state = 297 
+                    self.state = 297
                     self._errHandler.sync(self)
-                    _alt = self._interp.adaptivePredict(self._input,21,self._ctx)
+                    _alt = self._interp.adaptivePredict(self._input, 21, self._ctx)
 
                 self.state = 302
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==pddlParser.VARIABLE:
+                while _la == pddlParser.VARIABLE:
                     self.state = 299
                     self.match(pddlParser.VARIABLE)
                     self.state = 304
@@ -1873,7 +2045,6 @@ class pddlParser ( Parser ):
                     _la = self._input.LA(1)
 
                 pass
-
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1884,17 +2055,17 @@ class pddlParser ( Parser ):
         return localctx
 
     class SingleTypeVarListContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.t = None # R_typeContext
+            self.t = None  # R_typeContext
 
         def r_type(self):
-            return self.getTypedRuleContext(pddlParser.R_typeContext,0)
+            return self.getTypedRuleContext(pddlParser.R_typeContext, 0)
 
-
-        def VARIABLE(self, i:int=None):
+        def VARIABLE(self, i: int = None):
             if i is None:
                 return self.getTokens(pddlParser.VARIABLE)
             else:
@@ -1903,34 +2074,31 @@ class pddlParser ( Parser ):
         def getRuleIndex(self):
             return pddlParser.RULE_singleTypeVarList
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSingleTypeVarList" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterSingleTypeVarList"):
                 listener.enterSingleTypeVarList(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSingleTypeVarList" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitSingleTypeVarList"):
                 listener.exitSingleTypeVarList(self)
-
-
-
 
     def singleTypeVarList(self):
 
         localctx = pddlParser.SingleTypeVarListContext(self, self._ctx, self.state)
         self.enterRule(localctx, 38, self.RULE_singleTypeVarList)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 308 
+            self.state = 308
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 307
                 self.match(pddlParser.VARIABLE)
-                self.state = 310 
+                self.state = 310
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==pddlParser.VARIABLE):
+                if not (_la == pddlParser.VARIABLE):
                     break
 
             self.state = 312
@@ -1946,28 +2114,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class ConstraintsContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def conGD(self):
-            return self.getTypedRuleContext(pddlParser.ConGDContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ConGDContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_constraints
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConstraints" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterConstraints"):
                 listener.enterConstraints(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConstraints" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitConstraints"):
                 listener.exitConstraints(self)
-
-
-
 
     def constraints(self):
 
@@ -1992,36 +2157,31 @@ class pddlParser ( Parser ):
         return localctx
 
     class StructureDefContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def actionDef(self):
-            return self.getTypedRuleContext(pddlParser.ActionDefContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ActionDefContext, 0)
 
         def durativeActionDef(self):
-            return self.getTypedRuleContext(pddlParser.DurativeActionDefContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DurativeActionDefContext, 0)
 
         def derivedDef(self):
-            return self.getTypedRuleContext(pddlParser.DerivedDefContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DerivedDefContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_structureDef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStructureDef" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterStructureDef"):
                 listener.enterStructureDef(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStructureDef" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitStructureDef"):
                 listener.exitStructureDef(self)
-
-
-
 
     def structureDef(self):
 
@@ -2030,7 +2190,7 @@ class pddlParser ( Parser ):
         try:
             self.state = 323
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,25,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 25, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 320
@@ -2049,7 +2209,6 @@ class pddlParser ( Parser ):
                 self.derivedDef()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2059,36 +2218,31 @@ class pddlParser ( Parser ):
         return localctx
 
     class ActionDefContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def actionSymbol(self):
-            return self.getTypedRuleContext(pddlParser.ActionSymbolContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ActionSymbolContext, 0)
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
         def actionDefBody(self):
-            return self.getTypedRuleContext(pddlParser.ActionDefBodyContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ActionDefBodyContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_actionDef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterActionDef" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterActionDef"):
                 listener.enterActionDef(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitActionDef" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitActionDef"):
                 listener.exitActionDef(self)
-
-
-
 
     def actionDef(self):
 
@@ -2123,28 +2277,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class ActionSymbolContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(pddlParser.NameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_actionSymbol
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterActionSymbol" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterActionSymbol"):
                 listener.enterActionSymbol(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitActionSymbol" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitActionSymbol"):
                 listener.exitActionSymbol(self)
-
-
-
 
     def actionSymbol(self):
 
@@ -2163,49 +2314,45 @@ class pddlParser ( Parser ):
         return localctx
 
     class ActionDefBodyContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def precondition(self):
-            return self.getTypedRuleContext(pddlParser.PreconditionContext,0)
-
+            return self.getTypedRuleContext(pddlParser.PreconditionContext, 0)
 
         def effect(self):
-            return self.getTypedRuleContext(pddlParser.EffectContext,0)
-
+            return self.getTypedRuleContext(pddlParser.EffectContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_actionDefBody
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterActionDefBody" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterActionDefBody"):
                 listener.enterActionDefBody(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitActionDefBody" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitActionDefBody"):
                 listener.exitActionDefBody(self)
-
-
-
 
     def actionDefBody(self):
 
         localctx = pddlParser.ActionDefBodyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 48, self.RULE_actionDefBody)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 343
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==pddlParser.T__15:
+            if _la == pddlParser.T__15:
                 self.state = 337
                 self.match(pddlParser.T__15)
                 self.state = 341
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,26,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 26, self._ctx)
                 if la_ == 1:
                     self.state = 338
                     self.match(pddlParser.T__0)
@@ -2218,18 +2365,15 @@ class pddlParser ( Parser ):
                     self.precondition()
                     pass
 
-
-
-
             self.state = 351
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==pddlParser.T__16:
+            if _la == pddlParser.T__16:
                 self.state = 345
                 self.match(pddlParser.T__16)
                 self.state = 349
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,28,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 28, self._ctx)
                 if la_ == 1:
                     self.state = 346
                     self.match(pddlParser.T__0)
@@ -2242,9 +2386,6 @@ class pddlParser ( Parser ):
                     self.effect()
                     pass
 
-
-
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2254,28 +2395,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class PreconditionContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def goalDesc(self):
-            return self.getTypedRuleContext(pddlParser.GoalDescContext,0)
-
+            return self.getTypedRuleContext(pddlParser.GoalDescContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_precondition
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPrecondition" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPrecondition"):
                 listener.enterPrecondition(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPrecondition" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPrecondition"):
                 listener.exitPrecondition(self)
-
-
-
 
     def precondition(self):
 
@@ -2294,53 +2432,47 @@ class pddlParser ( Parser ):
         return localctx
 
     class GoalDescContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def atomicTermFormula(self):
-            return self.getTypedRuleContext(pddlParser.AtomicTermFormulaContext,0)
+            return self.getTypedRuleContext(pddlParser.AtomicTermFormulaContext, 0)
 
-
-        def goalDesc(self, i:int=None):
+        def goalDesc(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.GoalDescContext)
             else:
-                return self.getTypedRuleContext(pddlParser.GoalDescContext,i)
-
+                return self.getTypedRuleContext(pddlParser.GoalDescContext, i)
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
         def fComp(self):
-            return self.getTypedRuleContext(pddlParser.FCompContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FCompContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_goalDesc
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterGoalDesc" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterGoalDesc"):
                 listener.enterGoalDesc(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitGoalDesc" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitGoalDesc"):
                 listener.exitGoalDesc(self)
-
-
-
 
     def goalDesc(self):
 
         localctx = pddlParser.GoalDescContext(self, self._ctx, self.state)
         self.enterRule(localctx, 52, self.RULE_goalDesc)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 402
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,32,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 32, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 355
@@ -2356,7 +2488,7 @@ class pddlParser ( Parser ):
                 self.state = 361
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==pddlParser.T__0:
+                while _la == pddlParser.T__0:
                     self.state = 358
                     self.goalDesc()
                     self.state = 363
@@ -2376,7 +2508,7 @@ class pddlParser ( Parser ):
                 self.state = 370
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==pddlParser.T__0:
+                while _la == pddlParser.T__0:
                     self.state = 367
                     self.goalDesc()
                     self.state = 372
@@ -2455,7 +2587,6 @@ class pddlParser ( Parser ):
                 self.fComp()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2465,35 +2596,31 @@ class pddlParser ( Parser ):
         return localctx
 
     class FCompContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def binaryComp(self):
-            return self.getTypedRuleContext(pddlParser.BinaryCompContext,0)
+            return self.getTypedRuleContext(pddlParser.BinaryCompContext, 0)
 
-
-        def fExp(self, i:int=None):
+        def fExp(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.FExpContext)
             else:
-                return self.getTypedRuleContext(pddlParser.FExpContext,i)
-
+                return self.getTypedRuleContext(pddlParser.FExpContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_fComp
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFComp" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFComp"):
                 listener.enterFComp(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFComp" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFComp"):
                 listener.exitFComp(self)
-
-
-
 
     def fComp(self):
 
@@ -2520,41 +2647,37 @@ class pddlParser ( Parser ):
         return localctx
 
     class AtomicTermFormulaContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def predicate(self):
-            return self.getTypedRuleContext(pddlParser.PredicateContext,0)
+            return self.getTypedRuleContext(pddlParser.PredicateContext, 0)
 
-
-        def term(self, i:int=None):
+        def term(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.TermContext)
             else:
-                return self.getTypedRuleContext(pddlParser.TermContext,i)
-
+                return self.getTypedRuleContext(pddlParser.TermContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_atomicTermFormula
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAtomicTermFormula" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAtomicTermFormula"):
                 listener.enterAtomicTermFormula(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAtomicTermFormula" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAtomicTermFormula"):
                 listener.exitAtomicTermFormula(self)
-
-
-
 
     def atomicTermFormula(self):
 
         localctx = pddlParser.AtomicTermFormulaContext(self, self._ctx, self.state)
         self.enterRule(localctx, 56, self.RULE_atomicTermFormula)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 410
@@ -2564,7 +2687,15 @@ class pddlParser ( Parser ):
             self.state = 415
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)) | (1 << (pddlParser.VARIABLE - 28)))) != 0):
+            while (((_la - 28)) & ~0x3F) == 0 and (
+                (1 << (_la - 28))
+                & (
+                    (1 << (pddlParser.T__27 - 28))
+                    | (1 << (pddlParser.T__28 - 28))
+                    | (1 << (pddlParser.NAME - 28))
+                    | (1 << (pddlParser.VARIABLE - 28))
+                )
+            ) != 0:
                 self.state = 412
                 self.term()
                 self.state = 417
@@ -2582,14 +2713,14 @@ class pddlParser ( Parser ):
         return localctx
 
     class TermContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(pddlParser.NameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameContext, 0)
 
         def VARIABLE(self):
             return self.getToken(pddlParser.VARIABLE, 0)
@@ -2597,16 +2728,13 @@ class pddlParser ( Parser ):
         def getRuleIndex(self):
             return pddlParser.RULE_term
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTerm" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTerm"):
                 listener.enterTerm(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTerm" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTerm"):
                 listener.exitTerm(self)
-
-
-
 
     def term(self):
 
@@ -2638,36 +2766,31 @@ class pddlParser ( Parser ):
         return localctx
 
     class DurativeActionDefContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def actionSymbol(self):
-            return self.getTypedRuleContext(pddlParser.ActionSymbolContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ActionSymbolContext, 0)
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
         def daDefBody(self):
-            return self.getTypedRuleContext(pddlParser.DaDefBodyContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DaDefBodyContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_durativeActionDef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDurativeActionDef" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDurativeActionDef"):
                 listener.enterDurativeActionDef(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDurativeActionDef" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDurativeActionDef"):
                 listener.exitDurativeActionDef(self)
-
-
-
 
     def durativeActionDef(self):
 
@@ -2702,36 +2825,31 @@ class pddlParser ( Parser ):
         return localctx
 
     class DaDefBodyContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def durationConstraint(self):
-            return self.getTypedRuleContext(pddlParser.DurationConstraintContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DurationConstraintContext, 0)
 
         def daGD(self):
-            return self.getTypedRuleContext(pddlParser.DaGDContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DaGDContext, 0)
 
         def daEffect(self):
-            return self.getTypedRuleContext(pddlParser.DaEffectContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DaEffectContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_daDefBody
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDaDefBody" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDaDefBody"):
                 listener.enterDaDefBody(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDaDefBody" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDaDefBody"):
                 listener.exitDaDefBody(self)
-
-
-
 
     def daDefBody(self):
 
@@ -2747,7 +2865,7 @@ class pddlParser ( Parser ):
             self.match(pddlParser.T__25)
             self.state = 440
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,35,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 35, self._ctx)
             if la_ == 1:
                 self.state = 437
                 self.match(pddlParser.T__0)
@@ -2760,12 +2878,11 @@ class pddlParser ( Parser ):
                 self.daGD()
                 pass
 
-
             self.state = 442
             self.match(pddlParser.T__16)
             self.state = 446
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,36,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 36, self._ctx)
             if la_ == 1:
                 self.state = 443
                 self.match(pddlParser.T__0)
@@ -2778,7 +2895,6 @@ class pddlParser ( Parser ):
                 self.daEffect()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2788,49 +2904,44 @@ class pddlParser ( Parser ):
         return localctx
 
     class DaGDContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def prefTimedGD(self):
-            return self.getTypedRuleContext(pddlParser.PrefTimedGDContext,0)
+            return self.getTypedRuleContext(pddlParser.PrefTimedGDContext, 0)
 
-
-        def daGD(self, i:int=None):
+        def daGD(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.DaGDContext)
             else:
-                return self.getTypedRuleContext(pddlParser.DaGDContext,i)
-
+                return self.getTypedRuleContext(pddlParser.DaGDContext, i)
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_daGD
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDaGD" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDaGD"):
                 listener.enterDaGD(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDaGD" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDaGD"):
                 listener.exitDaGD(self)
-
-
-
 
     def daGD(self):
 
         localctx = pddlParser.DaGDContext(self, self._ctx, self.state)
         self.enterRule(localctx, 64, self.RULE_daGD)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 466
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,38,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 38, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 448
@@ -2846,7 +2957,7 @@ class pddlParser ( Parser ):
                 self.state = 454
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==pddlParser.T__0:
+                while _la == pddlParser.T__0:
                     self.state = 451
                     self.daGD()
                     self.state = 456
@@ -2875,7 +2986,6 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__2)
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2885,42 +2995,38 @@ class pddlParser ( Parser ):
         return localctx
 
     class PrefTimedGDContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def timedGD(self):
-            return self.getTypedRuleContext(pddlParser.TimedGDContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TimedGDContext, 0)
 
         def name(self):
-            return self.getTypedRuleContext(pddlParser.NameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_prefTimedGD
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPrefTimedGD" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPrefTimedGD"):
                 listener.enterPrefTimedGD(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPrefTimedGD" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPrefTimedGD"):
                 listener.exitPrefTimedGD(self)
-
-
-
 
     def prefTimedGD(self):
 
         localctx = pddlParser.PrefTimedGDContext(self, self._ctx, self.state)
         self.enterRule(localctx, 66, self.RULE_prefTimedGD)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 477
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,40,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 40, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 468
@@ -2936,17 +3042,22 @@ class pddlParser ( Parser ):
                 self.state = 472
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if ((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)))) != 0):
+                if (((_la - 28)) & ~0x3F) == 0 and (
+                    (1 << (_la - 28))
+                    & (
+                        (1 << (pddlParser.T__27 - 28))
+                        | (1 << (pddlParser.T__28 - 28))
+                        | (1 << (pddlParser.NAME - 28))
+                    )
+                ) != 0:
                     self.state = 471
                     self.name()
-
 
                 self.state = 474
                 self.timedGD()
                 self.state = 475
                 self.match(pddlParser.T__2)
                 pass
-
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2957,36 +3068,31 @@ class pddlParser ( Parser ):
         return localctx
 
     class TimedGDContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def timeSpecifier(self):
-            return self.getTypedRuleContext(pddlParser.TimeSpecifierContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TimeSpecifierContext, 0)
 
         def goalDesc(self):
-            return self.getTypedRuleContext(pddlParser.GoalDescContext,0)
-
+            return self.getTypedRuleContext(pddlParser.GoalDescContext, 0)
 
         def interval(self):
-            return self.getTypedRuleContext(pddlParser.IntervalContext,0)
-
+            return self.getTypedRuleContext(pddlParser.IntervalContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_timedGD
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTimedGD" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTimedGD"):
                 listener.enterTimedGD(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTimedGD" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTimedGD"):
                 listener.exitTimedGD(self)
-
-
-
 
     def timedGD(self):
 
@@ -2995,7 +3101,7 @@ class pddlParser ( Parser ):
         try:
             self.state = 491
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,41,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 41, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 479
@@ -3024,7 +3130,6 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__2)
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3034,36 +3139,33 @@ class pddlParser ( Parser ):
         return localctx
 
     class TimeSpecifierContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return pddlParser.RULE_timeSpecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTimeSpecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTimeSpecifier"):
                 listener.enterTimeSpecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTimeSpecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTimeSpecifier"):
                 listener.exitTimeSpecifier(self)
-
-
-
 
     def timeSpecifier(self):
 
         localctx = pddlParser.TimeSpecifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 70, self.RULE_timeSpecifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 493
             _la = self._input.LA(1)
-            if not(_la==pddlParser.T__29 or _la==pddlParser.T__30):
+            if not (_la == pddlParser.T__29 or _la == pddlParser.T__30):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3077,25 +3179,22 @@ class pddlParser ( Parser ):
         return localctx
 
     class IntervalContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return pddlParser.RULE_interval
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInterval" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterInterval"):
                 listener.enterInterval(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInterval" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitInterval"):
                 listener.exitInterval(self)
-
-
-
 
     def interval(self):
 
@@ -3114,32 +3213,28 @@ class pddlParser ( Parser ):
         return localctx
 
     class DerivedDefContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
         def goalDesc(self):
-            return self.getTypedRuleContext(pddlParser.GoalDescContext,0)
-
+            return self.getTypedRuleContext(pddlParser.GoalDescContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_derivedDef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDerivedDef" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDerivedDef"):
                 listener.enterDerivedDef(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDerivedDef" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDerivedDef"):
                 listener.exitDerivedDef(self)
-
-
-
 
     def derivedDef(self):
 
@@ -3166,8 +3261,9 @@ class pddlParser ( Parser ):
         return localctx
 
     class FExpContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3175,34 +3271,27 @@ class pddlParser ( Parser ):
             return self.getToken(pddlParser.NUMBER, 0)
 
         def binaryOp(self):
-            return self.getTypedRuleContext(pddlParser.BinaryOpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.BinaryOpContext, 0)
 
         def fExp(self):
-            return self.getTypedRuleContext(pddlParser.FExpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FExpContext, 0)
 
         def fExp2(self):
-            return self.getTypedRuleContext(pddlParser.FExp2Context,0)
-
+            return self.getTypedRuleContext(pddlParser.FExp2Context, 0)
 
         def fHead(self):
-            return self.getTypedRuleContext(pddlParser.FHeadContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FHeadContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_fExp
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFExp" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFExp"):
                 listener.enterFExp(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFExp" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFExp"):
                 listener.exitFExp(self)
-
-
-
 
     def fExp(self):
 
@@ -3211,7 +3300,7 @@ class pddlParser ( Parser ):
         try:
             self.state = 516
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,42,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 42, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 503
@@ -3250,7 +3339,6 @@ class pddlParser ( Parser ):
                 self.fHead()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3260,28 +3348,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class FExp2Context(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def fExp(self):
-            return self.getTypedRuleContext(pddlParser.FExpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FExpContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_fExp2
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFExp2" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFExp2"):
                 listener.enterFExp2(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFExp2" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFExp2"):
                 listener.exitFExp2(self)
-
-
-
 
     def fExp2(self):
 
@@ -3300,41 +3385,37 @@ class pddlParser ( Parser ):
         return localctx
 
     class FHeadContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def functionSymbol(self):
-            return self.getTypedRuleContext(pddlParser.FunctionSymbolContext,0)
+            return self.getTypedRuleContext(pddlParser.FunctionSymbolContext, 0)
 
-
-        def term(self, i:int=None):
+        def term(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.TermContext)
             else:
-                return self.getTypedRuleContext(pddlParser.TermContext,i)
-
+                return self.getTypedRuleContext(pddlParser.TermContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_fHead
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFHead" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFHead"):
                 listener.enterFHead(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFHead" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFHead"):
                 listener.exitFHead(self)
-
-
-
 
     def fHead(self):
 
         localctx = pddlParser.FHeadContext(self, self._ctx, self.state)
         self.enterRule(localctx, 80, self.RULE_fHead)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 531
             self._errHandler.sync(self)
@@ -3348,7 +3429,15 @@ class pddlParser ( Parser ):
                 self.state = 525
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while ((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)) | (1 << (pddlParser.VARIABLE - 28)))) != 0):
+                while (((_la - 28)) & ~0x3F) == 0 and (
+                    (1 << (_la - 28))
+                    & (
+                        (1 << (pddlParser.T__27 - 28))
+                        | (1 << (pddlParser.T__28 - 28))
+                        | (1 << (pddlParser.NAME - 28))
+                        | (1 << (pddlParser.VARIABLE - 28))
+                    )
+                ) != 0:
                     self.state = 522
                     self.term()
                     self.state = 527
@@ -3375,41 +3464,38 @@ class pddlParser ( Parser ):
         return localctx
 
     class EffectContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def cEffect(self, i:int=None):
+        def cEffect(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.CEffectContext)
             else:
-                return self.getTypedRuleContext(pddlParser.CEffectContext,i)
-
+                return self.getTypedRuleContext(pddlParser.CEffectContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_effect
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEffect" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterEffect"):
                 listener.enterEffect(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEffect" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitEffect"):
                 listener.exitEffect(self)
-
-
-
 
     def effect(self):
 
         localctx = pddlParser.EffectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 82, self.RULE_effect)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 543
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,46,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 46, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 533
@@ -3419,7 +3505,7 @@ class pddlParser ( Parser ):
                 self.state = 538
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==pddlParser.T__0:
+                while _la == pddlParser.T__0:
                     self.state = 535
                     self.cEffect()
                     self.state = 540
@@ -3436,7 +3522,6 @@ class pddlParser ( Parser ):
                 self.cEffect()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3446,44 +3531,37 @@ class pddlParser ( Parser ):
         return localctx
 
     class CEffectContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
         def effect(self):
-            return self.getTypedRuleContext(pddlParser.EffectContext,0)
-
+            return self.getTypedRuleContext(pddlParser.EffectContext, 0)
 
         def goalDesc(self):
-            return self.getTypedRuleContext(pddlParser.GoalDescContext,0)
-
+            return self.getTypedRuleContext(pddlParser.GoalDescContext, 0)
 
         def condEffect(self):
-            return self.getTypedRuleContext(pddlParser.CondEffectContext,0)
-
+            return self.getTypedRuleContext(pddlParser.CondEffectContext, 0)
 
         def pEffect(self):
-            return self.getTypedRuleContext(pddlParser.PEffectContext,0)
-
+            return self.getTypedRuleContext(pddlParser.PEffectContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_cEffect
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCEffect" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCEffect"):
                 listener.enterCEffect(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCEffect" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCEffect"):
                 listener.exitCEffect(self)
-
-
-
 
     def cEffect(self):
 
@@ -3492,7 +3570,7 @@ class pddlParser ( Parser ):
         try:
             self.state = 560
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,47,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 47, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 545
@@ -3531,7 +3609,6 @@ class pddlParser ( Parser ):
                 self.pEffect()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3541,40 +3618,34 @@ class pddlParser ( Parser ):
         return localctx
 
     class PEffectContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def assignOp(self):
-            return self.getTypedRuleContext(pddlParser.AssignOpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.AssignOpContext, 0)
 
         def fHead(self):
-            return self.getTypedRuleContext(pddlParser.FHeadContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FHeadContext, 0)
 
         def fExp(self):
-            return self.getTypedRuleContext(pddlParser.FExpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FExpContext, 0)
 
         def atomicTermFormula(self):
-            return self.getTypedRuleContext(pddlParser.AtomicTermFormulaContext,0)
-
+            return self.getTypedRuleContext(pddlParser.AtomicTermFormulaContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_pEffect
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPEffect" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPEffect"):
                 listener.enterPEffect(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPEffect" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPEffect"):
                 listener.exitPEffect(self)
-
-
-
 
     def pEffect(self):
 
@@ -3583,7 +3654,7 @@ class pddlParser ( Parser ):
         try:
             self.state = 574
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,48,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 48, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 562
@@ -3616,7 +3687,6 @@ class pddlParser ( Parser ):
                 self.atomicTermFormula()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3626,41 +3696,38 @@ class pddlParser ( Parser ):
         return localctx
 
     class CondEffectContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def pEffect(self, i:int=None):
+        def pEffect(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.PEffectContext)
             else:
-                return self.getTypedRuleContext(pddlParser.PEffectContext,i)
-
+                return self.getTypedRuleContext(pddlParser.PEffectContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_condEffect
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCondEffect" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCondEffect"):
                 listener.enterCondEffect(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCondEffect" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCondEffect"):
                 listener.exitCondEffect(self)
-
-
-
 
     def condEffect(self):
 
         localctx = pddlParser.CondEffectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 88, self.RULE_condEffect)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 586
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,50,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 50, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 576
@@ -3670,7 +3737,7 @@ class pddlParser ( Parser ):
                 self.state = 581
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==pddlParser.T__0:
+                while _la == pddlParser.T__0:
                     self.state = 578
                     self.pEffect()
                     self.state = 583
@@ -3687,7 +3754,6 @@ class pddlParser ( Parser ):
                 self.pEffect()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3697,36 +3763,47 @@ class pddlParser ( Parser ):
         return localctx
 
     class BinaryOpContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return pddlParser.RULE_binaryOp
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBinaryOp" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBinaryOp"):
                 listener.enterBinaryOp(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBinaryOp" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBinaryOp"):
                 listener.exitBinaryOp(self)
-
-
-
 
     def binaryOp(self):
 
         localctx = pddlParser.BinaryOpContext(self, self._ctx, self.state)
         self.enterRule(localctx, 90, self.RULE_binaryOp)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 588
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << pddlParser.T__6) | (1 << pddlParser.T__34) | (1 << pddlParser.T__35) | (1 << pddlParser.T__36))) != 0)):
+            if not (
+                (
+                    ((_la) & ~0x3F) == 0
+                    and (
+                        (1 << _la)
+                        & (
+                            (1 << pddlParser.T__6)
+                            | (1 << pddlParser.T__34)
+                            | (1 << pddlParser.T__35)
+                            | (1 << pddlParser.T__36)
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3740,36 +3817,48 @@ class pddlParser ( Parser ):
         return localctx
 
     class BinaryCompContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return pddlParser.RULE_binaryComp
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBinaryComp" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBinaryComp"):
                 listener.enterBinaryComp(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBinaryComp" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBinaryComp"):
                 listener.exitBinaryComp(self)
-
-
-
 
     def binaryComp(self):
 
         localctx = pddlParser.BinaryCompContext(self, self._ctx, self.state)
         self.enterRule(localctx, 92, self.RULE_binaryComp)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 590
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << pddlParser.T__37) | (1 << pddlParser.T__38) | (1 << pddlParser.T__39) | (1 << pddlParser.T__40) | (1 << pddlParser.T__41))) != 0)):
+            if not (
+                (
+                    ((_la) & ~0x3F) == 0
+                    and (
+                        (1 << _la)
+                        & (
+                            (1 << pddlParser.T__37)
+                            | (1 << pddlParser.T__38)
+                            | (1 << pddlParser.T__39)
+                            | (1 << pddlParser.T__40)
+                            | (1 << pddlParser.T__41)
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3783,36 +3872,48 @@ class pddlParser ( Parser ):
         return localctx
 
     class AssignOpContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return pddlParser.RULE_assignOp
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAssignOp" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAssignOp"):
                 listener.enterAssignOp(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAssignOp" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAssignOp"):
                 listener.exitAssignOp(self)
-
-
-
 
     def assignOp(self):
 
         localctx = pddlParser.AssignOpContext(self, self._ctx, self.state)
         self.enterRule(localctx, 94, self.RULE_assignOp)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 592
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << pddlParser.T__42) | (1 << pddlParser.T__43) | (1 << pddlParser.T__44) | (1 << pddlParser.T__45) | (1 << pddlParser.T__46))) != 0)):
+            if not (
+                (
+                    ((_la) & ~0x3F) == 0
+                    and (
+                        (1 << _la)
+                        & (
+                            (1 << pddlParser.T__42)
+                            | (1 << pddlParser.T__43)
+                            | (1 << pddlParser.T__44)
+                            | (1 << pddlParser.T__45)
+                            | (1 << pddlParser.T__46)
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3826,57 +3927,58 @@ class pddlParser ( Parser ):
         return localctx
 
     class DurationConstraintContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def simpleDurationConstraint(self, i:int=None):
+        def simpleDurationConstraint(self, i: int = None):
             if i is None:
-                return self.getTypedRuleContexts(pddlParser.SimpleDurationConstraintContext)
+                return self.getTypedRuleContexts(
+                    pddlParser.SimpleDurationConstraintContext
+                )
             else:
-                return self.getTypedRuleContext(pddlParser.SimpleDurationConstraintContext,i)
-
+                return self.getTypedRuleContext(
+                    pddlParser.SimpleDurationConstraintContext, i
+                )
 
         def getRuleIndex(self):
             return pddlParser.RULE_durationConstraint
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDurationConstraint" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDurationConstraint"):
                 listener.enterDurationConstraint(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDurationConstraint" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDurationConstraint"):
                 listener.exitDurationConstraint(self)
-
-
-
 
     def durationConstraint(self):
 
         localctx = pddlParser.DurationConstraintContext(self, self._ctx, self.state)
         self.enterRule(localctx, 96, self.RULE_durationConstraint)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 606
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,52,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 52, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 594
                 self.match(pddlParser.T__0)
                 self.state = 595
                 self.match(pddlParser.T__17)
-                self.state = 597 
+                self.state = 597
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
                     self.state = 596
                     self.simpleDurationConstraint()
-                    self.state = 599 
+                    self.state = 599
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if not (_la==pddlParser.T__0):
+                    if not (_la == pddlParser.T__0):
                         break
 
                 self.state = 601
@@ -3897,7 +3999,6 @@ class pddlParser ( Parser ):
                 self.simpleDurationConstraint()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3907,49 +4008,47 @@ class pddlParser ( Parser ):
         return localctx
 
     class SimpleDurationConstraintContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def durOp(self):
-            return self.getTypedRuleContext(pddlParser.DurOpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DurOpContext, 0)
 
         def durValue(self):
-            return self.getTypedRuleContext(pddlParser.DurValueContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DurValueContext, 0)
 
         def timeSpecifier(self):
-            return self.getTypedRuleContext(pddlParser.TimeSpecifierContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TimeSpecifierContext, 0)
 
         def simpleDurationConstraint(self):
-            return self.getTypedRuleContext(pddlParser.SimpleDurationConstraintContext,0)
-
+            return self.getTypedRuleContext(
+                pddlParser.SimpleDurationConstraintContext, 0
+            )
 
         def getRuleIndex(self):
             return pddlParser.RULE_simpleDurationConstraint
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSimpleDurationConstraint" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterSimpleDurationConstraint"):
                 listener.enterSimpleDurationConstraint(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSimpleDurationConstraint" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitSimpleDurationConstraint"):
                 listener.exitSimpleDurationConstraint(self)
-
-
-
 
     def simpleDurationConstraint(self):
 
-        localctx = pddlParser.SimpleDurationConstraintContext(self, self._ctx, self.state)
+        localctx = pddlParser.SimpleDurationConstraintContext(
+            self, self._ctx, self.state
+        )
         self.enterRule(localctx, 98, self.RULE_simpleDurationConstraint)
         try:
             self.state = 620
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,53,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 53, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 608
@@ -3978,7 +4077,6 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__2)
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3988,36 +4086,46 @@ class pddlParser ( Parser ):
         return localctx
 
     class DurOpContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return pddlParser.RULE_durOp
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDurOp" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDurOp"):
                 listener.enterDurOp(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDurOp" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDurOp"):
                 listener.exitDurOp(self)
-
-
-
 
     def durOp(self):
 
         localctx = pddlParser.DurOpContext(self, self._ctx, self.state)
         self.enterRule(localctx, 100, self.RULE_durOp)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 622
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << pddlParser.T__39) | (1 << pddlParser.T__40) | (1 << pddlParser.T__41))) != 0)):
+            if not (
+                (
+                    ((_la) & ~0x3F) == 0
+                    and (
+                        (1 << _la)
+                        & (
+                            (1 << pddlParser.T__39)
+                            | (1 << pddlParser.T__40)
+                            | (1 << pddlParser.T__41)
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4031,8 +4139,9 @@ class pddlParser ( Parser ):
         return localctx
 
     class DurValueContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4040,22 +4149,18 @@ class pddlParser ( Parser ):
             return self.getToken(pddlParser.NUMBER, 0)
 
         def fExp(self):
-            return self.getTypedRuleContext(pddlParser.FExpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FExpContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_durValue
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDurValue" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDurValue"):
                 listener.enterDurValue(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDurValue" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDurValue"):
                 listener.exitDurValue(self)
-
-
-
 
     def durValue(self):
 
@@ -4064,7 +4169,7 @@ class pddlParser ( Parser ):
         try:
             self.state = 626
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,54,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 54, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 624
@@ -4077,7 +4182,6 @@ class pddlParser ( Parser ):
                 self.fExp()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -4087,65 +4191,56 @@ class pddlParser ( Parser ):
         return localctx
 
     class DaEffectContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def daEffect(self, i:int=None):
+        def daEffect(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.DaEffectContext)
             else:
-                return self.getTypedRuleContext(pddlParser.DaEffectContext,i)
-
+                return self.getTypedRuleContext(pddlParser.DaEffectContext, i)
 
         def timedEffect(self):
-            return self.getTypedRuleContext(pddlParser.TimedEffectContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TimedEffectContext, 0)
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
         def daGD(self):
-            return self.getTypedRuleContext(pddlParser.DaGDContext,0)
-
+            return self.getTypedRuleContext(pddlParser.DaGDContext, 0)
 
         def assignOp(self):
-            return self.getTypedRuleContext(pddlParser.AssignOpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.AssignOpContext, 0)
 
         def fHead(self):
-            return self.getTypedRuleContext(pddlParser.FHeadContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FHeadContext, 0)
 
         def fExpDA(self):
-            return self.getTypedRuleContext(pddlParser.FExpDAContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FExpDAContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_daEffect
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDaEffect" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDaEffect"):
                 listener.enterDaEffect(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDaEffect" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDaEffect"):
                 listener.exitDaEffect(self)
-
-
-
 
     def daEffect(self):
 
         localctx = pddlParser.DaEffectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 104, self.RULE_daEffect)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 658
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,56,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 56, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 628
@@ -4155,7 +4250,7 @@ class pddlParser ( Parser ):
                 self.state = 633
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==pddlParser.T__0:
+                while _la == pddlParser.T__0:
                     self.state = 630
                     self.daEffect()
                     self.state = 635
@@ -4218,7 +4313,6 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__2)
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -4228,48 +4322,40 @@ class pddlParser ( Parser ):
         return localctx
 
     class TimedEffectContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def timeSpecifier(self):
-            return self.getTypedRuleContext(pddlParser.TimeSpecifierContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TimeSpecifierContext, 0)
 
         def cEffect(self):
-            return self.getTypedRuleContext(pddlParser.CEffectContext,0)
-
+            return self.getTypedRuleContext(pddlParser.CEffectContext, 0)
 
         def fAssignDA(self):
-            return self.getTypedRuleContext(pddlParser.FAssignDAContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FAssignDAContext, 0)
 
         def assignOpT(self):
-            return self.getTypedRuleContext(pddlParser.AssignOpTContext,0)
-
+            return self.getTypedRuleContext(pddlParser.AssignOpTContext, 0)
 
         def fHead(self):
-            return self.getTypedRuleContext(pddlParser.FHeadContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FHeadContext, 0)
 
         def fExp(self):
-            return self.getTypedRuleContext(pddlParser.FExpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FExpContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_timedEffect
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTimedEffect" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTimedEffect"):
                 listener.enterTimedEffect(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTimedEffect" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTimedEffect"):
                 listener.exitTimedEffect(self)
-
-
-
 
     def timedEffect(self):
 
@@ -4278,7 +4364,7 @@ class pddlParser ( Parser ):
         try:
             self.state = 678
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,57,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 57, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 660
@@ -4321,7 +4407,6 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__2)
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -4331,36 +4416,31 @@ class pddlParser ( Parser ):
         return localctx
 
     class FAssignDAContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def assignOp(self):
-            return self.getTypedRuleContext(pddlParser.AssignOpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.AssignOpContext, 0)
 
         def fHead(self):
-            return self.getTypedRuleContext(pddlParser.FHeadContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FHeadContext, 0)
 
         def fExpDA(self):
-            return self.getTypedRuleContext(pddlParser.FExpDAContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FExpDAContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_fAssignDA
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFAssignDA" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFAssignDA"):
                 listener.enterFAssignDA(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFAssignDA" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFAssignDA"):
                 listener.exitFAssignDA(self)
-
-
-
 
     def fAssignDA(self):
 
@@ -4387,39 +4467,34 @@ class pddlParser ( Parser ):
         return localctx
 
     class FExpDAContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def binaryOp(self):
-            return self.getTypedRuleContext(pddlParser.BinaryOpContext,0)
+            return self.getTypedRuleContext(pddlParser.BinaryOpContext, 0)
 
-
-        def fExpDA(self, i:int=None):
+        def fExpDA(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.FExpDAContext)
             else:
-                return self.getTypedRuleContext(pddlParser.FExpDAContext,i)
-
+                return self.getTypedRuleContext(pddlParser.FExpDAContext, i)
 
         def fExp(self):
-            return self.getTypedRuleContext(pddlParser.FExpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FExpContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_fExpDA
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFExpDA" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFExpDA"):
                 listener.enterFExpDA(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFExpDA" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFExpDA"):
                 listener.exitFExpDA(self)
-
-
-
 
     def fExpDA(self):
 
@@ -4428,14 +4503,14 @@ class pddlParser ( Parser ):
         try:
             self.state = 699
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,59,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 59, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 686
                 self.match(pddlParser.T__0)
                 self.state = 693
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,58,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 58, self._ctx)
                 if la_ == 1:
                     self.state = 687
                     self.binaryOp()
@@ -4451,7 +4526,6 @@ class pddlParser ( Parser ):
                     self.state = 692
                     self.fExpDA()
                     pass
-
 
                 self.state = 695
                 self.match(pddlParser.T__2)
@@ -4469,7 +4543,6 @@ class pddlParser ( Parser ):
                 self.fExp()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -4479,36 +4552,33 @@ class pddlParser ( Parser ):
         return localctx
 
     class AssignOpTContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return pddlParser.RULE_assignOpT
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAssignOpT" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAssignOpT"):
                 listener.enterAssignOpT(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAssignOpT" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAssignOpT"):
                 listener.exitAssignOpT(self)
-
-
-
 
     def assignOpT(self):
 
         localctx = pddlParser.AssignOpTContext(self, self._ctx, self.state)
         self.enterRule(localctx, 112, self.RULE_assignOpT)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 701
             _la = self._input.LA(1)
-            if not(_la==pddlParser.T__45 or _la==pddlParser.T__46):
+            if not (_la == pddlParser.T__45 or _la == pddlParser.T__46):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4522,62 +4592,52 @@ class pddlParser ( Parser ):
         return localctx
 
     class ProblemContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def problemDecl(self):
-            return self.getTypedRuleContext(pddlParser.ProblemDeclContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ProblemDeclContext, 0)
 
         def problemDomain(self):
-            return self.getTypedRuleContext(pddlParser.ProblemDomainContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ProblemDomainContext, 0)
 
         def init(self):
-            return self.getTypedRuleContext(pddlParser.InitContext,0)
-
+            return self.getTypedRuleContext(pddlParser.InitContext, 0)
 
         def goal(self):
-            return self.getTypedRuleContext(pddlParser.GoalContext,0)
-
+            return self.getTypedRuleContext(pddlParser.GoalContext, 0)
 
         def requireDef(self):
-            return self.getTypedRuleContext(pddlParser.RequireDefContext,0)
-
+            return self.getTypedRuleContext(pddlParser.RequireDefContext, 0)
 
         def objectDecl(self):
-            return self.getTypedRuleContext(pddlParser.ObjectDeclContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ObjectDeclContext, 0)
 
         def probConstraints(self):
-            return self.getTypedRuleContext(pddlParser.ProbConstraintsContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ProbConstraintsContext, 0)
 
         def metricSpec(self):
-            return self.getTypedRuleContext(pddlParser.MetricSpecContext,0)
-
+            return self.getTypedRuleContext(pddlParser.MetricSpecContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_problem
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterProblem" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterProblem"):
                 listener.enterProblem(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitProblem" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitProblem"):
                 listener.exitProblem(self)
-
-
-
 
     def problem(self):
 
         localctx = pddlParser.ProblemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 114, self.RULE_problem)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 703
@@ -4590,19 +4650,17 @@ class pddlParser ( Parser ):
             self.problemDomain()
             self.state = 708
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,60,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 60, self._ctx)
             if la_ == 1:
                 self.state = 707
                 self.requireDef()
 
-
             self.state = 711
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,61,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 61, self._ctx)
             if la_ == 1:
                 self.state = 710
                 self.objectDecl()
-
 
             self.state = 713
             self.init()
@@ -4610,19 +4668,17 @@ class pddlParser ( Parser ):
             self.goal()
             self.state = 716
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,62,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 62, self._ctx)
             if la_ == 1:
                 self.state = 715
                 self.probConstraints()
 
-
             self.state = 719
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==pddlParser.T__0:
+            if _la == pddlParser.T__0:
                 self.state = 718
                 self.metricSpec()
-
 
             self.state = 721
             self.match(pddlParser.T__2)
@@ -4635,28 +4691,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class ProblemDeclContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(pddlParser.NameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_problemDecl
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterProblemDecl" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterProblemDecl"):
                 listener.enterProblemDecl(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitProblemDecl" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitProblemDecl"):
                 listener.exitProblemDecl(self)
-
-
-
 
     def problemDecl(self):
 
@@ -4681,28 +4734,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class ProblemDomainContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(pddlParser.NameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_problemDomain
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterProblemDomain" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterProblemDomain"):
                 listener.enterProblemDomain(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitProblemDomain" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitProblemDomain"):
                 listener.exitProblemDomain(self)
-
-
-
 
     def problemDomain(self):
 
@@ -4727,28 +4777,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class ObjectDeclContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def typedNameList(self):
-            return self.getTypedRuleContext(pddlParser.TypedNameListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedNameListContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_objectDecl
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterObjectDecl" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterObjectDecl"):
                 listener.enterObjectDecl(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitObjectDecl" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitObjectDecl"):
                 listener.exitObjectDecl(self)
-
-
-
 
     def objectDecl(self):
 
@@ -4773,37 +4820,34 @@ class pddlParser ( Parser ):
         return localctx
 
     class InitContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def initEl(self, i:int=None):
+        def initEl(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.InitElContext)
             else:
-                return self.getTypedRuleContext(pddlParser.InitElContext,i)
-
+                return self.getTypedRuleContext(pddlParser.InitElContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_init
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInit" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterInit"):
                 listener.enterInit(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInit" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitInit"):
                 listener.exitInit(self)
-
-
-
 
     def init(self):
 
         localctx = pddlParser.InitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 122, self.RULE_init)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 738
@@ -4813,7 +4857,7 @@ class pddlParser ( Parser ):
             self.state = 743
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==pddlParser.T__0:
+            while _la == pddlParser.T__0:
                 self.state = 740
                 self.initEl()
                 self.state = 745
@@ -4831,18 +4875,17 @@ class pddlParser ( Parser ):
         return localctx
 
     class InitElContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def nameLiteral(self):
-            return self.getTypedRuleContext(pddlParser.NameLiteralContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameLiteralContext, 0)
 
         def fHead(self):
-            return self.getTypedRuleContext(pddlParser.FHeadContext,0)
-
+            return self.getTypedRuleContext(pddlParser.FHeadContext, 0)
 
         def NUMBER(self):
             return self.getToken(pddlParser.NUMBER, 0)
@@ -4850,16 +4893,13 @@ class pddlParser ( Parser ):
         def getRuleIndex(self):
             return pddlParser.RULE_initEl
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInitEl" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterInitEl"):
                 listener.enterInitEl(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInitEl" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitInitEl"):
                 listener.exitInitEl(self)
-
-
-
 
     def initEl(self):
 
@@ -4868,7 +4908,7 @@ class pddlParser ( Parser ):
         try:
             self.state = 761
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,65,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 65, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 748
@@ -4903,7 +4943,6 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__2)
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -4913,28 +4952,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class NameLiteralContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def atomicNameFormula(self):
-            return self.getTypedRuleContext(pddlParser.AtomicNameFormulaContext,0)
-
+            return self.getTypedRuleContext(pddlParser.AtomicNameFormulaContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_nameLiteral
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNameLiteral" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNameLiteral"):
                 listener.enterNameLiteral(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNameLiteral" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNameLiteral"):
                 listener.exitNameLiteral(self)
-
-
-
 
     def nameLiteral(self):
 
@@ -4943,7 +4979,7 @@ class pddlParser ( Parser ):
         try:
             self.state = 769
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,66,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 66, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 763
@@ -4962,7 +4998,6 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__2)
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -4972,41 +5007,37 @@ class pddlParser ( Parser ):
         return localctx
 
     class AtomicNameFormulaContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def predicate(self):
-            return self.getTypedRuleContext(pddlParser.PredicateContext,0)
+            return self.getTypedRuleContext(pddlParser.PredicateContext, 0)
 
-
-        def name(self, i:int=None):
+        def name(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.NameContext)
             else:
-                return self.getTypedRuleContext(pddlParser.NameContext,i)
-
+                return self.getTypedRuleContext(pddlParser.NameContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_atomicNameFormula
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAtomicNameFormula" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAtomicNameFormula"):
                 listener.enterAtomicNameFormula(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAtomicNameFormula" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAtomicNameFormula"):
                 listener.exitAtomicNameFormula(self)
-
-
-
 
     def atomicNameFormula(self):
 
         localctx = pddlParser.AtomicNameFormulaContext(self, self._ctx, self.state)
         self.enterRule(localctx, 128, self.RULE_atomicNameFormula)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 771
@@ -5016,7 +5047,14 @@ class pddlParser ( Parser ):
             self.state = 776
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)))) != 0):
+            while (((_la - 28)) & ~0x3F) == 0 and (
+                (1 << (_la - 28))
+                & (
+                    (1 << (pddlParser.T__27 - 28))
+                    | (1 << (pddlParser.T__28 - 28))
+                    | (1 << (pddlParser.NAME - 28))
+                )
+            ) != 0:
                 self.state = 773
                 self.name()
                 self.state = 778
@@ -5034,28 +5072,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class GoalContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def goalDesc(self):
-            return self.getTypedRuleContext(pddlParser.GoalDescContext,0)
-
+            return self.getTypedRuleContext(pddlParser.GoalDescContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_goal
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterGoal" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterGoal"):
                 listener.enterGoal(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitGoal" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitGoal"):
                 listener.exitGoal(self)
-
-
-
 
     def goal(self):
 
@@ -5080,28 +5115,25 @@ class pddlParser ( Parser ):
         return localctx
 
     class ProbConstraintsContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def prefConGD(self):
-            return self.getTypedRuleContext(pddlParser.PrefConGDContext,0)
-
+            return self.getTypedRuleContext(pddlParser.PrefConGDContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_probConstraints
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterProbConstraints" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterProbConstraints"):
                 listener.enterProbConstraints(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitProbConstraints" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitProbConstraints"):
                 listener.exitProbConstraints(self)
-
-
-
 
     def probConstraints(self):
 
@@ -5126,53 +5158,47 @@ class pddlParser ( Parser ):
         return localctx
 
     class PrefConGDContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def prefConGD(self, i:int=None):
+        def prefConGD(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.PrefConGDContext)
             else:
-                return self.getTypedRuleContext(pddlParser.PrefConGDContext,i)
-
+                return self.getTypedRuleContext(pddlParser.PrefConGDContext, i)
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
-
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
         def conGD(self):
-            return self.getTypedRuleContext(pddlParser.ConGDContext,0)
-
+            return self.getTypedRuleContext(pddlParser.ConGDContext, 0)
 
         def name(self):
-            return self.getTypedRuleContext(pddlParser.NameContext,0)
-
+            return self.getTypedRuleContext(pddlParser.NameContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_prefConGD
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPrefConGD" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPrefConGD"):
                 listener.enterPrefConGD(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPrefConGD" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPrefConGD"):
                 listener.exitPrefConGD(self)
-
-
-
 
     def prefConGD(self):
 
         localctx = pddlParser.PrefConGDContext(self, self._ctx, self.state)
         self.enterRule(localctx, 134, self.RULE_prefConGD)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 817
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,70,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 70, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 791
@@ -5182,7 +5208,7 @@ class pddlParser ( Parser ):
                 self.state = 796
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==pddlParser.T__0:
+                while _la == pddlParser.T__0:
                     self.state = 793
                     self.prefConGD()
                     self.state = 798
@@ -5220,10 +5246,16 @@ class pddlParser ( Parser ):
                 self.state = 811
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if ((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)))) != 0):
+                if (((_la - 28)) & ~0x3F) == 0 and (
+                    (1 << (_la - 28))
+                    & (
+                        (1 << (pddlParser.T__27 - 28))
+                        | (1 << (pddlParser.T__28 - 28))
+                        | (1 << (pddlParser.NAME - 28))
+                    )
+                ) != 0:
                     self.state = 810
                     self.name()
-
 
                 self.state = 813
                 self.conGD()
@@ -5237,7 +5269,6 @@ class pddlParser ( Parser ):
                 self.conGD()
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5247,32 +5278,28 @@ class pddlParser ( Parser ):
         return localctx
 
     class MetricSpecContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def optimization(self):
-            return self.getTypedRuleContext(pddlParser.OptimizationContext,0)
-
+            return self.getTypedRuleContext(pddlParser.OptimizationContext, 0)
 
         def metricFExp(self):
-            return self.getTypedRuleContext(pddlParser.MetricFExpContext,0)
-
+            return self.getTypedRuleContext(pddlParser.MetricFExpContext, 0)
 
         def getRuleIndex(self):
             return pddlParser.RULE_metricSpec
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMetricSpec" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMetricSpec"):
                 listener.enterMetricSpec(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMetricSpec" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMetricSpec"):
                 listener.exitMetricSpec(self)
-
-
-
 
     def metricSpec(self):
 
@@ -5299,36 +5326,33 @@ class pddlParser ( Parser ):
         return localctx
 
     class OptimizationContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return pddlParser.RULE_optimization
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOptimization" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterOptimization"):
                 listener.enterOptimization(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOptimization" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitOptimization"):
                 listener.exitOptimization(self)
-
-
-
 
     def optimization(self):
 
         localctx = pddlParser.OptimizationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 138, self.RULE_optimization)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 825
             _la = self._input.LA(1)
-            if not(_la==pddlParser.T__54 or _la==pddlParser.T__55):
+            if not (_la == pddlParser.T__54 or _la == pddlParser.T__55):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -5342,59 +5366,53 @@ class pddlParser ( Parser ):
         return localctx
 
     class MetricFExpContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def binaryOp(self):
-            return self.getTypedRuleContext(pddlParser.BinaryOpContext,0)
+            return self.getTypedRuleContext(pddlParser.BinaryOpContext, 0)
 
-
-        def metricFExp(self, i:int=None):
+        def metricFExp(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.MetricFExpContext)
             else:
-                return self.getTypedRuleContext(pddlParser.MetricFExpContext,i)
-
+                return self.getTypedRuleContext(pddlParser.MetricFExpContext, i)
 
         def NUMBER(self):
             return self.getToken(pddlParser.NUMBER, 0)
 
         def functionSymbol(self):
-            return self.getTypedRuleContext(pddlParser.FunctionSymbolContext,0)
+            return self.getTypedRuleContext(pddlParser.FunctionSymbolContext, 0)
 
-
-        def name(self, i:int=None):
+        def name(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.NameContext)
             else:
-                return self.getTypedRuleContext(pddlParser.NameContext,i)
-
+                return self.getTypedRuleContext(pddlParser.NameContext, i)
 
         def getRuleIndex(self):
             return pddlParser.RULE_metricFExp
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMetricFExp" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMetricFExp"):
                 listener.enterMetricFExp(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMetricFExp" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMetricFExp"):
                 listener.exitMetricFExp(self)
-
-
-
 
     def metricFExp(self):
 
         localctx = pddlParser.MetricFExpContext(self, self._ctx, self.state)
         self.enterRule(localctx, 140, self.RULE_metricFExp)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 866
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,73,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 73, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 827
@@ -5415,23 +5433,39 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__0)
                 self.state = 834
                 _la = self._input.LA(1)
-                if not(_la==pddlParser.T__34 or _la==pddlParser.T__36):
+                if not (_la == pddlParser.T__34 or _la == pddlParser.T__36):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
                 self.state = 835
                 self.metricFExp()
-                self.state = 837 
+                self.state = 837
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
                     self.state = 836
                     self.metricFExp()
-                    self.state = 839 
+                    self.state = 839
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << pddlParser.T__0) | (1 << pddlParser.T__27) | (1 << pddlParser.T__28) | (1 << pddlParser.T__56))) != 0) or _la==pddlParser.NAME or _la==pddlParser.NUMBER):
+                    if not (
+                        (
+                            ((_la) & ~0x3F) == 0
+                            and (
+                                (1 << _la)
+                                & (
+                                    (1 << pddlParser.T__0)
+                                    | (1 << pddlParser.T__27)
+                                    | (1 << pddlParser.T__28)
+                                    | (1 << pddlParser.T__56)
+                                )
+                            )
+                            != 0
+                        )
+                        or _la == pddlParser.NAME
+                        or _la == pddlParser.NUMBER
+                    ):
                         break
 
                 self.state = 841
@@ -5465,7 +5499,14 @@ class pddlParser ( Parser ):
                 self.state = 854
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while ((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)))) != 0):
+                while (((_la - 28)) & ~0x3F) == 0 and (
+                    (1 << (_la - 28))
+                    & (
+                        (1 << (pddlParser.T__27 - 28))
+                        | (1 << (pddlParser.T__28 - 28))
+                        | (1 << (pddlParser.NAME - 28))
+                    )
+                ) != 0:
                     self.state = 851
                     self.name()
                     self.state = 856
@@ -5500,7 +5541,6 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__2)
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5510,30 +5550,28 @@ class pddlParser ( Parser ):
         return localctx
 
     class ConGDContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def conGD(self, i:int=None):
+        def conGD(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.ConGDContext)
             else:
-                return self.getTypedRuleContext(pddlParser.ConGDContext,i)
-
+                return self.getTypedRuleContext(pddlParser.ConGDContext, i)
 
         def typedVariableList(self):
-            return self.getTypedRuleContext(pddlParser.TypedVariableListContext,0)
+            return self.getTypedRuleContext(pddlParser.TypedVariableListContext, 0)
 
-
-        def goalDesc(self, i:int=None):
+        def goalDesc(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(pddlParser.GoalDescContext)
             else:
-                return self.getTypedRuleContext(pddlParser.GoalDescContext,i)
+                return self.getTypedRuleContext(pddlParser.GoalDescContext, i)
 
-
-        def NUMBER(self, i:int=None):
+        def NUMBER(self, i: int = None):
             if i is None:
                 return self.getTokens(pddlParser.NUMBER)
             else:
@@ -5542,26 +5580,23 @@ class pddlParser ( Parser ):
         def getRuleIndex(self):
             return pddlParser.RULE_conGD
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConGD" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterConGD"):
                 listener.enterConGD(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConGD" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitConGD"):
                 listener.exitConGD(self)
-
-
-
 
     def conGD(self):
 
         localctx = pddlParser.ConGDContext(self, self._ctx, self.state)
         self.enterRule(localctx, 142, self.RULE_conGD)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 944
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,75,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 75, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 868
@@ -5571,7 +5606,7 @@ class pddlParser ( Parser ):
                 self.state = 873
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==pddlParser.T__0:
+                while _la == pddlParser.T__0:
                     self.state = 870
                     self.conGD()
                     self.state = 875
@@ -5738,7 +5773,6 @@ class pddlParser ( Parser ):
                 self.match(pddlParser.T__2)
                 pass
 
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5748,8 +5782,9 @@ class pddlParser ( Parser ):
         return localctx
 
     class NameContext(ParserRuleContext):
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(
+            self, parser, parent: ParserRuleContext = None, invokingState: int = -1
+        ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5759,27 +5794,37 @@ class pddlParser ( Parser ):
         def getRuleIndex(self):
             return pddlParser.RULE_name
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterName" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterName"):
                 listener.enterName(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitName" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitName"):
                 listener.exitName(self)
-
-
-
 
     def name(self):
 
         localctx = pddlParser.NameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 144, self.RULE_name)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 946
             _la = self._input.LA(1)
-            if not(((((_la - 28)) & ~0x3f) == 0 and ((1 << (_la - 28)) & ((1 << (pddlParser.T__27 - 28)) | (1 << (pddlParser.T__28 - 28)) | (1 << (pddlParser.NAME - 28)))) != 0)):
+            if not (
+                (
+                    (((_la - 28)) & ~0x3F) == 0
+                    and (
+                        (1 << (_la - 28))
+                        & (
+                            (1 << (pddlParser.T__27 - 28))
+                            | (1 << (pddlParser.T__28 - 28))
+                            | (1 << (pddlParser.NAME - 28))
+                        )
+                    )
+                    != 0
+                )
+            ):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -5791,8 +5836,3 @@ class pddlParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
-
-
-
-

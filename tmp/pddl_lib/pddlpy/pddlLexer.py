@@ -4,7 +4,9 @@ from io import StringIO
 
 from antlr4 import *
 from typing.io import TextIO
+
 print(TextIO)
+
 
 def serializedATN():
     with StringIO() as buf:
@@ -14,8 +16,8 @@ def serializedATN():
         buf.write("\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23")
         buf.write("\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30")
         buf.write("\4\31\t\31\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36")
-        buf.write("\t\36\4\37\t\37\4 \t \4!\t!\4\"\t\"\4#\t#\4$\t$\4%\t%")
-        buf.write("\4&\t&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+\4,\t,\4-\t-\4.")
+        buf.write('\t\36\4\37\t\37\4 \t \4!\t!\4"\t"\4#\t#\4$\t$\4%\t%')
+        buf.write("\4&\t&\4'\t'\4(\t(\4)\t)\4*\t*\4+\t+\4,\t,\4-\t-\4.")
         buf.write("\t.\4/\t/\4\60\t\60\4\61\t\61\4\62\t\62\4\63\t\63\4\64")
         buf.write("\t\64\4\65\t\65\4\66\t\66\4\67\t\67\48\t8\49\t9\4:\t:")
         buf.write("\4;\t;\4<\t<\4=\t=\4>\t>\4?\t?\4@\t@\4A\tA\4B\tB\4C\t")
@@ -40,9 +42,9 @@ def serializedATN():
         buf.write("\3\32\3\32\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33")
         buf.write("\3\33\3\33\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34")
         buf.write("\3\34\3\34\3\35\3\35\3\35\3\36\3\36\3\36\3\36\3\36\3\37")
-        buf.write("\3\37\3\37\3\37\3\37\3\37\3 \3 \3 \3 \3!\3!\3!\3!\3\"")
-        buf.write("\3\"\3\"\3\"\3\"\3\"\3\"\3\"\3\"\3#\3#\3#\3#\3#\3$\3$")
-        buf.write("\3%\3%\3&\3&\3\'\3\'\3(\3(\3)\3)\3*\3*\3*\3+\3+\3+\3,")
+        buf.write('\3\37\3\37\3\37\3\37\3\37\3 \3 \3 \3 \3!\3!\3!\3!\3"')
+        buf.write('\3"\3"\3"\3"\3"\3"\3"\3"\3#\3#\3#\3#\3#\3$\3$')
+        buf.write("\3%\3%\3&\3&\3'\3'\3(\3(\3)\3)\3*\3*\3*\3+\3+\3+\3,")
         buf.write("\3,\3,\3,\3,\3,\3,\3-\3-\3-\3-\3-\3-\3-\3-\3-\3.\3.\3")
         buf.write(".\3.\3.\3.\3.\3.\3.\3.\3.\3/\3/\3/\3/\3/\3/\3/\3/\3/\3")
         buf.write("\60\3\60\3\60\3\60\3\60\3\60\3\60\3\60\3\60\3\61\3\61")
@@ -80,17 +82,17 @@ def serializedATN():
         buf.write("L\7L\u03d5\nL\fL\16L\u03d8\13L\3L\5L\u03db\nL\3L\3L\3")
         buf.write("L\3L\3M\6M\u03e2\nM\rM\16M\u03e3\3M\3M\2\2N\3\3\5\4\7")
         buf.write("\5\t\6\13\7\r\b\17\t\21\n\23\13\25\f\27\r\31\16\33\17")
-        buf.write("\35\20\37\21!\22#\23%\24\'\25)\26+\27-\30/\31\61\32\63")
-        buf.write("\33\65\34\67\359\36;\37= ?!A\"C#E$G%I&K\'M(O)Q*S+U,W-")
+        buf.write("\35\20\37\21!\22#\23%\24'\25)\26+\27-\30/\31\61\32\63")
+        buf.write("\33\65\34\67\359\36;\37= ?!A\"C#E$G%I&K'M(O)Q*S+U,W-")
         buf.write("Y.[/]\60_\61a\62c\63e\64g\65i\66k\67m8o9q:s;u<w=y>{?}")
         buf.write("@\177A\u0081B\u0083C\u0085D\u0087E\u0089F\u008bG\u008d")
         buf.write("\2\u008f\2\u0091H\u0093I\u0095\2\u0097J\u0099K\3\2\6\4")
-        buf.write("\2C\\c|\5\2//\62;aa\4\2\f\f\17\17\5\2\13\f\17\17\"\"\2")
+        buf.write('\2C\\c|\5\2//\62;aa\4\2\f\f\17\17\5\2\13\f\17\17""\2')
         buf.write("\u03fb\2\3\3\2\2\2\2\5\3\2\2\2\2\7\3\2\2\2\2\t\3\2\2\2")
         buf.write("\2\13\3\2\2\2\2\r\3\2\2\2\2\17\3\2\2\2\2\21\3\2\2\2\2")
         buf.write("\23\3\2\2\2\2\25\3\2\2\2\2\27\3\2\2\2\2\31\3\2\2\2\2\33")
         buf.write("\3\2\2\2\2\35\3\2\2\2\2\37\3\2\2\2\2!\3\2\2\2\2#\3\2\2")
-        buf.write("\2\2%\3\2\2\2\2\'\3\2\2\2\2)\3\2\2\2\2+\3\2\2\2\2-\3\2")
+        buf.write("\2\2%\3\2\2\2\2'\3\2\2\2\2)\3\2\2\2\2+\3\2\2\2\2-\3\2")
         buf.write("\2\2\2/\3\2\2\2\2\61\3\2\2\2\2\63\3\2\2\2\2\65\3\2\2\2")
         buf.write("\2\67\3\2\2\2\29\3\2\2\2\2;\3\2\2\2\2=\3\2\2\2\2?\3\2")
         buf.write("\2\2\2A\3\2\2\2\2C\3\2\2\2\2E\3\2\2\2\2G\3\2\2\2\2I\3")
@@ -108,7 +110,7 @@ def serializedATN():
         buf.write("\23\u00cb\3\2\2\2\25\u00d6\3\2\2\2\27\u00dd\3\2\2\2\31")
         buf.write("\u00e8\3\2\2\2\33\u00f4\3\2\2\2\35\u0101\3\2\2\2\37\u0109")
         buf.write("\3\2\2\2!\u0115\3\2\2\2#\u0123\3\2\2\2%\u012b\3\2\2\2")
-        buf.write("\'\u012f\3\2\2\2)\u0132\3\2\2\2+\u0136\3\2\2\2-\u013c")
+        buf.write("'\u012f\3\2\2\2)\u0132\3\2\2\2+\u0136\3\2\2\2-\u013c")
         buf.write("\3\2\2\2/\u0143\3\2\2\2\61\u014a\3\2\2\2\63\u015b\3\2")
         buf.write("\2\2\65\u0165\3\2\2\2\67\u0170\3\2\2\29\u017b\3\2\2\2")
         buf.write(";\u017e\3\2\2\2=\u0183\3\2\2\2?\u0189\3\2\2\2A\u018d\3")
@@ -170,7 +172,7 @@ def serializedATN():
         buf.write("\7t\2\2\u0118\u0119\7g\2\2\u0119\u011a\7e\2\2\u011a\u011b")
         buf.write("\7q\2\2\u011b\u011c\7p\2\2\u011c\u011d\7f\2\2\u011d\u011e")
         buf.write("\7k\2\2\u011e\u011f\7v\2\2\u011f\u0120\7k\2\2\u0120\u0121")
-        buf.write("\7q\2\2\u0121\u0122\7p\2\2\u0122\"\3\2\2\2\u0123\u0124")
+        buf.write('\7q\2\2\u0121\u0122\7p\2\2\u0122"\3\2\2\2\u0123\u0124')
         buf.write("\7<\2\2\u0124\u0125\7g\2\2\u0125\u0126\7h\2\2\u0126\u0127")
         buf.write("\7h\2\2\u0127\u0128\7g\2\2\u0128\u0129\7e\2\2\u0129\u012a")
         buf.write("\7v\2\2\u012a$\3\2\2\2\u012b\u012c\7c\2\2\u012c\u012d")
@@ -501,48 +503,177 @@ class pddlLexer(Lexer):
     LINE_COMMENT = 72
     WHITESPACE = 73
 
-    channelNames = [u"DEFAULT_TOKEN_CHANNEL", u"HIDDEN"]
+    channelNames = ["DEFAULT_TOKEN_CHANNEL", "HIDDEN"]
 
     modeNames = ["DEFAULT_MODE"]
 
-    literalNames = ["<INVALID>",
-                    "'('", "'define'", "')'", "'domain'", "':requirements'", "':types'",
-                    "'-'", "'either'", "':functions'", "'number'", "':constants'",
-                    "':predicates'", "':constraints'", "':action'", "':parameters'",
-                    "':precondition'", "':effect'", "'and'", "'or'", "'not'", "'imply'",
-                    "'exists'", "'forall'", "':durative-action'", "':duration'",
-                    "':condition'", "'preference'", "'at'", "'over'", "'start'",
-                    "'end'", "'all'", "':derived'", "'when'", "'*'", "'+'", "'/'",
-                    "'>'", "'<'", "'='", "'>='", "'<='", "'assign'", "'scale-up'",
-                    "'scale-down'", "'increase'", "'decrease'", "'?duration'", "'problem'",
-                    "':domain'", "':objects'", "':init'", "':goal'", "':metric'",
-                    "'minimize'", "'maximize'", "'total-time'", "'is-violated'",
-                    "'always'", "'sometime'", "'within'", "'at-most-once'", "'sometime-after'",
-                    "'sometime-before'", "'always-within'", "'hold-during'", "'hold-after'"]
+    literalNames = [
+        "<INVALID>",
+        "'('",
+        "'define'",
+        "')'",
+        "'domain'",
+        "':requirements'",
+        "':types'",
+        "'-'",
+        "'either'",
+        "':functions'",
+        "'number'",
+        "':constants'",
+        "':predicates'",
+        "':constraints'",
+        "':action'",
+        "':parameters'",
+        "':precondition'",
+        "':effect'",
+        "'and'",
+        "'or'",
+        "'not'",
+        "'imply'",
+        "'exists'",
+        "'forall'",
+        "':durative-action'",
+        "':duration'",
+        "':condition'",
+        "'preference'",
+        "'at'",
+        "'over'",
+        "'start'",
+        "'end'",
+        "'all'",
+        "':derived'",
+        "'when'",
+        "'*'",
+        "'+'",
+        "'/'",
+        "'>'",
+        "'<'",
+        "'='",
+        "'>='",
+        "'<='",
+        "'assign'",
+        "'scale-up'",
+        "'scale-down'",
+        "'increase'",
+        "'decrease'",
+        "'?duration'",
+        "'problem'",
+        "':domain'",
+        "':objects'",
+        "':init'",
+        "':goal'",
+        "':metric'",
+        "'minimize'",
+        "'maximize'",
+        "'total-time'",
+        "'is-violated'",
+        "'always'",
+        "'sometime'",
+        "'within'",
+        "'at-most-once'",
+        "'sometime-after'",
+        "'sometime-before'",
+        "'always-within'",
+        "'hold-during'",
+        "'hold-after'",
+    ]
 
-    symbolicNames = ["<INVALID>",
-                     "REQUIRE_KEY", "NAME", "VARIABLE", "NUMBER", "LINE_COMMENT",
-                     "WHITESPACE"]
+    symbolicNames = [
+        "<INVALID>",
+        "REQUIRE_KEY",
+        "NAME",
+        "VARIABLE",
+        "NUMBER",
+        "LINE_COMMENT",
+        "WHITESPACE",
+    ]
 
-    ruleNames = ["T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6",
-                 "T__7", "T__8", "T__9", "T__10", "T__11", "T__12", "T__13",
-                 "T__14", "T__15", "T__16", "T__17", "T__18", "T__19",
-                 "T__20", "T__21", "T__22", "T__23", "T__24", "T__25",
-                 "T__26", "T__27", "T__28", "T__29", "T__30", "T__31",
-                 "T__32", "T__33", "T__34", "T__35", "T__36", "T__37",
-                 "T__38", "T__39", "T__40", "T__41", "T__42", "T__43",
-                 "T__44", "T__45", "T__46", "T__47", "T__48", "T__49",
-                 "T__50", "T__51", "T__52", "T__53", "T__54", "T__55",
-                 "T__56", "T__57", "T__58", "T__59", "T__60", "T__61",
-                 "T__62", "T__63", "T__64", "T__65", "T__66", "REQUIRE_KEY",
-                 "NAME", "LETTER", "ANY_CHAR", "VARIABLE", "NUMBER", "DIGIT",
-                 "LINE_COMMENT", "WHITESPACE"]
+    ruleNames = [
+        "T__0",
+        "T__1",
+        "T__2",
+        "T__3",
+        "T__4",
+        "T__5",
+        "T__6",
+        "T__7",
+        "T__8",
+        "T__9",
+        "T__10",
+        "T__11",
+        "T__12",
+        "T__13",
+        "T__14",
+        "T__15",
+        "T__16",
+        "T__17",
+        "T__18",
+        "T__19",
+        "T__20",
+        "T__21",
+        "T__22",
+        "T__23",
+        "T__24",
+        "T__25",
+        "T__26",
+        "T__27",
+        "T__28",
+        "T__29",
+        "T__30",
+        "T__31",
+        "T__32",
+        "T__33",
+        "T__34",
+        "T__35",
+        "T__36",
+        "T__37",
+        "T__38",
+        "T__39",
+        "T__40",
+        "T__41",
+        "T__42",
+        "T__43",
+        "T__44",
+        "T__45",
+        "T__46",
+        "T__47",
+        "T__48",
+        "T__49",
+        "T__50",
+        "T__51",
+        "T__52",
+        "T__53",
+        "T__54",
+        "T__55",
+        "T__56",
+        "T__57",
+        "T__58",
+        "T__59",
+        "T__60",
+        "T__61",
+        "T__62",
+        "T__63",
+        "T__64",
+        "T__65",
+        "T__66",
+        "REQUIRE_KEY",
+        "NAME",
+        "LETTER",
+        "ANY_CHAR",
+        "VARIABLE",
+        "NUMBER",
+        "DIGIT",
+        "LINE_COMMENT",
+        "WHITESPACE",
+    ]
 
     grammarFileName = "pddl.g4"
 
     def __init__(self, input=None, output: TextIO = sys.stdout):
         super().__init__(input, output)
         self.checkVersion("4.7")
-        self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
+        self._interp = LexerATNSimulator(
+            self, self.atn, self.decisionsToDFA, PredictionContextCache()
+        )
         self._actions = None
         self._predicates = None

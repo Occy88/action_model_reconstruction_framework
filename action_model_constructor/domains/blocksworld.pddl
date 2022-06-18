@@ -20,4 +20,3 @@
   :precondition (and (clear ?bm) (clear ?bt) (on-table ?bm))
   :effect (and (not (clear ?bt)) (not (on-table ?bm))
                (on ?bm ?bt))))
-

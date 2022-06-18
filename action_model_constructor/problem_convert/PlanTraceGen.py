@@ -2,7 +2,7 @@ import copy
 
 
 class Predicate:
-    def __init__(self, name='', args='9', arg_types='number'):
+    def __init__(self, name="", args="9", arg_types="number"):
         self.name = name
         self.args = args
         self.arg_set = set(args)
@@ -14,7 +14,7 @@ class Predicate:
         if cap_args:
             args = list(map(lambda x: x.capitalize(), self.args))
         args += extra_args
-        return self.name + '(' + ','.join(args) + ')'
+        return self.name + "(" + ",".join(args) + ")"
 
     def mln(self, cap_args=False, extra_args=[]):
         return self._get_mln_str(self.args, cap_args, extra_args)
@@ -43,7 +43,7 @@ class Predicate:
         Returns:
 
         """
-        p_vals = ''
+        p_vals = ""
         for p in properties:
             p_vals += str(getattr(self, p))
         return hash(p_vals)
@@ -52,7 +52,7 @@ class Predicate:
     def from_str(p_str):
         sp = p_str.split("(")
         args = sp[1]
-        args = args.strip(")").replace(' ', '').split(',')
+        args = args.strip(")").replace(" ", "").split(",")
         return Predicate(sp[0], args)
 
     @staticmethod
@@ -67,7 +67,9 @@ class Predicate:
 
         """
         for p in predicate_list:
-            if p.get_property_hash(properties) == predicate.get_property_hash(properties):
+            if p.get_property_hash(properties) == predicate.get_property_hash(
+                properties
+            ):
                 return True
         return False
 
@@ -112,7 +114,7 @@ class Predicate:
             if int(v) < 0:
                 matching_v.append(p_child.args[i])
             else:
-                matching_v.append('v' + str(v))
+                matching_v.append("v" + str(v))
         return matching_v
 
     @staticmethod
@@ -136,13 +138,13 @@ class Predicate:
 class Action:
     arg_locations = dict()
 
-    def __init__(self, name='', args='', precondition='', effect=dict):
+    def __init__(self, name="", args="", precondition="", effect=dict):
         self.name = name
         self.args = args
         self._set_arg_locations()
         self.precondition = precondition
-        self.pos = self._get_predicates(effect['positive'])
-        self.neg = self._get_predicates(effect['negative'])
+        self.pos = self._get_predicates(effect["positive"])
+        self.neg = self._get_predicates(effect["negative"])
 
     def _set_arg_locations(self):
         self.arg_locations = dict()
@@ -162,12 +164,21 @@ class Action:
         """
         if len(args) < len(self.args):
             raise Exception(
-                "Arguments do not match Action footprint,\n expecting: " + str(self.args) + " | got: " + str(args))
+                "Arguments do not match Action footprint,\n expecting: "
+                + str(self.args)
+                + " | got: "
+                + str(args)
+            )
         l = set()
 
         for p in eff_list:
             pc = p.__copy__()
-            pc.args = list(map(lambda x: args[x], list(map(lambda y: self.arg_locations[y], p.args))))
+            pc.args = list(
+                map(
+                    lambda x: args[x],
+                    list(map(lambda y: self.arg_locations[y], p.args)),
+                )
+            )
             l.add(pc)
             # print(l)
         return l
@@ -186,7 +197,7 @@ class State:
     actions = dict()
 
     def __init__(self, state):
-        self._set_actions(state['actions'])
+        self._set_actions(state["actions"])
         self.state = set()
         self.latest_removed = set()
         self.latest_added = set()
@@ -203,7 +214,7 @@ class State:
 
     def _set_actions(self, actions):
         for a in actions:
-            self.actions[a['name']] = Action(**a)
+            self.actions[a["name"]] = Action(**a)
 
     def set_init_state(self, predicate_json):
         for p in predicate_json:
@@ -211,9 +222,9 @@ class State:
             self.state.add(Predicate(**p))
 
     def mln(self, cap_args=False, extra_args=[]):
-        s = ''
+        s = ""
         for p in self.state:
-            s += '\n' + p.mln(cap_args=cap_args, extra_args=extra_args)
+            s += "\n" + p.mln(cap_args=cap_args, extra_args=extra_args)
         return s
 
     def __str__(self):
@@ -228,7 +239,9 @@ import random
 
 
 class Database:
-    def __init__(self, action: Predicate, state: set, pos_effects: set, neg_effects: set):
+    def __init__(
+        self, action: Predicate, state: set, pos_effects: set, neg_effects: set
+    ):
         self.action = action
         self.state = state
         self.pos_effects = pos_effects
@@ -255,6 +268,7 @@ class Database:
 
         def samp(plist):
             return random.sample(plist, p(plist))
+
         print("=========[ noise: ]==============")
         print(len(self.state))
         self.state = samp(self.state)
@@ -293,26 +307,28 @@ class Database:
         for p in chain(self.state, self.pos_effects, self.neg_effects):
             # TODO exclusion should not be limited to on? thi is to be discussed
             # s.add(p)
-            if len(self.action.arg_set.intersection(p.arg_set)) > 0 and len(
-                    p.arg_set.difference(self.action.arg_set)) < 2:
+            if (
+                len(self.action.arg_set.intersection(p.arg_set)) > 0
+                and len(p.arg_set.difference(self.action.arg_set)) < 2
+            ):
                 s.add(p)
 
         return s
 
     def mln_db(self):
         a = self.action.mln()
-        p = ''
+        p = ""
         for pr in chain(self.state, self.neg_effects, self.pos_effects):
-            p += pr.mln() + '\n'
-        return a + '\n' + p
+            p += pr.mln() + "\n"
+        return a + "\n" + p
 
     @staticmethod
     def parse_db(db: str):
-        p_str = db.split('\n')
+        p_str = db.split("\n")
         p_p = []
         for p in p_str:
             # remove comments
-            p = p.split('//')[0]
+            p = p.split("//")[0]
             # avoid empty lines, not nice for now but whatever.
             if len(p) < 2:
                 continue
@@ -320,17 +336,19 @@ class Database:
         pos_effects = set()
         neg_effects = set()
         state = set()
-        action = ''
+        action = ""
         for p in p_p:
-            if p.args[-1] == '0':
+            if p.args[-1] == "0":
                 state.add(p)
-            elif p.args[-1] == '1':
+            elif p.args[-1] == "1":
                 pos_effects.add(p)
-            elif p.args[-1] == '-1':
+            elif p.args[-1] == "-1":
                 neg_effects.add(p)
             else:
-                if not action == '':
-                    raise Exception("Multiple actions in database: ", p.name, action.name)
+                if not action == "":
+                    raise Exception(
+                        "Multiple actions in database: ", p.name, action.name
+                    )
                 action = p
         return Database(p_p[0], state, pos_effects, neg_effects)
 
@@ -360,9 +378,9 @@ class StateInfrence:
         self.action_rejected_weights = dict()
         self.action_pending_weights = dict()
         self.actions = dict()
-        self.logic = 'FirstOrderLogic'
-        self.grammar = 'StandardGrammar'
-        self.method = 'pseudo-log-likelihood'
+        self.logic = "FirstOrderLogic"
+        self.grammar = "StandardGrammar"
+        self.method = "pseudo-log-likelihood"
         self.data_for_graph = dict()
         self.db_run = dict()
         self.dbs = []
@@ -379,7 +397,7 @@ class StateInfrence:
 
         predicates = open(self.predicate_file).read() + "\n\n// formulas: \n"
         weights = self.gen_weights(action)
-        f=open('tmp.mln', 'w')
+        f = open("tmp.mln", "w")
         f.write(predicates + weights)
         f.close()
         if action.name in self.action_mln:
@@ -395,11 +413,11 @@ class StateInfrence:
                 form_name = w.mln_type()
                 if form_name not in existing_weights:
                     existing_weights.add(form_name)
-                    m.formula(action.mln_type() + ' => ' + form_name)
-            m_parse = MLN(self.logic, self.grammar, mlnfile='tmp.mln')
+                    m.formula(action.mln_type() + " => " + form_name)
+            m_parse = MLN(self.logic, self.grammar, mlnfile="tmp.mln")
             print(len(m.weights), len(m.formulas))
         else:
-            m = MLN(self.logic, self.grammar, mlnfile='tmp.mln')
+            m = MLN(self.logic, self.grammar, mlnfile="tmp.mln")
             m_parse = m
             self._unmodified_predicates = m.predicates
 
@@ -407,11 +425,11 @@ class StateInfrence:
         # m.weights[2]=10
         # else:
         #     m = self.action_mln[action.name]
-        open('tmp_db.mln', 'w').write(self.db.mln_db())
+        open("tmp_db.mln", "w").write(self.db.mln_db())
         try:
-            db = DB.load(m, 'tmp_db.mln')
+            db = DB.load(m, "tmp_db.mln")
         except Exception as e:
-            db = DB.load(m_parse, 'tmp_db.mln')
+            db = DB.load(m_parse, "tmp_db.mln")
             print(e)
         print(db[0].evidence)
 
@@ -428,7 +446,9 @@ class StateInfrence:
         for i, form in enumerate(res.weighted_formulas):
             predicate_key = str(form.children[1])
             # self.action_weights[self.db.action.name][predicate_key].weight += res.weights[i]
-            self.action_weights[self.db.action.name][predicate_key].weight = res.weights[i]
+            self.action_weights[self.db.action.name][
+                predicate_key
+            ].weight = res.weights[i]
             # res.weights[i] += self.action_weights[self.db.action.name][predicate_key].weight
 
         # print(res.weights)
@@ -476,8 +496,10 @@ class StateInfrence:
             self.actions[db.action.name] = db.action
         for w in relevant_weights:
             w.arg_types = Predicate.matching_as_variables(db.action, w)
-            if w.mln_type() in self.action_rejected_weights[db.action.name] or w.mln_type() in self.action_weights[
-                db.action.name]:
+            if (
+                w.mln_type() in self.action_rejected_weights[db.action.name]
+                or w.mln_type() in self.action_weights[db.action.name]
+            ):
                 continue
             else:
                 self.action_weights[db.action.name][w.mln_type()] = w
@@ -485,7 +507,14 @@ class StateInfrence:
     def gen_weights(self, action: Predicate):
         s = ""
         for k, w in self.action_weights[action.name].items():
-            s += str(w.weight) + "    " + action.mln_type() + " => " + w.mln_type() + '\n'
+            s += (
+                str(w.weight)
+                + "    "
+                + action.mln_type()
+                + " => "
+                + w.mln_type()
+                + "\n"
+            )
         # print(s)
         return s
 
@@ -529,18 +558,18 @@ class StateInfrence:
                 # fill all missed runs with 'NaN' value.
                 self.data_for_graph[a][k] = [np.nan] * self.db_run[a]
             if len(self.data_for_graph[a][k]) > 100:
-                print("longer: ", k, '  ', len(self.data_for_graph[a][k]))
+                print("longer: ", k, "  ", len(self.data_for_graph[a][k]))
                 pass
             self.data_for_graph[a][k].append(p.weight)
 
         for k, p in self.action_rejected_weights[a].items():
             if len(self.data_for_graph[a][k]) > 100:
-                print("longer-nan: ", k, '  ', len(self.data_for_graph[a][k]))
+                print("longer-nan: ", k, "  ", len(self.data_for_graph[a][k]))
                 pass
             self.data_for_graph[a][k].append(np.nan)
 
     def save_data_for_graphing(self):
-        f = open('graph_data', 'w+')
+        f = open("graph_data", "w+")
         f.write(json.dumps(self.data_for_graph))
 
     @staticmethod
@@ -553,7 +582,7 @@ class StateInfrence:
 
     @staticmethod
     def plot():
-        d = json.loads(open('graph_data', 'r').read())
+        d = json.loads(open("graph_data", "r").read())
         print(d)
         for k in d:
             a = d[k]
@@ -562,39 +591,50 @@ class StateInfrence:
                     print("-----------------")
                     print(len(val), key)
                 label = key if StateInfrence.count_nan(val) < len(val) * 0.5 else None
-                plt.plot(list(range(0, len(val))), val, 'o-', label=label)
+                plt.plot(list(range(0, len(val))), val, "o-", label=label)
                 # break
-            plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', fontsize='xx-small')
+            plt.legend(bbox_to_anchor=(1.05, 1), loc="upper left", fontsize="xx-small")
             print(k)
             plt.title(k)
             plt.subplots_adjust(right=0.7, top=0.8)
-            plt.savefig(k+'graph.png', dpi=600)
+            plt.savefig(k + "graph.png", dpi=600)
             plt.show()
             # break
 
 
 def update_mln():
     print("UPDATING MLN")
-    logic = 'FirstOrderLogic'
-    grammar = 'StandardGrammar'
-    method = 'pseudo-log-likelihood'
-    m = MLN(logic, grammar, mlnfile='../tmp1.mln')
+    logic = "FirstOrderLogic"
+    grammar = "StandardGrammar"
+    method = "pseudo-log-likelihood"
+    m = MLN(logic, grammar, mlnfile="../tmp1.mln")
     # m.weights[1]=1
     # m.weights[2]=10
     # else:
     #     m = self.action_mln[action.name]
-    db_both = DB.load(m, '../tmp_db3.mln')
-    db_1 = DB.load(m, '../tmp_db1.mln')
-    db_2 = DB.load(m, '../tmp_db2.mln')
+    db_both = DB.load(m, "../tmp_db3.mln")
+    db_1 = DB.load(m, "../tmp_db1.mln")
+    db_2 = DB.load(m, "../tmp_db2.mln")
     # a = m.learn(db_both)
     # print(a.weights)
     # b = m.learn_iter(db_1)
     c = m.learn_iter(db_2)
-    print("target: ",
-          [5.3619451781468195, 2.8782336808825564, -0.7494174682462591, 3.793552188739899, 3.5295832607294213,
-           13.918149709704712, 2.878233680882602, 13.918149709704519, 5.884279775032551]
-          )
+    print(
+        "target: ",
+        [
+            5.3619451781468195,
+            2.8782336808825564,
+            -0.7494174682462591,
+            3.793552188739899,
+            3.5295832607294213,
+            13.918149709704712,
+            2.878233680882602,
+            13.918149709704519,
+            5.884279775032551,
+        ],
+    )
     print("value: ", c.weights)
+
 
 # update_mln()
 # action_dbs[self.db.action.name].append(db)

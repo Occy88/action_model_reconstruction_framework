@@ -550,5 +550,3 @@ void build_goal_agenda( void )
   }
 
 }
-
-

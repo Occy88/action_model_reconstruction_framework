@@ -8,60 +8,77 @@ from problem_convert.pddl_22_parser.pddl_parser import parse_pddl
 # //modify precondition to  pre(a,b, past)
 #   modify negation to neg(a,b, current)
 
+
 def add_q(l):
-    return list(map(lambda x: '?' + x, l))
+    return list(map(lambda x: "?" + x, l))
 
 
 def add_pre(pred, preconditions):
-    pre = ''
+    pre = ""
     for p in preconditions:
-        a = p['args']
-        pre += '^' + p['name'] + '(' + ','.join(a) + ',0)'
-    return '(' + pred + pre + ')'
+        a = p["args"]
+        pre += "^" + p["name"] + "(" + ",".join(a) + ",0)"
+    return "(" + pred + pre + ")"
 
 
 def write_action(name, args, predicate, preconditions):
-    score = '\n0.000000    '
-    action_sig = name + '(' + ','.join(args) + ')'
+    score = "\n0.000000    "
+    action_sig = name + "(" + ",".join(args) + ")"
 
-    return score + action_sig + ' => ' + add_pre(predicate['name'] + '(' + ', '.join(
-        list(predicate['args'])) + ',1)', preconditions)
+    return (
+        score
+        + action_sig
+        + " => "
+        + add_pre(
+            predicate["name"] + "(" + ", ".join(list(predicate["args"])) + ",1)",
+            preconditions,
+        )
+    )
 
 
 def write_neg_action(name, args, predicate, preconditions):
-    score = '\n0.000000    '
-    action_sig = name + '(' + ','.join(args) + ')'
+    score = "\n0.000000    "
+    action_sig = name + "(" + ",".join(args) + ")"
 
-    return score + action_sig + ' => ' + add_pre(predicate['name'] + '(' + ', '.join(
-        list(predicate['args'])) + ',-1)', preconditions)
+    return (
+        score
+        + action_sig
+        + " => "
+        + add_pre(
+            predicate["name"] + "(" + ", ".join(list(predicate["args"])) + ",-1)",
+            preconditions,
+        )
+    )
+
 
 def write_state(f, s, p):
-    f.write('\n' + p.mln(cap_args=True))
-    f.write(s.mln(cap_args=True, extra_args=['0']))
+    f.write("\n" + p.mln(cap_args=True))
+    f.write(s.mln(cap_args=True, extra_args=["0"]))
 
 
 def write_db(f, state, plan):
     # f.write(state.mln(cap_args=True))
-    for index, s in enumerate(plan['steps']):
-        p = Predicate(**s['predicate'])
-        write_state(f,state, p)
+    for index, s in enumerate(plan["steps"]):
+        p = Predicate(**s["predicate"])
+        write_state(f, state, p)
         state.perform_action(p)
 
         for pr in state.latest_removed:
-            f.write('\n' + pr.mln(cap_args=True, extra_args=['-1']))
+            f.write("\n" + pr.mln(cap_args=True, extra_args=["-1"]))
         for pr in state.latest_added:
-            f.write('\n' + pr.mln(cap_args=True, extra_args=['1']))
+            f.write("\n" + pr.mln(cap_args=True, extra_args=["1"]))
 
-        if index < len(plan['steps']) - 1:
+        if index < len(plan["steps"]) - 1:
             f.write("\n--- ")
 
-domain='grid'
-parsed = parse_pddl('./domains/'+domain+'.pddl')
+
+domain = "grid"
+parsed = parse_pddl("./domains/" + domain + ".pddl")
 
 
 # # state.perform_action('move-b-to-t', ('b9', 'b4'))
 # mln_params = 'mln_params.mln'
-mln_database = 'mln_db.mln'
+mln_database = "mln_db.mln"
 # f = open(mln_params, 'w')
 #
 #
@@ -90,16 +107,16 @@ mln_database = 'mln_db.mln'
 # f.close()
 
 
-fl = open(mln_database, 'w')
+fl = open(mln_database, "w")
 
 # f.write('\n\n//databae test \n\n')
-for i in range(1,100):
+for i in range(1, 100):
     try:
         state = State(parsed)
-        problem = parse_state(domain, 'state_'+str(i))
-        state.set_init_state(problem['init'])
-        plan = parse_plan(domain, 'state_'+str(i))
-        print(len(plan['steps']))
+        problem = parse_state(domain, "state_" + str(i))
+        state.set_init_state(problem["init"])
+        plan = parse_plan(domain, "state_" + str(i))
+        print(len(plan["steps"]))
         write_db(fl, state, plan)
         fl.write("\n---\n")
     except FileNotFoundError:

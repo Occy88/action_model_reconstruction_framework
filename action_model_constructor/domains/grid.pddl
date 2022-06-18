@@ -49,5 +49,3 @@
 :precondition (and (place ?curpos) (key ?key)
                   (at-robot ?curpos) (holding ?key))
 :effect (and (arm-empty ) (at ?key ?curpos) (not (holding ?key)))))
-
-

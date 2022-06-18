@@ -63,7 +63,7 @@ class DomainListener(pddlListener):
         pred = []
         for c in ctx.getChildren():
             n = c.getText()
-            if n == '(' or n == ')':
+            if n == "(" or n == ")":
                 continue
             pred.append(n)
         scope = self.scopes[-1]
@@ -77,21 +77,21 @@ class DomainListener(pddlListener):
 
     def exitPrecondition(self, ctx):
         scope = self.scopes.pop()
-        self.scopes[-1].precondition_pos = set( scope.atoms )
-        self.scopes[-1].precondition_neg = set( scope.negatoms )
+        self.scopes[-1].precondition_pos = set(scope.atoms)
+        self.scopes[-1].precondition_neg = set(scope.negatoms)
 
     def enterEffect(self, ctx):
         self.scopes.append(Scope())
 
     def exitEffect(self, ctx):
         scope = self.scopes.pop()
-        self.scopes[-1].effect_pos = set( scope.atoms )
-        self.scopes[-1].effect_neg = set( scope.negatoms )
+        self.scopes[-1].effect_pos = set(scope.atoms)
+        self.scopes[-1].effect_neg = set(scope.negatoms)
 
     def enterGoalDesc(self, ctx):
         negscope = bool(self.negativescopes and self.negativescopes[-1])
         for c in ctx.getChildren():
-            if c.getText() == 'not':
+            if c.getText() == "not":
                 negscope = True
                 break
         self.negativescopes.append(negscope)
@@ -102,7 +102,7 @@ class DomainListener(pddlListener):
     def enterPEffect(self, ctx):
         negscope = False
         for c in ctx.getChildren():
-            if c.getText() == 'not':
+            if c.getText() == "not":
                 negscope = True
                 break
         self.negativescopes.append(negscope)
@@ -134,9 +134,14 @@ class DomainListener(pddlListener):
         if not self.objects and not self.typesdef:
             vs = set()
             for opn, oper in self.operators.items():
-                alls = oper.precondition_pos | oper.precondition_neg | oper.effect_pos | oper.effect_neg
+                alls = (
+                    oper.precondition_pos
+                    | oper.precondition_neg
+                    | oper.effect_pos
+                    | oper.effect_neg
+                )
                 for a in alls:
                     for s in a.predicate:
-                        if s[0] != '?':
-                            vs.add( (s, None) )
-            self.objects = dict( vs)
+                        if s[0] != "?":
+                            vs.add((s, None))
+            self.objects = dict(vs)

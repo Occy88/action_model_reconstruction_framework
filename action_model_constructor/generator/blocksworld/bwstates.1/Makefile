@@ -86,4 +86,3 @@ deinstall:
 
 
 bwstates.o: bwstates.h
-

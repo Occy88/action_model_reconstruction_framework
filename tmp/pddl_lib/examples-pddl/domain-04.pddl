@@ -37,4 +37,3 @@
      :precondition (and (atl ?r ?l) (loaded ?r ?c) )
      :effect (and (unloaded ?r) (in ?c ?l)
                     (not (loaded ?r ?c)) )) )
-

@@ -28,13 +28,12 @@
 }
 
 #solving {
-   margin-left:20px;
+  margin-left: 20px;
 }
 
-#solving .progress{
+#solving .progress {
   height: 34px;
   padding-left: 0px;
   padding-right: 0px;
   visibility: hidden;
 }
-

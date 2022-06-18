@@ -23,4 +23,3 @@ dlgen -n 6788 16 5 15 5 100 > pfile17
 dlgen -n 6543 20 5 20 5 100 > pfile18
 dlgen -n 7654 20 5 25 5 100 > pfile19
 dlgen -n 1764 20 8 25 6 100 > pfile20
-

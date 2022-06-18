@@ -1,13 +1,13 @@
 from pracmln import MLN
 
-results = open("results", 'w')
+results = open("results", "w")
 # state.perform_action('move-b-to-t', ('b9', 'b4'))
-mln_params = 'mln_params_r.mln'
-mln_database = 'mln_db.mln'
-logic = 'FirstOrderLogic'
-grammar = 'StandardGrammar'
-method = 'pseudo-log-likelihood'
-domain = 'grid'
+mln_params = "mln_params_r.mln"
+mln_database = "mln_db.mln"
+logic = "FirstOrderLogic"
+grammar = "StandardGrammar"
+method = "pseudo-log-likelihood"
+domain = "grid"
 from pracmln import Database
 import numpy as np
 
@@ -26,7 +26,7 @@ import random
 num_databases = 25
 print("Loading database file: ")
 databases = open(mln_database).read()
-databases = databases.strip('\n').strip(' ').strip('---').split("---")
+databases = databases.strip("\n").strip(" ").strip("---").split("---")
 random.shuffle(databases)
 databases = databases[:num_databases]
 d_processed = []
@@ -39,25 +39,32 @@ for i, d in enumerate(databases):
 
     d_processed.append(DB.parse_db(d))
 print("initiating state inference")
-s = StateInfrence(os.getcwd() + '/' + domain + '_p_decs.txt')
+s = StateInfrence(os.getcwd() + "/" + domain + "_p_decs.txt")
 print("Initiating learning:")
 opt_tracker = dict()
 for i, d in enumerate(d_processed):
-    if d.action.name=='unlock':
+    if d.action.name == "unlock":
         continue
     if d.action.name not in opt_tracker:
         opt_tracker[d.action.name] = 0
     # systematic noise on move function
-    if d.action.name == 'move' :
-        if opt_tracker[d.action.name]>=1:
-                # d.noise(0.3)
-                d.sys_noise('conn(v0,v1,0)',0.5)
+    if d.action.name == "move":
+        if opt_tracker[d.action.name] >= 1:
+            # d.noise(0.3)
+            d.sys_noise("conn(v0,v1,0)", 0.5)
 
     else:
         continue
     #     pass
 
-    print("=========[ processing db: ", d.action.name, i, '/', len(d_processed), ' ]===========')
+    print(
+        "=========[ processing db: ",
+        d.action.name,
+        i,
+        "/",
+        len(d_processed),
+        " ]===========",
+    )
     print(i / len(d_processed))
     s.process_database(d)
 
@@ -66,7 +73,7 @@ for i, d in enumerate(d_processed):
     #     s.prune_weights(d.action.name,2)
     opt_tracker[d.action.name] += 1
     s.save_data_for_graphing()
-s = StateInfrence(os.getcwd() + '/' + domain + '_p_decs.txt')
+s = StateInfrence(os.getcwd() + "/" + domain + "_p_decs.txt")
 
 StateInfrence.plot()
 # m.prin

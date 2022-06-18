@@ -130,4 +130,3 @@ f_exp_t: f_exp_t_1 | f_exp_t_2 | f_exp_t_3
 f_exp_t_1:  "(" "*" f_exp #t ")"
 f_exp_t_2:  "(" "*" "#t" f_exp ")"
 f_exp_t_3:  "#t"
-
