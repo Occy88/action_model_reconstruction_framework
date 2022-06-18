@@ -9,7 +9,7 @@ class BaseSolver(ABC):
 
     @abstractmethod
     def solve(self, domain_file: str, problem_path: str, output_path: str):
-        """ solves a problem given a domain.
+        """solves a problem given a domain.
 
         :param domain_file: path to domain file
         :param problem_path: path to problem
@@ -20,14 +20,13 @@ class BaseSolver(ABC):
 
     @staticmethod
     def exec_os_command(cmd: str):
-        os.popen(cmd).read()
+        os.popen(cmd).read()  # nosec
 
 
 class FFXSolver(BaseSolver):
-
     def solve(self, domain_file: str, problem_path: str, output_path: str):
-        command = f'./ff -o  {domain_file}  -f {problem_path}| sed -n "/step/,/time/p" > {output_path}'
-        self.exec_os_command(command)
+        cmd = f'./ff -o  {domain_file}  -f {problem_path}| sed -n "/step/,/time/p" > {output_path}'
+        self.exec_os_command(cmd)
 
 
 class CloudSolver(BaseSolver):

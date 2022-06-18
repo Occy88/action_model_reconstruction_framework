@@ -2303,5 +2303,3 @@ void yyfree (void * ptr )
 #define YYTABLES_NAME "yytables"
 
 #line 122 "lex-fct_pddl.l"
-
-

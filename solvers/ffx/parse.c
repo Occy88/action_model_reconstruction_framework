@@ -1220,5 +1220,3 @@ Bool make_conjunction_of_literals( PlNode **n )
   return TRUE;
 
 }
-
-

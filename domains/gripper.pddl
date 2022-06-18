@@ -32,4 +32,3 @@
                (not (at ?ball  ?arm))
                ))
 )
-

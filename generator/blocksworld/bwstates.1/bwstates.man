@@ -49,4 +49,3 @@ John Slaney, Automated Reasoning Project, Research School of Information
 Sciences and Engineering, Australian National University, Canberra ACT 0200,
 Australia; e-mail:
 .I John.Slaney@anu.edu.au
-

@@ -1,7 +1,5 @@
-import os
-from parser.action import Action
 import json
-import time
+import os
 
 
 # definition of an action
@@ -36,15 +34,15 @@ class FFToActionParser:
         to an action in the form:
         action_name & arguments
         """
-        text = text.strip().split(' ')
+        text = text.strip().split(" ")
         return (text[0], text[1:])
 
     def _parse_line(self, line):
-        arr = line.split(':')
+        arr = line.split(":")
         if len(arr) <= 1:
             raise Exception
 
-        if 'step' in arr[0] or int(arr[0]):
+        if "step" in arr[0] or int(arr[0]):
             return self._convert_to_action(arr[1])
 
     def _parse_text(self, text):
@@ -53,13 +51,12 @@ class FFToActionParser:
         """
         text = self._clean_text(text)
         trace = []
-        for line in text.split('\n'):
+        for line in text.split("\n"):
             try:
                 trace.append(self._parse_line(line))
-            except Exception:
-                continue
+            except Exception as e:
+                print(f"exc: {e}")
         return trace
-        pass
 
     def parse_all(self, problem):
         """
@@ -67,17 +64,17 @@ class FFToActionParser:
         """
         print("=================================")
         print(os.getcwd())
-        os.chdir('./parser/plan_traces')
+        os.chdir("./parser/plan_traces")
 
-        os.popen('rm -rf ' + problem + ' ; mkdir ' + problem)
+        os.popen("rm -rf " + problem + " ; mkdir " + problem)  # nosec
         print(os.getcwd())
-        for name in os.listdir('../../solvers/plans/' + problem):
+        for name in os.listdir("../../solvers/plans/" + problem):
             print(name)
-            f = open('../../solvers/plans/' + problem + '/' + name)
+            f = open("../../solvers/plans/" + problem + "/" + name)
             text = f.read()
             f.close()
             parsed = self._parse_text(text)
-            f = open('./' + problem + '/' + name, 'w+')
+            f = open("./" + problem + "/" + name, "w+")
             print(parsed)
             f.write(json.dumps(parsed))
             f.close()

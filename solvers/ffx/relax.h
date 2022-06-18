@@ -80,5 +80,3 @@ void reset_search_info( void );
 
 
 #endif /* _RELAX_H */
-
-

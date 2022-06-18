@@ -14,5 +14,3 @@ $BS -s 2 -n $1 > STATES
 $TR -d STATES -n $1 
 
 rm STATES
-
-

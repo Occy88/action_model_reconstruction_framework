@@ -2260,4 +2260,3 @@ void load_fct_file( char *filename )
   fclose( fp );/* and close file again */
 
 }
-

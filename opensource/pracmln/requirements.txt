@@ -1,0 +1,14 @@
+appdirs
+dnutils
+Image
+logutils
+matplotlib
+mpmath
+networkx
+numpy
+Pmw
+psutil
+pymongo
+pyparsing
+scipy
+tabulate

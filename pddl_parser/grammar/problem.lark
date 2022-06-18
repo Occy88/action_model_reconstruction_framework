@@ -75,4 +75,3 @@ ground_f_exp_6: function_symbol
 
 length_spec: "(" ":length" ["(" ":serial" integer ")"]
                          | ["(" ":parallel" integer ")"] ")"
-

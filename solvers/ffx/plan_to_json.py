@@ -1,25 +1,24 @@
-import sys
-
 from lark import Lark, Transformer, v_args
+import os
 
 
 class PddlToJson(Transformer):
     def plan(self, args):
         predicates = args[:-1]
         time = args[len(args) - 1]
-        return {'steps': predicates, 'time': time}
+        return {"steps": predicates, "time": time}
 
     def string(self, s):
         # d=s.value
         # d2=s.lower()
-        d3=s[0]
-        d4=d3.value.lower().replace('-','_')
+        d3 = s[0]
+        d4 = d3.value.lower().replace("-", "_")
         return d4
 
     def predicate(self, args):
         name = args[0][0]
         vals = list(args[1:])
-        p = {'name': name, 'args': vals}
+        p = {"name": name, "args": vals}
         return p
 
     def arg(self, v):
@@ -30,19 +29,16 @@ class PddlToJson(Transformer):
         return s
 
     def step(self, args):
-        return {'step': args[0], 'predicate': args[1]}
+        return {"step": args[0], "predicate": args[1]}
 
     number = v_args(inline=True)(float)
 
 
-import os
-
-
 def parse_plan(domain_name, state_id):
     dirname = os.path.dirname(__file__)
-    filename = os.path.join(dirname, '../plans/', '/'.join((domain_name, state_id)))
-    sample_conf = open(filename, 'r').read()
-    grammar = open(os.path.join(dirname, 'grammar'), 'r').read()
+    filename = os.path.join(dirname, "../plans/", "/".join((domain_name, state_id)))
+    sample_conf = open(filename, "r").read()
+    grammar = open(os.path.join(dirname, "grammar"), "r").read()
     parser = Lark(grammar, transformer=PddlToJson(), parser="lalr")
     parsed = parser.parse(sample_conf)
     return parsed
@@ -91,14 +87,33 @@ def parse_plan(domain_name, state_id):
 #
 #
 #
-plan = {'steps': [{'step': 0.0, 'predicate': {'name': 'MOVE-B-TO-T', 'args': list({'B7', 'B4'})}},
-                  {'step': 1.0, 'predicate': {'name': 'MOVE-B-TO-B', 'args': list({'B5', 'B7', 'B4'})}},
-                  {'step': 2.0, 'predicate': {'name': 'MOVE-B-TO-B', 'args': list({'B9', 'B1', 'B4'})}},
-                  {'step': 3.0, 'predicate': {'name': 'MOVE-B-TO-T', 'args': list({'B1', 'B2'})}},
-                  {'step': 4.0, 'predicate': {'name': 'MOVE-B-TO-T', 'args': list({'B3', 'B2'})}},
-                  {'step': 5.0, 'predicate': {'name': 'MOVE-B-TO-B', 'args': list({'B3', 'B10', 'B1'})}},
-                  {'step': 6.0, 'predicate': {'name': 'MOVE-T-TO-B', 'args': list({'B3', 'B8'})}},
-                  {'step': 7.0, 'predicate': {'name': 'MOVE-B-TO-B', 'args': list({'B9', 'B8', 'B4'})}},
-                  {'step': 8.0, 'predicate': {'name': 'MOVE-B-TO-B', 'args': list({'B5', 'B10', 'B6'})}},
-                  {'step': 9.0, 'predicate': {'name': 'MOVE-T-TO-B', 'args': list({'B6', 'B2'})}}],
-        'time': ('time', [0.0, 1200.0, 0.0])}
+plan = {
+    "steps": [
+        {"step": 0.0, "predicate": {"name": "MOVE-B-TO-T", "args": list({"B7", "B4"})}},
+        {
+            "step": 1.0,
+            "predicate": {"name": "MOVE-B-TO-B", "args": list({"B5", "B7", "B4"})},
+        },
+        {
+            "step": 2.0,
+            "predicate": {"name": "MOVE-B-TO-B", "args": list({"B9", "B1", "B4"})},
+        },
+        {"step": 3.0, "predicate": {"name": "MOVE-B-TO-T", "args": list({"B1", "B2"})}},
+        {"step": 4.0, "predicate": {"name": "MOVE-B-TO-T", "args": list({"B3", "B2"})}},
+        {
+            "step": 5.0,
+            "predicate": {"name": "MOVE-B-TO-B", "args": list({"B3", "B10", "B1"})},
+        },
+        {"step": 6.0, "predicate": {"name": "MOVE-T-TO-B", "args": list({"B3", "B8"})}},
+        {
+            "step": 7.0,
+            "predicate": {"name": "MOVE-B-TO-B", "args": list({"B9", "B8", "B4"})},
+        },
+        {
+            "step": 8.0,
+            "predicate": {"name": "MOVE-B-TO-B", "args": list({"B5", "B10", "B6"})},
+        },
+        {"step": 9.0, "predicate": {"name": "MOVE-T-TO-B", "args": list({"B6", "B2"})}},
+    ],
+    "time": ("time", [0.0, 1200.0, 0.0]),
+}
