@@ -1,0 +1,52 @@
+name: Python Package Testing
+
+on:
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  validate:
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo - including submodules
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.TOKEN_AUTOMATION }}
+          submodules: "recursive"
+      - name: Run pre-commit
+        uses: pre-commit/action@v2.0.3
+
+  test:
+    needs: validate
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 9
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.7", "3.8", "3.9", "3.10"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: syphar/restore-virtualenv@v1.2
+        id: cache-virtualenv
+      - name: Check for macos and install libomp for Boosting libraries to work
+        if: startsWith(matrix.os, 'macOS')
+        run: brew install libomp
+
+      - uses: syphar/restore-pip-download-cache@v1
+        if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+
+        # the package installation will only be executed when the
+        # requirements-files have changed.
+      - run: pip install -r requirements.txt
+        if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+
+      - name: Run Tests
+        run: |
+          python -m unittest discover -t ..
