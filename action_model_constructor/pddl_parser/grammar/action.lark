@@ -1,0 +1,20 @@
+%import .typed_lists.typed_list_variable
+%import .goal_descriptor.GD
+%import .name.name
+%import .effect.effect
+
+//      <action-def> ::= (  :action <action-symbol>
+//                          :parameters ( <typed list (variable)> )
+//                              <action-def body>)
+//      <action-symbol> ::= <name>
+//      <action-def body> ::= [:precondition <GD>]
+//                            [:effect <effect>]
+
+action_def: "(" ":action" action_symbol
+              | ":parameters" "(" typed_list_variable ")"
+              | action_def_body ")"
+
+action_symbol: name
+
+action_def_body: [":precondition" GD]
+           | [":effect" effect]

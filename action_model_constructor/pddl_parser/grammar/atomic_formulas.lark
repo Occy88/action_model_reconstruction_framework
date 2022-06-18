@@ -1,0 +1,7 @@
+//        <atomic formula(t)> ::= (<predicate> t*)
+
+%import .predicate.predicate
+
+// ======= TERM =========
+% import .term.term
+atomic_formula_term: "(" predicate term* ")"

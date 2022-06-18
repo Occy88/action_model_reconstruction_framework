@@ -1,0 +1,24 @@
+//  <f-comp> ::= (<binary-comp> <f-exp> <f-exp>)
+//  <f-exp> ::= <number>
+//  <f-exp> ::= (<binary-op> <f-exp> <f-exp>)
+//  <f-exp> ::= (- <f-exp>)
+//  <f-exp> ::= <f-head>
+//  <f-head> ::= (<function-symbol> <term>∗)
+//  <f-head> ::= <function-symbol>
+
+%import .number.number
+%import .name.name
+%import .binary.binary_op
+%import .binary.binary_comp
+%import .term.term
+
+f_comp: "(" binary_comp f_exp f_exp ")"
+f_exp: number
+f_exp: "(" binary_op f_exp f_exp ")"
+f_exp: "(" "-" f_exp ")"
+f_exp: f_head
+f_head: "(" function_symbol term∗ ")"
+f_head: function_symbol
+
+function_type: number
+function_symbol: name

@@ -1,0 +1,15 @@
+%import .type.type
+
+// ======== TYPED LIST FORMAT ============
+//        <typed list (x)> ::= x*
+//        <typed list (x)> ::=:typing x+ - <type> <typed list(x)>
+
+%import .variable.variable
+typed_list_variable: typed_list_variable_1 | typed_list_variable_2
+typed_list_variable_1: variable*
+typed_list_variable_2: variable+ "-" type typed_list_variable
+
+%import .name.name
+typed_list_name: typed_list_name_1 | typed_list_name_2
+typed_list_name_1: name*
+typed_list_name_2: name+ "-" type typed_list_name

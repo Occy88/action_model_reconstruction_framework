@@ -1,0 +1,54 @@
+//  :strips Basic STRIPS-style adds and deletes
+//  :typing Allow type names in declarations of variables
+//  :negative-preconditions Allow not in goal descriptions
+//  :disjunctive-preconditions Allow or in goal descriptions
+//  :equality Support = as built-in predicate
+//  :existential-preconditions Allow exists in goal descriptions
+//  :universal-preconditions Allow forall in goal descriptions
+//  :quantified-preconditions = :existential-preconditions
+//  + :universal-preconditions
+//  :conditional-effects Allow when in action effects
+//  :fluents Allow function definitions and use of effects using
+//  assignment operators and arithmetic preconditions.
+//  :adl = :strips + :typing
+//  + :negative-preconditions
+//  + :disjunctive-preconditions
+//  + :equality
+//  + :quantified-preconditions
+//  + :conditional-effects
+//  :durative-actions Allows durative actions.
+//  Note that this does not imply :fluents.
+//  :duration-inequalities Allows duration constraints in durative
+//  actions using inequalities.
+//  :continuous-effects Allows durative actions to affect fluents
+//  continuously over the duration of the actions.
+
+require_key: [t1]
+           | [t2]
+           | [t3]
+           | [t4]
+           | [t5]
+           | [t6]
+           | [t7]
+           | [t8]
+           | [t9]
+           | [t10]
+           | [t11]
+           | [t12]
+           | [t13]
+           | [t14]
+
+t1:  ":strips"
+t2:  ":typing"
+t3:  ":negative-preconditions"
+t4:  ":disjunctive-preconditions"
+t5:  ":equality"
+t6:  ":existential-preconditions"
+t7:  ":universal-preconditions"
+t8:  ":quantified-preconditions"
+t9:  ":conditional-effects"
+t10: ":fluents"
+t11: ":adl"
+t12: ":durative-actions" 
+t13: ":duration-inequalities"
+t14: ":continuous-effects" 

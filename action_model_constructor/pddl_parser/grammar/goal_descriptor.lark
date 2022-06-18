@@ -1,0 +1,28 @@
+%import .literals.literal_term
+%import .typed_list.typed_list_variable
+%import .atomic_formulas.atomic_formula_term
+%import .f.f_comp
+
+//        <GD_1>   ::= ()
+//        <GD_2> ::= <atomic formula(term)>
+//        <GD_3> ::= <literal(term)>
+//        <GD_4> ::= (and <GD>*)
+//        <GD_5> ::=:disjunctivepreconditions (or <GD>*)
+//        <GD_6> ::=:disjunctivepreconditions (not <GD>)
+//        <GD_7> ::=:disjunctivepreconditions (imply <GD> <GD>)
+//        <GD_8> ::=:existentialpreconditions
+//                (exists (<typed list(variable)>*) <GD> )
+//        <GD_9> ::=:universalpreconditions
+//                (forall (<typed list(variable)>*) <GD>)
+//        <GD_10> ::=:fluents <f-comp>
+GD: GD_1 | GD_2 | GD_3 | GD_4 | GD_5 | GD_6 | GD_7 | GD_8 | GD_9 | GD_10
+GD_1: "(" ")"
+GD_2: atomic_formula_term
+GD_3: literal_term
+GD_4: "(" "and" GD* ")"
+GD_5: "(" "or" GD* ")"
+GD_6: "(" "not" GD ")"
+GD_7: "(" "imply" GD GD ")"
+GD_8: "(" "exists" "(" typed_list_variable* ")" GD ")"
+GD_9: "(" "forall" "(" typed_list_variable* ")" GD ")"
+GD_10: f_comp

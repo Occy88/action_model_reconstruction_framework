@@ -1,0 +1,22 @@
+//    <binary-op> ::= +
+//    <binary-op> ::= −
+//    <binary-op> ::= ∗
+//    <binary-op> ::= /
+//    <binary-comp> ::= >
+//    <binary-comp> ::= <
+//    <binary-comp> ::= =
+//    <binary-comp> ::= >=
+//    <binary-comp> ::= <=
+
+binary_op: binary_op_1 | binary_op_2 | binary_op_3 | binary_op_4
+binary_op_1: "+"
+binary_op_2: "−"
+binary_op_3: "∗"
+binary_op_4: "/"
+
+binary_comp: binary_comp_1 | binary_comp_2 | binary_comp_3 | binary_comp_4 | binary_comp_5
+binary_comp_1: ">"
+binary_comp_2: "<"
+binary_comp_3: "="
+binary_comp_4: ">="
+binary_comp_5: "<="

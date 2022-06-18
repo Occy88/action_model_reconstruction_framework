@@ -1,0 +1,133 @@
+
+
+//    <durative-action-def> ::= (:durative-action <da-symbol>
+//                               :parameters ( <typed list (variable)> )
+//                                <da-def body>)
+//    <da-symbol> ::= <name>
+//    <da-def body> ::= :duration <duration-constraint>
+//                      :condition <da-GD>
+//                      :effect <da-effect>
+//    <da-GD> ::= ()
+//    <da-GD> ::= <timed-GD>
+//    <da-GD> ::= (and <timed-GD>+)
+//    <timed-GD> ::= (at <time-specifier> <GD>)
+//    <timed-GD> ::= (over <interval> <GD>)
+//    <time-specifier> ::= start
+//    <time-specifier> ::= end
+//    <interval> ::= all
+//    <duration-constraint> ::= :duration−inequalities
+//                                (and <simple-duration-constraint>+)
+//    <duration-constraint> ::= ()
+//    <duration-constraint> ::= <simple-duration-constraint>
+//    <simple-duration-constraint> ::= (<d-op> ?duration <d-value>)
+//    <simple-duration-constraint> ::= (at <time-specifier>
+//                                        <simple-duration-constraint>)
+//    <d-op> ::=:duration−inequalities <=
+//    <d-op> ::=:duration−inequalities >=
+//    <d-op> ::= =
+//    <d-value> ::= <number>
+//    <d-value> ::=:fluents <f-exp>
+//    
+//    <da-effect> ::= ()
+//    <da-effect> ::= (and <da-effect>∗)
+//    <da-effect> ::= <timed-effect>
+//    <da-effect> ::=:conditional−effects (forall (<variable>∗) <da-effect>)
+//    <da-effect> ::=:conditional−effects (when <da-GD> <timed-effect>)
+//    <da-effect> ::=:fluents (<assign-op> <f-head> <f-exp-da>)
+//    <timed-effect> ::= (at <time-specifier> <a-effect>)
+//    <timed-effect> ::= (at <time-specifier> <f-assign-da>)
+//    <timed-effect> ::=:continuous−effects (<assign-op-t> <f-head> <f-exp-t>)
+//    <f-assign-da> ::= (<assign-op> <f-head> <f-exp-da>)
+//    <f-exp-da> ::= (<binary-op> <f-exp-da> <f-exp-da>)
+//    <f-exp-da> ::= (- <f-exp-da>)
+//    <f-exp-da> ::=:duration−inequalities ?duration
+//    <f-exp-da> ::= <f-exp>
+//    
+//    <assign-op-t> ::= increase
+//    <assign-op-t> ::= decrease
+//    <f-exp-t> ::= (* <f-exp> #t)
+//    <f-exp-t> ::= (* #t <f-exp>)
+//    <f-exp-t> ::= #t
+%import .typed_lists.typed_list_variable
+%import .goal_descriptor.GD
+%import .name.name
+%import .f.f_exp
+%import .f.f_head
+%import .binary.binary_op
+%import .number.number
+%import .variable.variable
+%import .effect.assign_op
+durative_action_def: "(" ":durative-action" da_symbol
+                       | ":parameters" "(" typed_list_variable ")"
+                       | da_def_body ")"
+
+da_symbol: name
+
+da_def_body: ":duration" duration_constraint
+           | "condition" da_GD
+           | "effect" da_effect
+
+da_GD: da_GD_1 | da_GD_2 | da_GD_3
+da_GD_1:   "("  ")" 
+da_GD_2:  timed_GD
+da_GD_3:   "(" "and" timed_GD+ ")"
+
+timed_GD: timed_GD_1 | timed_GD_2
+timed_GD_1:   "(" "at" time_specifier GD ")"
+timed_GD_2:   "(" "over" interval GD ")"
+
+time_specifier: time_specifier_1 | time_specifier_2
+time_specifier_1:  "start"
+time_specifier_2:  "end"
+
+interval:  "all"
+
+duration_constraint: duration_constraint_1 |  duration_constraint_2 | duration_constraint_3
+duration_constraint_1:   "(" "and"  simple_duration_constraint+")"
+duration_constraint_2:  "(" ")"
+duration_constraint_3:  simple_duration_constraint
+
+simple_duration_constraint: simple_duration_constraint_1 | simple_duration_constraint_2
+simple_duration_constraint_1:  "(" d_op "?duration" d_value ")"
+simple_duration_constraint_2:  "(" "at"  time_specifier simple_duration_constraint ")"
+
+d_op: d_op_1 | d_op_2 | d_op_3
+d_op_1:  "<="
+d_op_2:  ">="
+d_op_3:  "="
+
+d_value: d_value_1 | d_value_2
+d_value_1:  number
+d_value_2: f_exp
+
+da_effect: da_effect_1 | da_effect_2 | da_effect_3 | da_effect_4 | da_effect_5| da_effect_6
+da_effect_1:  "(" ")"
+da_effect_2:  "(" "and"  da_effect∗")"
+da_effect_3:  timed_effect
+da_effect_4: "(" "forall"  "(" variable∗ ")"  da_effect")"
+da_effect_5:  "(" "when"  da_GD timed_effect ")"
+da_effect_6: "(" assign_op f_head f_exp_da ")"
+
+// da_effect (two lines bellow was written as a_effect however no such var defined, so assumed error.
+timed_effect: timed_effect_1 | timed_effect_2 | timed_effect_3
+timed_effect_1:  "(" "at"  time_specifier da_effect ")"
+timed_effect_2:  "(" "at"  time_specifier f_assign_da ")"
+timed_effect_3:  "(" assign_op_t f_head f_exp_t ")"
+
+f_assign_da:  "(" assign_op f_head f_exp_da ")"
+
+f_exp_da: f_exp_da_1 | f_exp_da_2 | f_exp_da_3 | f_exp_da_4
+f_exp_da_1:  "(" binary_op f_exp_da f_exp_da ")"
+f_exp_da_2:  "(" _ f_exp_da ")"
+f_exp_da_3:  "?duration"
+f_exp_da_4:  f_exp
+
+assign_op_t: assign_op_t_1 | assign_op_t_2
+assign_op_t_1:  "increase"
+assign_op_t_2:  "decrease"
+
+f_exp_t: f_exp_t_1 | f_exp_t_2 | f_exp_t_3
+f_exp_t_1:  "(" "*" f_exp #t ")"
+f_exp_t_2:  "(" "*" "#t" f_exp ")"
+f_exp_t_3:  "#t"
+

@@ -1,0 +1,78 @@
+
+%import .name.name
+%import .typed_lists.typed_list_name
+%import .literals.literal_name
+%import .fluents.f_head
+%import .number.number
+%import .number.integer
+%import .goal_descriptor.GD
+%import .binary.binary_op
+%import .Domain.require_def
+%import .f.function_symbol
+//<problem> ::= (define (problem <name>)
+//                (:domain <name>)
+//                [<require-def>]
+//                [<object declaration> ]
+//                <init>
+//                <goal>
+//                [<metric-spec>]
+//                [<length-spec> ])
+//  <object declaration> ::= (:objects <typed list (name)>)
+//
+//  <init> ::= (:init <init-el>∗)
+//  <init-el 1> ::= <literal(name)>
+//  <init-el 2> ::=:fluents (= <f-head> <number>)
+//
+//  <goal> ::= (:goal <GD>)
+//
+//  <metric-spec> ::= (:metric <optimization> <ground-f-exp>)
+//
+//  <optimization 1> ::= minimize
+//  <optimization 2> ::= maximize
+//
+//  <ground-f-exp 1> ::= (<binary-op> <ground-f-exp> <ground-f-exp>)
+//  <ground-f-exp 2> ::= (- <ground-f-exp>)
+//  <ground-f-exp 3> ::= <number>
+//  <ground-f-exp 4> ::= (<function-symbol> <name>∗)
+//  <ground-f-exp 5> ::= total-time
+//  <ground-f-exp 6> ::= <function-symbol>
+//
+//  <length-spec> ::= (:length [(:serial <integer>)]
+//                    [(:parallel <integer>)])
+//  The length-spec is deprecated
+
+problem: "(" "define" "(" "problem" name ")"
+        | "(" ":domain" name ")"
+        | [require_def]
+        | [object_declaration]
+        | init
+        | goal
+        | [metric_spec]
+        | [length_spec] ")"
+
+object_declaration: "(" ":objects" typed_list_name ")"
+
+init: "(" ":init" init_el* ")"
+init_el: init_el_1 | init_el_2
+init_el_1: literal_name
+init_el_2: "(" "=" f_head number ")"
+
+goal: "(" ":goal" GD ")"
+
+metric_spec: "(" ":metric" optimization ground_f_exp ")"
+
+optimization: optimization_1 | optimization_2
+optimization_1: "minimize"
+optimization_2: "maximize"
+
+ground_f_exp: ground_f_exp_1 | ground_f_exp_2 | ground_f_exp_3 | ground_f_exp_4 | ground_f_exp_5 | ground_f_exp_6 |
+ground_f_exp_1: "(" binary_op ground_f_exp~2 ")"
+ground_f_exp_2: "(" "-" ground_f_exp ")"
+ground_f_exp_3: number
+ground_f_exp_4: "(" function_symbol name* ")"
+ground_f_exp_5: "total-time"
+ground_f_exp_6: function_symbol
+
+length_spec: "(" ":length" ["(" ":serial" integer ")"]
+                         | ["(" ":parallel" integer ")"] ")"
+

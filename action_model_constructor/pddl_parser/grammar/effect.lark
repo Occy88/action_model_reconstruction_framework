@@ -1,0 +1,56 @@
+%import .variable.variable
+%import .GD.GD
+%import .atomic_formulas.atomic_formula_term
+%import .f.f_head
+%import .f.f_exp
+//    <effect> ::= ()
+//    <effect> ::= (and <c-effect>*)
+//    <effect> ::= <c-effect>
+//    
+//    <c-effect> ::=:conditional−effects (forall (<variable>*) <effect>)
+//    <c-effect> ::=:conditional−effects (when <GD> <cond-effect>)
+//    <c-effect> ::= <p-effect>
+//    
+//    <p-effect> ::= (<assign-op> <f-head> <f-exp>)
+//    <p-effect> ::= (not <atomic formula(term)>)
+//    <p-effect> ::= <atomic formula(term)>
+//    <p-effect> ::=:fluents(<assign-op> <f-head> <f-exp>)
+//
+//    <cond-effect> ::= (and <p-effect>*)
+//    <cond-effect> ::= <p-effect>
+
+effect: effect_1 | effect_2 | effect_3
+effect_1: "(" ")"
+effect_2: "(" "and" c_effect* ")"
+effect_3: c_effect
+
+c_effect: c_effect_1 | c_effect_2 | c_effect_3
+c_effect_1: "(" "forall" "(" variable* ")"  effect ")"
+c_effect_2: "(" "when" GD cond_effect ")"
+c_effect_3: p_effect
+
+p_effect: p_effect_1 | p_effect_2 | p_effect_3 | p_effect_4 
+p_effect_1: "(" assign_op f_head f_exp ")" 
+p_effect_2: "(" "not" atomic_formula_term  ")" 
+p_effect_3: atomic_formula_term
+p_effect_4: "(" assign_op f_head f_exp ")" 
+
+cond_effect: cond_effect_1 | cond_effect_2
+cond_effect_1: "(" "and" p_effect* ")" 
+cond_effect_2: p_effect
+
+
+
+
+//    <assign-op> ::= assign
+//    <assign-op> ::= scale-up
+//    <assign-op> ::= scale-down
+//    <assign-op> ::= increase
+//    <assign-op> ::= decrease
+
+assign_op: assign_op_1 | assign_op_2 | assign_op_3 | assign_op_4 | assign_op_5
+assign_op_1 : "assign"
+assign_op_2 : "scale-up"
+assign_op_3 : "scale-down"
+assign_op_4 : "increase"
+assign_op_5 : "decrease"
