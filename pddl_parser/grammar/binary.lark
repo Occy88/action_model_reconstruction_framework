@@ -7,7 +7,6 @@
 //    <binary-comp> ::= =
 //    <binary-comp> ::= >=
 //    <binary-comp> ::= <=
-
 binary_op: binary_op_1 | binary_op_2 | binary_op_3 | binary_op_4
 binary_op_1: "+"
 binary_op_2: "−"
