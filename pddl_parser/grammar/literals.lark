@@ -1,0 +1,10 @@
+//<literal(t)> ::= <atomic formula(t)>
+//<literal(t)> ::= (not <atomic formula(t) >)
+
+// ======== TERM ==========
+%import .term.term
+%import .atomic_formulas.atomic_formula_term
+
+literal_term : literal_term_1 | literal_term_2
+literal_term_1 : atomic_formula_term
+literal_term_2 : "(" "not" atomic_formula_term ")"

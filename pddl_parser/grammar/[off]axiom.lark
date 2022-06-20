@@ -1,0 +1,13 @@
+%import .typed_lists.typed_list_variable
+%import .goal_descriptor.GD
+%import .literals.literal_term
+
+//    <axiom-def> ::= (:axiom
+//                     :vars (<typed list (variable)>)
+//                     :context <GD>
+//                     :implies <literal(term)>)
+
+axiom:  "(" ":axiom"
+     |  ":vars" typed_list_variable
+     |  ":context" GD
+     |  ":implies" literal_term ")"

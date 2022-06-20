@@ -1,0 +1,6 @@
+%import .name.name
+%import .variable.variable
+
+term: term_1 | term_2
+term_1: name
+term_2: variable

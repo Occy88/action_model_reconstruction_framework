@@ -1,0 +1,12 @@
+%import .name.name
+//  <primitive-type> ::= <name>
+//  <type> ::= (either <primitive-type>+)
+//  <type> ::= <primitive-type>
+
+type: type_1 | type_2
+
+primitive_type: name
+
+type_1: "(" "either" primitive_type+ ")"
+
+type_2: primitive_type

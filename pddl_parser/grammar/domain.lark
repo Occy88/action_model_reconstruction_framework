@@ -1,0 +1,55 @@
+%import .requirements.require_key
+%import .name.name
+%import .number.number
+%import .typed_lists.typed_list_name
+%import .typed_lists.typed_list_variable
+%import .predicate.predicate
+%import .action.action_def
+%import .durative_action.durative_action_def
+%import .f.function_symbol
+%import .f.function_type
+//  <domain>                    ::= (define (domain <name>)
+                                    [<require-def>]
+                                    [<types-def>]:typing
+                                    [<constants-def>]
+                                    [<predicates-def>]
+                                    [<functions-def>]:fluents
+                                    <structure-def>∗)
+//  <require-def>               ::= (:requirements <require-key>+)
+//  <require-key>               ::= See Section A.5
+//  <types-def>                 ::= (:types <typed list (name)>)
+//  <constants-def>             ::= (:constants <typed list (name)>)
+//  <predicates-def>            ::= (:predicates <atomic formula skeleton>+)
+//  <atomic formula skeleton>   ::= (<predicate> <typed list (variable)>)
+//  <predicate>                 ::= <name>
+//  <variable>                  ::= ?<name>
+//  <atomic function skeleton>  ::= (<function-symbol> <typed list (variable)>)
+//  <function-symbol>           ::= <name>
+//  <functions-def>             ::=:fluents (:functions <function typed list (atomic function skeleton)>)
+//  <structure-def>             ::= <action-def>
+//  <structure-def>             ::=:durative−actions <durative-action-def>
+
+domain: "(" "define" "(" "domain" name ")"
+            | [require_def]
+            | [types_def]
+            | [constants_def]
+            | [predicates_def]
+            | [functions_def]
+            structure_def* ")"
+
+require_def: "(" ":requirements" require_key+ ")"
+types_def: "(" ":types" typed_list_name ")"
+constants_def: "(" ":constants" typed_list_name ")"
+predicates_def: "(" ":predicates" atomic_formula_skeleton+ ")"
+atomic_formula_skeleton: "(" predicate typed_list_variable ")"
+atomic_function_skeleton: "(" function_symbol typed_list_variable ")"
+functions_def: "(" ":functions" function_typed_list_atomic_formula_skeleton ")"
+function_typed_list_atomic_formula_skeleton: function_typed_list_atomic_formula_skeleton_1 |
+                                           | function_typed_list_atomic_formula_skeleton_2
+function_typed_list_atomic_formula_skeleton_1: atomic_formula_skeleton*
+function_typed_list_atomic_formula_skeleton_2: atomic_formula_skeleton+
+                                             | function_type function_typed_list_atomic_formula_skeleton
+
+structure_def: structure_def_1 | structure_def_2
+structure_def_1: action_def
+structure_def_2: durative_action_def

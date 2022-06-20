@@ -1,0 +1,1 @@
+[["MOVE", ["F3-2F", "F2-2F"]], ["PICKUP", ["F2-2F", "KEY13-0"]], ["MOVE", ["F2-2F", "F2-3F"]], ["MOVE", ["F2-3F", "F2-4F"]], ["PUTDOWN", ["F2-4F", "KEY13-0"]], ["MOVE", ["F2-4F", "F2-3F"]], ["MOVE", ["F2-3F", "F2-2F"]], ["MOVE", ["F2-2F", "F2-1F"]], ["PICKUP", ["F2-1F", "KEY13-1"]], ["MOVE", ["F2-1F", "F2-2F"]], ["MOVE", ["F2-2F", "F2-3F"]], ["PUTDOWN", ["F2-3F", "KEY13-1"]]]

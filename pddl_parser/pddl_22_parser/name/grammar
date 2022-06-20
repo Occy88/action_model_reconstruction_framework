@@ -1,0 +1,9 @@
+name: /([a-zA-Z]|\d)+((_|-)([a-zA-Z]|\d)+)*/
+not: "not"
+or: "or"
+and: "and"
+change:"change"
+when:"when"
+exists: "exists"
+forall: "forall"
+forsome: "forsome"
