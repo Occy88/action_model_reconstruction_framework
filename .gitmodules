@@ -1,3 +1,6 @@
 [submodule "MscDissertation"]
 	path = MscDissertation
 	url = git@github.com:occy88/MscDissertation
+[submodule "opensource/pracmln"]
+	path = opensource/pracmln
+	url = git@github.com:Occy88/pracmln.git
