@@ -4,19 +4,25 @@ from abc import abstractmethod
 
 
 class BaseSolver(ABC):
-    def __init__(self):
-        pass
 
-    @abstractmethod
-    def solve(self, domain_file: str, problem_path: str, output_path: str):
-        """solves a problem given a domain.
-
-        :param domain_file: path to domain file
-        :param problem_path: path to problem
-        :param output_path: path to output directory
+    @classmethod
+    def solve_problem_dir(cls, domain_file: str, problem_dir: str, output_dir):
+        """
+        Solves each problem in a directory and outputs solutions with the same file names into
+        a newly specified directory.
+        :param domain:
+        :param problem_dir:
+        :param output_dir:
         :return:
         """
-        pass
+        problems = os.listdir(problem_dir)
+        for p in problems:
+            cls.solve(domain_file, f'{problem_dir}/{p}', f'{output_dir}/{p}')
+
+    @classmethod
+    @abstractmethod
+    def solve(cls, domain_file: str, problem_path: str, output_path: str):
+        ...
 
     @staticmethod
     def exec_os_command(cmd: str):
@@ -24,12 +30,16 @@ class BaseSolver(ABC):
 
 
 class FFXSolver(BaseSolver):
-    def solve(self, domain_file: str, problem_path: str, output_path: str):
-        cmd = f'./ff -o  {domain_file}  -f {problem_path}| sed -n "/step/,/time/p" > {output_path}'
-        self.exec_os_command(cmd)
+    @classmethod
+    def solve(cls, domain_file: str, problem_path: str, output_path: str):
+        ff_path = f'{os.path.dirname(__file__)}/ffx/'
+        cmd = f'{ff_path}ff -o  {domain_file}  -f {problem_path}| sed -n "/step/,/time/p" > {output_path}'
+        cls.exec_os_command(cmd)
 
 
 class CloudSolver(BaseSolver):
-    def solve(self, domain_file: str, problem_path: str, output_path: str):
+    @classmethod
+    def solve(cls, domain_file: str, problem_path: str, output_path: str):
+        cloud_solver_dir = f'{os.getcwd()}/opesource/cloud-solver'
         cmd = f'exec "$(dirname "$0")"/siw-then-bfsf --domain {domain_file} --problem {problem_path} --output {output_path}'
-        self.exec_os_command(cmd)
+        cls.exec_os_command(cmd)

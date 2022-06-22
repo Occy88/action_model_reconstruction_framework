@@ -1,8 +1,8 @@
 import copy
-from pracmln import MLN
+from opensource.pracmln.pracmln_patched import MLN
 from itertools import chain
 
-from pracmln.mln.database import Database as DB
+from opensource.pracmln.pracmln_patched.mln.database import Database as DB
 
 import json
 
@@ -80,7 +80,7 @@ class Predicate:
         """
         for p in predicate_list:
             if p.get_property_hash(properties) == predicate.get_property_hash(
-                properties
+                    properties
             ):
                 return True
         return False
@@ -247,7 +247,7 @@ class State:
 
 class Database:
     def __init__(
-        self, action: Predicate, state: set, pos_effects: set, neg_effects: set
+            self, action: Predicate, state: set, pos_effects: set, neg_effects: set
     ):
         self.action = action
         self.state = state
@@ -315,8 +315,8 @@ class Database:
             # TODO exclusion should not be limited to on? thi is to be discussed
             # s.add(p)
             if (
-                len(self.action.arg_set.intersection(p.arg_set)) > 0
-                and len(p.arg_set.difference(self.action.arg_set)) < 2
+                    len(self.action.arg_set.intersection(p.arg_set)) > 0
+                    and len(p.arg_set.difference(self.action.arg_set)) < 2
             ):
                 s.add(p)
 
@@ -495,8 +495,8 @@ class StateInfrence:
         for w in relevant_weights:
             w.arg_types = Predicate.matching_as_variables(db.action, w)
             if (
-                w.mln_type() in self.action_rejected_weights[db.action.name]
-                or w.mln_type() in self.action_weights[db.action.name]
+                    w.mln_type() in self.action_rejected_weights[db.action.name]
+                    or w.mln_type() in self.action_weights[db.action.name]
             ):
                 continue
             else:
@@ -506,12 +506,12 @@ class StateInfrence:
         s = ""
         for k, w in self.action_weights[action.name].items():
             s += (
-                str(w.weight)
-                + "    "
-                + action.mln_type()
-                + " => "
-                + w.mln_type()
-                + "\n"
+                    str(w.weight)
+                    + "    "
+                    + action.mln_type()
+                    + " => "
+                    + w.mln_type()
+                    + "\n"
             )
         # print(s)
         return s
@@ -631,7 +631,6 @@ def update_mln():
         ],
     )
     print("value: ", c.weights)
-
 
 # update_mln()
 # action_dbs[self.db.action.name].append(db)

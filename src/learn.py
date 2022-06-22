@@ -1,13 +1,14 @@
 import os
 import random
+from pathlib import Path
 
 from problem_convert.plan_trace_gen import Database as DB
 from problem_convert.plan_trace_gen import StateInfrence
-
+print(os.getcwd())
 results = open("results", "w")
 # state.perform_action('move-b-to-t', ('b9', 'b4'))
 mln_params = "mln_params_r.mln"
-mln_database = "mln_db.mln"
+mln_database = "../data/mln/mln_db.mln"
 logic = "FirstOrderLogic"
 grammar = "StandardGrammar"
 method = "pseudo-log-likelihood"
@@ -37,7 +38,7 @@ for i, d in enumerate(databases):
 
     d_processed.append(DB.parse_db(d))
 print("initiating state inference")
-s = StateInfrence(os.getcwd() + "/" + domain + "_p_decs.txt")
+s = StateInfrence(os.path.normpath(os.path.join(os.getcwd(),f"../data/txt/{domain}_p_decs.txt")))
 print("Initiating learning:")
 opt_tracker = dict()
 for i, d in enumerate(d_processed):

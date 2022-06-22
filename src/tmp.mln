@@ -1,0 +1,32 @@
+// predicate declarations move_b_to_b(object,object,object)
+t = {-1,0,1}
+
+unlock(pos,pos,key,shape)
+move(pos,pos)
+pickup(pos,key)
+pickup_and_loose(pos,key,key)
+putdown(pos,key)
+conn(pos,pos,t)
+key_shape(key,shape,t)
+lock_shape(pos,shape,t)
+at(key,pos,t)
+at_robot(pos,t)
+place(pos,t)
+key(key,t)
+shape(shape,t)
+locked(pos,t)
+holding(key,t)
+open(pos,t)
+arm_empty(t)
+
+
+// formulas: 
+4.393794287193672    move(v0,v1) => open(v1,0)
+13.985913082513793    move(v0,v1) => place(v0,0)
+2.547933505479376    move(v0,v1) => conn(v1,v0,0)
+2.547933505479168    move(v0,v1) => conn(v0,v1,0)
+5.3728958503469775    move(v0,v1) => at_robot(v1,1)
+3.483195078815499    move(v0,v1) => at_robot(v0,-1)
+7.054007503369078    move(v0,v1) => open(v0,0)
+13.985913082513845    move(v0,v1) => place(v1,0)
+3.483195078815531    move(v0,v1) => at_robot(v0,0)

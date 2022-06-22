@@ -63,13 +63,12 @@ class FFToActionParser:
         writes output to json saves each output into a new state file.
         """
         print("=================================")
-        print(os.getcwd())
-        os.chdir("./parser/plan_traces")
+        path = os.getcwd()
+        os.chdir(f'{os.path.dirname(__file__)}/plan_traces')
 
         os.popen("rm -rf " + problem + " ; mkdir " + problem)  # nosec
         print(os.getcwd())
         for name in os.listdir("../../solvers/plans/" + problem):
-            print(name)
             f = open("../../solvers/plans/" + problem + "/" + name)
             text = f.read()
             f.close()
@@ -78,5 +77,4 @@ class FFToActionParser:
             print(parsed)
             f.write(json.dumps(parsed))
             f.close()
-
-        print(os.getcwd())
+        os.chdir(path)
