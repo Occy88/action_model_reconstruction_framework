@@ -8,8 +8,8 @@ class PDDL22DomainTransformer(Transformer):
     This is a transformer compatible with PDDL 2.2 domains files.
     """
 
-    def pddl(self, args):
-        domain = args[0]
+    def define(self, args):
+        domain = args[0][0]
         predicates = args[1]
         actions = args[2:]
         return {"domain": domain, "predicates": predicates, "actions": actions}
@@ -68,11 +68,12 @@ def parse_pddl(file):
     import os
 
     print(os.getcwd())
-    grammar = open("problem_convert/grammar", "r").read()
+    grammar = open(f"{os.path.dirname(__file__)}/grammar", "r").read()
     print(sample_conf)
     print(grammar)
-    parser = Lark(grammar, transformer=PddlToJson(), parser="lalr")
-    return parser.parse(sample_conf)
+    parser = Lark(grammar, transformer=PDDL22DomainTransformer(), parser="lalr")
+    result = parser.parse(sample_conf)
+    return result
 
 
 # #

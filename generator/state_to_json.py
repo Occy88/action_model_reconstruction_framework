@@ -20,7 +20,7 @@ class PddlToJson(Transformer):
         }
 
     def var(self, v):
-        val = v[0][0].value
+        val = v[0]
         return val
 
     def parameters(self, args):

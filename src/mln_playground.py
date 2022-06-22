@@ -74,7 +74,7 @@ def write_db(f, state, plan):
 
 
 domain = "grid"
-parsed = parse_pddl("./domains/" + domain + ".pddl")
+parsed = parse_pddl("../domains/" + domain + ".pddl")
 
 # # state.perform_action('move-b-to-t', ('b9', 'b4'))
 # mln_params = 'mln_params.mln'
