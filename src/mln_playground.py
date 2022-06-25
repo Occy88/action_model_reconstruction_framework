@@ -110,6 +110,7 @@ mln_database = "mln_db.mln"
 fl = open(mln_database, "w")
 
 # f.write('\n\n//databae test \n\n')
+a=1
 for i in range(1, 100):
     try:
         state = State(parsed)
@@ -119,6 +120,11 @@ for i in range(1, 100):
         print(len(plan["steps"]))
         write_db(fl, state, plan)
         fl.write("\n---\n")
-    except FileNotFoundError:
+        a+=1
+    except Exception:
         continue
+    # except Exception as e:
+    #     print(str(e),i,state,problem)
+    #     exit()
 fl.close()
+print(a)

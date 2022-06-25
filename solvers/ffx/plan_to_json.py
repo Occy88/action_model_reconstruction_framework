@@ -38,10 +38,13 @@ def parse_plan(domain_name, state_id):
     dirname = os.path.dirname(__file__)
     filename = os.path.join(dirname, "../plans/", "/".join((domain_name, state_id)))
     sample_conf = open(filename, "r").read()
+
     grammar = open(os.path.join(dirname, "grammar"), "r").read()
     parser = Lark(grammar, transformer=PddlToJson(), parser="lalr")
     parsed = parser.parse(sample_conf)
+
     return parsed
+
 
 
 #
