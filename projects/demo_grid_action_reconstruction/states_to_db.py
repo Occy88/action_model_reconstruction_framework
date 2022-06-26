@@ -8,6 +8,7 @@ from solvers.ffx.plan_to_json import parse_plan
 
 # convert solutions to MLN databases
 
+
 def write_db(f, state, plan):
     # f.write(state.mln(cap_args=True))
     for index, s in enumerate(plan["steps"]):
@@ -26,16 +27,21 @@ def write_db(f, state, plan):
             f.write("\n--- ")
 
 
-def write_dbs(domain_file: str, problem_state_dir: str, problem_solution_dir: str, mln_db_path: str ):
+def write_dbs(
+    domain_file: str,
+    problem_state_dir: str,
+    problem_solution_dir: str,
+    mln_db_path: str,
+):
     parsed = parse_pddl(domain_file)
     fl = open(mln_db_path, "w+")
     a = 1
     for i in range(1, 100):
         try:
             state = State(parsed)
-            problem = parse_state(f'{problem_state_dir}/state_{i}')
+            problem = parse_state(f"{problem_state_dir}/state_{i}")
             state.set_init_state(problem["init"])
-            plan = parse_plan(f'{problem_solution_dir}/state_{i}')
+            plan = parse_plan(f"{problem_solution_dir}/state_{i}")
             print(len(plan["steps"]))
             write_db(fl, state, plan)
             fl.write("\n---\n")

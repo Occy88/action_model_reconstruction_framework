@@ -36,11 +36,10 @@ class PddlToJson(Transformer):
 
 def parse_plan(state_f_path):
     sample_domain = open(state_f_path, "r").read()
-    grammar = open(f'{os.path.dirname(__file__)}/grammar', "r").read()
+    grammar = open(f"{os.path.dirname(__file__)}/grammar", "r").read()
     parser = Lark(grammar, transformer=PddlToJson(), parser="lalr")
     parsed = parser.parse(sample_domain)
     return parsed
-
 
 
 #

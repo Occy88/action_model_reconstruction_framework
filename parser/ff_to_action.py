@@ -26,7 +26,7 @@ class FFToActionParser:
         """
 
         # for now ignore this, take care of parsing properly in parse_line...
-        text = text.strip().strip('\n').strip()
+        text = text.strip().strip("\n").strip()
         return text
 
     @classmethod
@@ -47,8 +47,8 @@ class FFToActionParser:
         returns list of actions.
         """
         text = cls._clean(text)
-        trace=[]
-        for line in text.split('\n'):
+        trace = []
+        for line in text.split("\n"):
             try:
                 trace.append(cls._parse_line(line))
             except ValueError:
