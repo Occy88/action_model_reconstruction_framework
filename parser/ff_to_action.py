@@ -1,6 +1,8 @@
 import json
 import os
 
+from typing import List, Tuple
+
 
 # definition of an action
 class FFToActionParser:
@@ -10,10 +12,7 @@ class FFToActionParser:
     ML.
     """
 
-    def __init__(self):
-        pass
-
-    def _clean_text(self, text):
+    def _clean(self, text: str):
         """
         removes step and final line from:
         step    0: MOVE-B-TO-T B2 B1
@@ -28,53 +27,32 @@ class FFToActionParser:
         # for now ignore this, take care of parsing properly in parse_line...
         return text
 
-    def _convert_to_action(self, text):
-        """
-        converts: MOVE-T-TO-B B9 B6
-        to an action in the form:
-        action_name & arguments
-        """
-        text = text.strip().split(" ")
-        return (text[0], text[1:])
-
-    def _parse_line(self, line):
+    def _parse_line(self, line: str) -> Tuple[str, List[str]]:
         arr = line.split(":")
         if len(arr) <= 1:
-            raise Exception
+            raise ValueError(f'Unexpected arg: "{line}" when parsing FF output to action_traces.')
 
         if "step" in arr[0] or int(arr[0]):
-            return self._convert_to_action(arr[1])
+            text = arr[1].strip().split(" ")
+            return text[0], text[1:]
 
-    def _parse_text(self, text):
+    def _parse(self, text: str) -> List[Tuple[str, List[str]]]:
         """
-        returns set of actions.
+        returns list of actions.
         """
         text = self._clean_text(text)
-        trace = []
-        for line in text.split("\n"):
-            try:
-                trace.append(self._parse_line(line))
-            except Exception as e:
-                print(f"exc: {e}")
+        trace = [self._parse_line(line) for line in text.split('\n')]
         return trace
 
-    def parse_all(self, problem):
+    def convert_ffx_plan_traces_to_actions(self, state_dir: str, output_dir: str):
         """
         writes output to json saves each output into a new state file.
         """
-        print("=================================")
-        path = os.getcwd()
-        os.chdir(f'{os.path.dirname(__file__)}/plan_traces')
-
-        os.popen("rm -rf " + problem + " ; mkdir " + problem)  # nosec
-        print(os.getcwd())
-        for name in os.listdir("../../solvers/plans/" + problem):
-            f = open("../../solvers/plans/" + problem + "/" + name)
+        for name in os.listdir(state_dir):
+            f = open(f'{state_dir}/{name}')
             text = f.read()
             f.close()
-            parsed = self._parse_text(text)
-            f = open("./" + problem + "/" + name, "w+")
-            print(parsed)
+            parsed = self._parse(text)
+            f = open(f"{output_dir}/{name}", "w+")
             f.write(json.dumps(parsed))
             f.close()
-        os.chdir(path)

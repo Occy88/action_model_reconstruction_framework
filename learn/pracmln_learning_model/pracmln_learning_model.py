@@ -2,21 +2,16 @@ import os
 import random
 
 from learn import LearningModelInterface
-from opensource.pracmln.pracmln_patched.mln.database import Database as DB
+# from opensource.pracmln.pracmln_patched.mln.database import Database as DB
+from .state_inference import Database as DB
 from .state_inference import StateInfrence
 
 
 class PracmlnLearningModel(LearningModelInterface):
-    def __init__(self):
-        results = open("results", "w")
+    def __init__(self, mln_database_path: str, domain_p_decs_path: str, ):
         # state.perform_action('move-b-to-t', ('b9', 'b4'))
-        mln_params = "mln_params_r.mln"
         mln_database = "../data/mln/mln_db.mln"
-        logic = "FirstOrderLogic"
-        grammar = "StandardGrammar"
-        method = "pseudo-log-likelihood"
         self.domain = "grid"
-
         num_databases = 25
         print("Loading database file: ")
         databases = open(mln_database).read()
@@ -30,10 +25,9 @@ class PracmlnLearningModel(LearningModelInterface):
             # cut out any blank databases.
             if len(d) < 20:
                 pass
-
             self.d_processed.append(DB.parse_db(d))
         print("initiating state inference")
-        self.s = StateInfrence(os.path.normpath(os.path.join(os.getcwd(), f"../data/txt/{self.domain}_p_decs.txt")))
+        self.state_inference:StateInfrence = StateInfrence(os.path.normpath(os.path.join(os.getcwd(), domain_p_decs_path)))
         ...
 
     def train(self):
@@ -55,18 +49,18 @@ class PracmlnLearningModel(LearningModelInterface):
                 continue
             #     pass
 
-        print(f"=========[ processing db: {d.action.name} {i} / {len(self.d_processed)} ]===========")
-        print(i / len(self.d_processed))
-        self.s.process_database(d)
+            print(f"=========[ processing db: {d.action.name} {i} / {len(self.d_processed)} ]===========")
+            print(i / len(self.d_processed))
+            self.state_inference.process_database(d)
 
-        # s.update_data_for_graph(i)
-        # if opt_tracker[d.action.name] % 5 and not opt_tracker[d.action.name] == 0:
-        #     s.prune_weights(d.action.name,2)
-        opt_tracker[d.action.name] += 1
-        self.s.save_data_for_graphing()
+            # s.update_data_for_graph(i)
+            # if opt_tracker[d.action.name] % 5 and not opt_tracker[d.action.name] == 0:
+            #     s.prune_weights(d.action.name,2)
+            opt_tracker[d.action.name] += 1
+            self.state_inference.save_data_for_graphing()
+
         s = StateInfrence(os.getcwd() + "/" + self.domain + "_p_decs.txt")
-
-        StateInfrence.plot()
+        self.state_inference.plot()
         print("writing results")
         # for k in iter(s.action_weights):
         #     print("============[ ", k, " ]============")

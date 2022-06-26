@@ -17,11 +17,9 @@ class Database:
         self.pos_effects = pos_effects
         self.neg_effects = neg_effects
         # precompute s why not...
-        self.update_relevant_state_predicates()
-        pass
+        self._action_related_predicates = None
 
-    def update_relevant_state_predicates(self):
-        self.relevant_state_predicates = self.get_relevant_state_predicates()
+
 
     def noise(self, prob):
         """
@@ -45,7 +43,6 @@ class Database:
         print(len(self.state))
         self.pos_effects = samp(self.pos_effects)
         self.neg_effects = samp(self.neg_effects)
-        self.update_relevant_state_predicates()
 
     def sys_noise(self, p_name, prob):
         def p(pset):
@@ -65,9 +62,9 @@ class Database:
         self.state = p(self.state)
         self.neg_effects = p(self.neg_effects)
         self.pos_effects = p(self.pos_effects)
-        self.update_relevant_state_predicates()
 
-    def get_relevant_state_predicates(self):
+    @property
+    def action_related_predicates(self):
         """
         returns all predicates that have an argument that is present in
         the action's argument.
@@ -244,7 +241,7 @@ class StateInfrence:
 
     def insert_weights(self):
         db = self.db
-        relevant_weights = db.relevant_state_predicates
+        relevant_weights = db.action_related_predicates
         # existing_weights=self.action_weights[db.action]
         # existing_rejected_weidghts=self.action_rejected_weights[db.action]
         db.action.arg_types = Predicate.matching_as_variables(db.action, db.action)
