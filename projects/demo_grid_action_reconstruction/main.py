@@ -18,7 +18,7 @@ DATA_DIR = f"{PROJECT_DIR}/data"
 PROBLEM_STATE_DSET_DIR = f"{DATA_DIR}/problem_states"
 DOMAIN_FILE = f"{PROJECT_DIR}/grid.pddl"
 PROBLEM_SOLUTION_DIR = f"{DATA_DIR}/problem_solutions"
-
+MLN_DATABASE = f'{DATA_DIR}/mln_db.mln'
 GridWorldGenerator.generate_data(output_dir=PROBLEM_STATE_DSET_DIR)
 FFXSolver.solve_problem_dir(
     domain_file=DOMAIN_FILE,
@@ -27,12 +27,13 @@ FFXSolver.solve_problem_dir(
 )
 
 
+# convert solutions to MLN databases
 def write_db(f, state, plan):
     # f.write(state.mln(cap_args=True))
     for index, s in enumerate(plan["steps"]):
         p = Predicate(**s["predicate"])
         f.write("\n" + p.mln(cap_args=True))
-        f.write(s.mln(cap_args=True, extra_args=["0"]))
+        f.write(state.mln(cap_args=True, extra_args=["0"]))
 
         state.perform_action(p)
 
@@ -45,25 +46,27 @@ def write_db(f, state, plan):
             f.write("\n--- ")
 
 
-domain = "grid"
-parsed = parse_pddl("../domains/" + domain + ".pddl")
-mln_database = "mln_db.mln"
-fl = open(mln_database, "w")
-a = 1
-for i in range(1, 100):
-    try:
-        state = State(parsed)
-        problem = parse_state(domain, "state_" + str(i))
-        state.set_init_state(problem["init"])
-        plan = parse_plan(domain, "state_" + str(i))
-        print(len(plan["steps"]))
-        write_db(fl, state, plan)
-        fl.write("\n---\n")
-        a += 1
-    except Exception:
-        continue
-    # except Exception as e:
-    #     print(str(e),i,state,problem)
-    #     exit()
-fl.close()
-print(a)
+def write_dbs():
+    parsed = parse_pddl(DOMAIN_FILE)
+    fl = open(MLN_DATABASE, "w+")
+    a = 1
+    for i in range(1, 100):
+        try:
+            state = State(parsed)
+            problem = parse_state(f'{PROBLEM_STATE_DSET_DIR}/state_{i}')
+            state.set_init_state(problem["init"])
+            plan = parse_plan(f'{PROBLEM_SOLUTION_DIR}/state_{i}')
+            print(len(plan["steps"]))
+            write_db(fl, state, plan)
+            fl.write("\n---\n")
+            a += 1
+        except Exception as e:
+            continue
+        # except Exception as e:
+        #     print(str(e),i,state,problem)
+        #     exit()
+    fl.close()
+    print(a)
+
+
+write_dbs()

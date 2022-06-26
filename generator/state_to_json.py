@@ -1,6 +1,5 @@
 from lark import Lark, Transformer, v_args
 
-
 import os
 
 
@@ -51,11 +50,9 @@ class PddlToJson(Transformer):
     number = v_args(inline=True)(float)
 
 
-def parse_state(domain_name, state_id):
-    dirname = os.path.dirname(__file__)
-    filename = os.path.join(dirname, "/".join((domain_name, "states", state_id)))
-    sample_domain = open(filename, "r").read()
-    grammar = open(os.path.join(dirname, "grammar"), "r").read()
+def parse_state(state_f_path):
+    sample_domain = open(state_f_path, "r").read()
+    grammar = open(f'{os.path.dirname(__file__)}/grammar', "r").read()
     parser = Lark(grammar, transformer=PddlToJson(), parser="lalr")
     parsed = parser.parse(sample_domain)
     return parsed

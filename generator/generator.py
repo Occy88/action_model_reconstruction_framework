@@ -25,7 +25,7 @@ class GridWorldGenerator(DataGenerator):
         pathlib.Path(output_dir).mkdir(parents=True, exist_ok=True)
 
         path = os.getcwd()
-        os.chdir(f"{os.path.dirname(__file__)}")
+        os.chdir(f"{os.path.dirname(__file__)}/grid")
         for i in range(0, no_states):
             print("generating states: ", i, "/", no_states)
             cmd = (

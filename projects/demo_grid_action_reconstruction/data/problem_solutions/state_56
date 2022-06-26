@@ -1,0 +1,10 @@
+step    0: MOVE F0-3F F1-3F
+        1: MOVE F1-3F F2-3F
+        2: PICKUP F2-3F KEY3-0
+        3: UNLOCK F2-3F F3-3F KEY3-0 SHAPE3
+        4: MOVE F2-3F F3-3F
+        5: MOVE F3-3F F4-3F
+        6: PUTDOWN F4-3F KEY3-0
+     
+
+time spent:    0.00 seconds instantiating 159 easy, 0 hard action templates

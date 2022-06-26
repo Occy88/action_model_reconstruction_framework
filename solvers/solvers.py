@@ -5,6 +5,7 @@ from abc import ABC
 from abc import abstractmethod
 
 from parser.ff_to_action import FFToActionParser
+import pathlib
 
 
 class BaseSolver(ABC):
@@ -19,9 +20,11 @@ class BaseSolver(ABC):
         :return:
         """
         problems = os.listdir(problem_dir)
+        pathlib.Path(output_dir).mkdir(parents=True, exist_ok=True)
+
         for p in problems:
             cls.solve(domain_file, f"{problem_dir}/{p}", f"{output_dir}/{p}")
-        cls.post_process_results(problem_dir=problem_dir)
+        cls.post_process_results(result_dir=output_dir)
 
     @classmethod
     @abstractmethod
@@ -30,7 +33,7 @@ class BaseSolver(ABC):
 
     @classmethod
     @abstractmethod
-    def post_process_results(cls, problem_dir: str):
+    def post_process_results(cls, result_dir: str):
         pass
 
     @staticmethod
@@ -48,10 +51,11 @@ class FFXSolver(BaseSolver):
         cls.exec_os_command(cmd)
 
     @classmethod
-    def post_process_results(cls, problem_dir: str):
-        cls.ff_output_parser.convert_ffx_plan_traces_to_actions(
-            state_dir=problem_dir, output_dir=problem_dir
-        )
+    def post_process_results(cls, result_dir: str):
+        # cls.ff_output_parser.convert_ffx_plan_traces_to_actions(
+        #     state_dir=result_dir, output_dir=result_dir
+        # )
+        ...
 
 
 class CloudSolver(BaseSolver):
