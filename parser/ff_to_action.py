@@ -30,7 +30,9 @@ class FFToActionParser:
     def _parse_line(self, line: str) -> Tuple[str, List[str]]:
         arr = line.split(":")
         if len(arr) <= 1:
-            raise ValueError(f'Unexpected arg: "{line}" when parsing FF output to action_traces.')
+            raise ValueError(
+                f'Unexpected arg: "{line}" when parsing FF output to action_traces.'
+            )
 
         if "step" in arr[0] or int(arr[0]):
             text = arr[1].strip().split(" ")
@@ -41,7 +43,7 @@ class FFToActionParser:
         returns list of actions.
         """
         text = self._clean_text(text)
-        trace = [self._parse_line(line) for line in text.split('\n')]
+        trace = [self._parse_line(line) for line in text.split("\n")]
         return trace
 
     def convert_ffx_plan_traces_to_actions(self, state_dir: str, output_dir: str):
@@ -49,7 +51,7 @@ class FFToActionParser:
         writes output to json saves each output into a new state file.
         """
         for name in os.listdir(state_dir):
-            f = open(f'{state_dir}/{name}')
+            f = open(f"{state_dir}/{name}")
             text = f.read()
             f.close()
             parsed = self._parse(text)

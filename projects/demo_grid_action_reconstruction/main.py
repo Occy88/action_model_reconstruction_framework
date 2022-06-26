@@ -11,18 +11,20 @@ from learn.pracmln_learning_model.state_inference import Predicate
 from learn.pracmln_learning_model.state_inference import State
 from solvers.ffx.plan_to_json import parse_plan
 
-BASE_PATH = os.path.normpath(f'{os.getcwd()}/..')
+BASE_PATH = os.path.normpath(f"{os.getcwd()}/..")
 
 PROJECT_DIR = os.path.dirname(__file__)
-DATA_DIR = f'{PROJECT_DIR}/data'
-PROBLEM_STATE_DSET_DIR = f'{DATA_DIR}/problem_states'
-DOMAIN_FILE = f'{PROJECT_DIR}/grid.pddl'
-PROBLEM_SOLUTION_DIR = f'{DATA_DIR}/problem_solutions'
+DATA_DIR = f"{PROJECT_DIR}/data"
+PROBLEM_STATE_DSET_DIR = f"{DATA_DIR}/problem_states"
+DOMAIN_FILE = f"{PROJECT_DIR}/grid.pddl"
+PROBLEM_SOLUTION_DIR = f"{DATA_DIR}/problem_solutions"
 
 GridWorldGenerator.generate_data(output_dir=PROBLEM_STATE_DSET_DIR)
-FFXSolver.solve_problem_dir(domain_file=DOMAIN_FILE,
-                            problem_dir=PROBLEM_STATE_DSET_DIR,
-                            output_dir=PROBLEM_SOLUTION_DIR)
+FFXSolver.solve_problem_dir(
+    domain_file=DOMAIN_FILE,
+    problem_dir=PROBLEM_STATE_DSET_DIR,
+    output_dir=PROBLEM_SOLUTION_DIR,
+)
 
 
 def write_db(f, state, plan):

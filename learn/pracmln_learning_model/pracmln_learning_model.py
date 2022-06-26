@@ -2,13 +2,18 @@ import os
 import random
 
 from learn import LearningModelInterface
+
 # from opensource.pracmln.pracmln_patched.mln.database import Database as DB
 from .state_inference import Database as DB
 from .state_inference import StateInfrence
 
 
 class PracmlnLearningModel(LearningModelInterface):
-    def __init__(self, mln_database_path: str, domain_p_decs_path: str, ):
+    def __init__(
+        self,
+        mln_database_path: str,
+        domain_p_decs_path: str,
+    ):
         # state.perform_action('move-b-to-t', ('b9', 'b4'))
         mln_database = "../data/mln/mln_db.mln"
         self.domain = "grid"
@@ -27,7 +32,9 @@ class PracmlnLearningModel(LearningModelInterface):
                 pass
             self.d_processed.append(DB.parse_db(d))
         print("initiating state inference")
-        self.state_inference:StateInfrence = StateInfrence(os.path.normpath(os.path.join(os.getcwd(), domain_p_decs_path)))
+        self.state_inference: StateInfrence = StateInfrence(
+            os.path.normpath(os.path.join(os.getcwd(), domain_p_decs_path))
+        )
         ...
 
     def train(self):
@@ -49,7 +56,9 @@ class PracmlnLearningModel(LearningModelInterface):
                 continue
             #     pass
 
-            print(f"=========[ processing db: {d.action.name} {i} / {len(self.d_processed)} ]===========")
+            print(
+                f"=========[ processing db: {d.action.name} {i} / {len(self.d_processed)} ]==========="
+            )
             print(i / len(self.d_processed))
             self.state_inference.process_database(d)
 

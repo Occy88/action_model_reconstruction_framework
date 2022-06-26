@@ -46,7 +46,6 @@ def parse_plan(domain_name, state_id):
     return parsed
 
 
-
 #
 # def write_action(name, predicate):
 #     p1 = '\n0.000000    action('

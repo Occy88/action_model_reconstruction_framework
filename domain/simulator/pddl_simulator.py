@@ -3,7 +3,6 @@ import copy
 from typing import List, Set
 
 
-
 class Predicate:
     def __init__(self, name="", args="9", arg_types="number"):
         self.name = name
@@ -71,7 +70,7 @@ class Predicate:
         """
         for p in predicate_list:
             if p.get_property_hash(properties) == predicate.get_property_hash(
-                    properties
+                properties
             ):
                 return True
         return False
@@ -234,6 +233,8 @@ class State:
     def __str__(self):
         for p in self.state:
             return str(p)
+
+
 #
 #
 # def update_mln():
