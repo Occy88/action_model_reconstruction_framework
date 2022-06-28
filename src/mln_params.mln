@@ -1,0 +1,26 @@
+// predicate declarations
+t = {-1,0,1}
+unlock(object,object,object,object)
+move(object,object)
+pickup(object,object)
+pickup_and_loose(object,object,object)
+putdown(object,object)
+conn(object,object,t)
+key_shape(object,object,t)
+lock_shape(object,object,t)
+at(object,object,t)
+at_robot(object,t)
+place(object,t)
+key(object,t)
+shape(object,t)
+locked(object,t)
+holding(object,t)
+open(object,t)
+arm_empty(,t)
+
+// formulas: 
+0.000000    unlock(curpos,lockpos,key,shape) ^ place(curpos,0)^place(lockpos,0)^key(key,0)^shape(shape,0)^conn(curpos,lockpos,0)^key_shape(key,shape,0)^lock_shape(lockpos,shape,0)^at_robot(curpos,0)^locked(lockpos,0)^holding(key,0) => open(lockpos,1) ^ locked(lockpos,-1)
+0.000000    move(curpos,nextpos) ^ place(curpos,0)^place(nextpos,0)^at_robot(curpos,0)^conn(curpos,nextpos,0)^open(nextpos,0) => at_robot(nextpos,1) ^ at_robot(curpos,-1)
+0.000000    pickup(curpos,key) ^ place(curpos,0)^key(key,0)^at_robot(curpos,0)^at(key,curpos,0)^arm_empty(0) => holding(key,1) ^ at(key,curpos,-1)^arm_empty(-1)
+0.000000    pickup_and_loose(curpos,newkey,oldkey) ^ place(curpos,0)^key(newkey,0)^key(oldkey,0)^at_robot(curpos,0)^holding(oldkey,0)^at(newkey,curpos,0) => holding(newkey,1)^at(oldkey,curpos,1) ^ holding(oldkey,-1)^at(newkey,curpos,-1)
+0.000000    putdown(curpos,key) ^ place(curpos,0)^key(key,0)^at_robot(curpos,0)^holding(key,0) => arm_empty(1)^at(key,curpos,1) ^ holding(key,-1)

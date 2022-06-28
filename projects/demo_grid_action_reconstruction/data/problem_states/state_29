@@ -137,7 +137,6 @@
 (open f3-1f)
 (open f4-1f)
 (open f0-2f)
-(open f1-2f)
 (open f2-2f)
 (open f3-2f)
 (open f4-2f)
@@ -147,17 +146,20 @@
 (open f3-3f)
 (open f4-3f)
 (open f0-4f)
+(open f1-4f)
 (open f2-4f)
 (open f3-4f)
 (open f4-4f)
-(locked f1-4f)
-(lock-shape f1-4f shape3)
-(at key3-0 f0-1f)
-(at-robot f2-3f)
+(locked f1-2f)
+(lock-shape f1-2f shape3)
+(at key3-0 f1-0f)
+(at-robot f0-0f)
 )
 (:goal
 (and
-(at key3-0 f1-1f)
+(at key3-0 f2-1f)
 )
 )
 )
+
+

@@ -13,18 +13,18 @@ DOMAIN_FILE = f"{PROJECT_DIR}/grid.pddl"
 PROBLEM_SOLUTION_DIR = f"{DATA_DIR}/problem_solutions"
 MLN_DATABASE = f"{DATA_DIR}/mln_db.mln"
 
-GridWorldGenerator.generate_data(output_dir=PROBLEM_STATE_DSET_DIR)
-FFXSolver.solve_problem_dir(
-    domain_file=DOMAIN_FILE,
-    problem_dir=PROBLEM_STATE_DSET_DIR,
-    output_dir=PROBLEM_SOLUTION_DIR,
-)
-
-write_dbs(
-    domain_file=DOMAIN_FILE,
-    problem_state_dir=PROBLEM_STATE_DSET_DIR,
-    problem_solution_dir=PROBLEM_SOLUTION_DIR,
-    mln_db_path=MLN_DATABASE,
-)
-
-model=PracmlnLearningModel(mln_database_path=MLN_DATABASE)
+# GridWorldGenerator.generate_data(output_dir=PROBLEM_STATE_DSET_DIR)
+# FFXSolver.solve_problem_dir(
+#     domain_file=DOMAIN_FILE,
+#     problem_dir=PROBLEM_STATE_DSET_DIR,
+#     output_dir=PROBLEM_SOLUTION_DIR,
+# )
+#
+# write_dbs(
+#     domain_file=DOMAIN_FILE,
+#     problem_state_dir=PROBLEM_STATE_DSET_DIR,
+#     problem_solution_dir=PROBLEM_SOLUTION_DIR,
+#     mln_db_path=MLN_DATABASE,
+# )
+#
+# model=PracmlnLearningModel(mln_database_path=MLN_DATABASE)

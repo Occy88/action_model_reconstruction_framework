@@ -152,12 +152,14 @@
 (open f4-4f)
 (locked f1-2f)
 (lock-shape f1-2f shape3)
-(at key3-0 f1-1f)
-(at-robot f0-1f)
+(at key3-0 f4-1f)
+(at-robot f2-4f)
 )
 (:goal
 (and
-(at key3-0 f2-2f)
+(at key3-0 f2-0f)
 )
 )
 )
+
+
