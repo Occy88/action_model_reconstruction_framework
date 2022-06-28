@@ -3,7 +3,7 @@ import os
 from generator.generator import GridWorldGenerator
 from solvers.solvers import FFXSolver
 from .states_to_db import write_dbs
-
+from learn.pracmln_learning_model import PracmlnLearningModel
 BASE_PATH = os.path.normpath(f"{os.getcwd()}/..")
 
 PROJECT_DIR = os.path.dirname(__file__)
@@ -26,3 +26,5 @@ write_dbs(
     problem_solution_dir=PROBLEM_SOLUTION_DIR,
     mln_db_path=MLN_DATABASE,
 )
+
+model=PracmlnLearningModel(mln_database_path=MLN_DATABASE)

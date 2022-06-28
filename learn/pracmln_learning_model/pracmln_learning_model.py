@@ -15,11 +15,10 @@ class PracmlnLearningModel(LearningModelInterface):
         domain_p_decs_path: str,
     ):
         # state.perform_action('move-b-to-t', ('b9', 'b4'))
-        mln_database = "../data/mln/mln_db.mln"
         self.domain = "grid"
         num_databases = 25
         print("Loading database file: ")
-        databases = open(mln_database).read()
+        databases = open(mln_database_path).read()
         databases = databases.strip("\n").strip(" ").strip("---").split("---")
         random.shuffle(databases)
         databases = databases[:num_databases]
