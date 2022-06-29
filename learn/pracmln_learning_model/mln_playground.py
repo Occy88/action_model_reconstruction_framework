@@ -17,19 +17,26 @@ class MLNDeclarationGenerator:
         f.write("// predicate declarations")
         f.write("\nt = {-1,0,1}")
         for a in parsed['actions']:
-            f.write('\n' + a['name'] + '(' + ','.join(['object'] * len(a['args'])) + ')')
+            num_actions = len(a['args'])
+
+            f.write('\n' + a['name'] + '(' + ','.join(['object'] * num_actions) + ')')
 
         for p in parsed['predicates']:
-            f.write('\n' + p['name'] + '(' + ','.join(['object'] * len(p['args'])) + ',t)')
-        f.write("\n\n// formulas: ")
+            num_preds = len(p['args'])
+            f.write(f'\n {p["name"]} ({",".join(["object"] * num_preds)}')
+            if num_preds == 0:
+                f.write('t)')
+            else:
+                f.write(',t)')
+        # f.write("\n\n// formulas: ")
 
-        for a in parsed['actions']:
-            score = '\n0.000000    '
-            action_sig = a['name'] + '(' + ','.join(a['args']) + ')'
-            pre_p = '^'.join(list(map(lambda x: Predicate(**x).mln(extra_args=['1']), a['effect']['positive'])))
-            pre_n = '^'.join(list(map(lambda x: Predicate(**x).mln(extra_args=['-1']), a['effect']['negative'])))
-            precon = '^'.join(list(map(lambda x: Predicate(**x).mln(extra_args=['0']), a['precondition'])))
-            f.write(score + action_sig + ' ^ ' + precon + ' => ' + pre_p + ' ^ ' + pre_n)
+        # for a in parsed['actions']:
+        #     score = '\n0.000000    '
+        #     action_sig = a['name'] + '(' + ','.join(a['args']) + ')'
+        #     pre_p = '^'.join(list(map(lambda x: Predicate(**x).mln(extra_args=['1']), a['effect']['positive'])))
+        #     pre_n = '^'.join(list(map(lambda x: Predicate(**x).mln(extra_args=['-1']), a['effect']['negative'])))
+        #     precon = '^'.join(list(map(lambda x: Predicate(**x).mln(extra_args=['0']), a['precondition'])))
+        #     f.write(score + action_sig + ' ^ ' + precon + ' => ' + pre_p + ' ^ ' + pre_n)
 
         f.close()
 
