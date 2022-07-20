@@ -108,3 +108,4 @@ app/analysis/tests/processed/
 
 # staticfiles for localtesting of docker setup.
 **/local_static
+opensource/
