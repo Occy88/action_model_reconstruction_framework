@@ -2,9 +2,9 @@ import os
 
 from generator.generator import GridWorldGenerator
 from solvers.solvers import FFXSolver
-from projects.demo_grid_action_reconstruction.states_to_db import write_dbs
+from learn.pracmln_learning_model.utils import write_dbs
 from learn.pracmln_learning_model import PracmlnLearningModel
-from learn.pracmln_learning_model.mln_playground import MLNDeclarationGenerator
+from learn.pracmln_learning_model.utils import MLNDeclarationGenerator
 
 BASE_PATH = os.path.normpath(f"{os.getcwd()}/..")
 

@@ -70,7 +70,7 @@ class Predicate:
         """
         for p in predicate_list:
             if p.get_property_hash(properties) == predicate.get_property_hash(
-                properties
+                    properties
             ):
                 return True
         return False
@@ -198,27 +198,30 @@ class Action:
 
 
 class State:
-    actions = dict()
-
     def __init__(self, state):
-        self._set_actions(state["actions"])
+        self._actions = dict()
+        self.actions = state["actions"]
         self.state = set()
         self.latest_removed = set()
         self.latest_added = set()
         # self.latest_added=set()
 
+    @property
+    def actions(self) -> dict:
+        return self._actions
+
+    @actions.setter
+    def actions(self, actions: list):
+        for a in actions:
+            self._actions[a["name"]] = Action(**a)
+
     def perform_action(self, p: Predicate):
-        # print(self)
         pos = self.actions[p.name].get_pos_list(p.args)
         self.state = self.state | pos
         self.latest_added = pos
         neg = self.actions[p.name].get_neg_list(p.args)
         self.latest_removed = neg
         self.state = self.state - neg
-
-    def _set_actions(self, actions):
-        for a in actions:
-            self.actions[a["name"]] = Action(**a)
 
     def set_init_state(self, predicate_json):
         for p in predicate_json:
@@ -233,7 +236,6 @@ class State:
     def __str__(self):
         for p in self.state:
             return str(p)
-
 
 #
 #
